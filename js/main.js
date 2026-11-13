@@ -21,9 +21,10 @@
   function applyLang(lang, save) {
     root.setAttribute('data-lang', lang);
     root.setAttribute('lang', lang);
-    document.title = titles[lang];
+    // Subpages carry their own title and description on <html>.
+    document.title = root.getAttribute('data-title-' + lang) || titles[lang];
     var meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content', descriptions[lang]);
+    if (meta) meta.setAttribute('content', root.getAttribute('data-desc-' + lang) || descriptions[lang]);
     langButtons.forEach(function (b) {
       b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
     });

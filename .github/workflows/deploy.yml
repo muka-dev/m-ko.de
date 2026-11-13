@@ -19,13 +19,20 @@ jobs:
       - name: Referenced files exist
         run: |
           missing=0
-          for ref in $(grep -oE '(src|href)="[^"#]+"' index.html \
-              | sed -E 's/^(src|href)="//; s/"$//' \
-              | grep -vE '^(https?:|mailto:|data:)'); do
-            if [ ! -e "${ref#/}" ]; then
-              echo "::error::index.html references a missing file: $ref"
-              missing=1
-            fi
+          for page in $(find . -name index.html -not -path './.git/*' | sed 's|^\./||'); do
+            dir=$(dirname "$page")
+            for ref in $(grep -oE '(src|href)="[^"#]+"' "$page" \
+                | sed -E 's/^(src|href)="//; s/"$//' \
+                | grep -vE '^(https?:|mailto:|data:)'); do
+              case "$ref" in
+                /*) target="${ref#/}" ;;
+                *)  target="$dir/$ref" ;;
+              esac
+              if [ ! -e "$target" ]; then
+                echo "::error::$page references a missing file: $ref"
+                missing=1
+              fi
+            done
           done
           exit $missing
       - uses: actions/setup-node@v4
@@ -58,7 +65,7 @@ jobs:
       - name: Assemble site folder
         run: |
           mkdir site
-          cp -r index.html favicon.svg css js fonts img get site/
+          cp -r index.html favicon.svg css js fonts img get check assistant site/
           chmod -R u=rwX,go=rX site
 
       - name: Deploy over SFTP
