@@ -49,6 +49,7 @@ jobs:
       DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
       DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
       DEPLOY_PATH: ${{ secrets.DEPLOY_PATH || './' }}
+      DEPLOY_PORT: ${{ secrets.DEPLOY_PORT || '22' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -69,7 +70,7 @@ jobs:
           # stay untouched. --chmod makes every file readable by the web
           # server, so an upload can never end in a 403.
           rsync -rlz --delay-updates --chmod=D755,F644 \
-            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes -o IdentitiesOnly=yes" \
+            -e "ssh -p $DEPLOY_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes -o IdentitiesOnly=yes" \
             site/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH"
 
       - name: Check the live site
