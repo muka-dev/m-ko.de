@@ -48,30 +48,36 @@ jobs:
       DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
       DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
       DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
-      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH || './' }}
+      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH || 'public_html' }}
       DEPLOY_PORT: ${{ secrets.DEPLOY_PORT || '22' }}
     steps:
       - uses: actions/checkout@v4
 
       # Only the website goes to the server, nothing from .git or .github.
+      # Permissions are set here, so an upload can never end in a 403.
       - name: Assemble site folder
         run: |
           mkdir site
           cp -r index.html favicon.svg css js fonts img get site/
+          chmod -R u=rwX,go=rX site
 
-      - name: Deploy over SSH
+      - name: Deploy over SFTP
         if: env.DEPLOY_HOST != ''
         run: |
+          sudo apt-get install -y -qq lftp
           install -m 700 -d ~/.ssh
           printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
           # No --delete: files on the server that are not in this repository
-          # stay untouched. --chmod makes every file readable by the web
-          # server, so an upload can never end in a 403.
-          rsync -rlz --delay-updates --chmod=D755,F644 \
-            -e "ssh -p $DEPLOY_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes -o IdentitiesOnly=yes" \
-            site/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH"
+          # stay untouched.
+          lftp -c "
+            set sftp:connect-program 'ssh -a -x -p $DEPLOY_PORT -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=yes -o IdentitiesOnly=yes -o BatchMode=yes';
+            set net:max-retries 3;
+            set net:reconnect-interval-base 5;
+            open -u '$DEPLOY_USER,' sftp://$DEPLOY_HOST;
+            mirror --reverse --parallel=4 --verbose site/ '$DEPLOY_PATH'
+          "
 
       - name: Check the live site
         if: env.DEPLOY_HOST != ''

@@ -1,12 +1,12 @@
 # Automatisches Deployment von m-ko.de
 
-Bei jedem Push auf `main` prüft GitHub Actions die Seite und kopiert sie
-per rsync über SSH auf den Server. Pull Requests werden nur geprüft, nie
+Bei jedem Push auf `main` prüft GitHub Actions die Seite und lädt sie per
+SFTP auf den Server hoch. Pull Requests werden nur geprüft, nie
 ausgeliefert.
 
 ```
 Pull Request  ──► check (Dateien vorhanden, Skripte gültig)
-Merge in main ──► check ──► rsync über SSH ──► m-ko.de ──► Live-Check
+Merge in main ──► check ──► SFTP-Upload ──► m-ko.de ──► Live-Check
 ```
 
 Solange das Secret `DEPLOY_HOST` fehlt, wird nichts hochgeladen. Der Job
@@ -15,89 +15,67 @@ und die Zugangsdaten danach einrichten.
 
 Was auf den Server geht: `index.html`, `favicon.svg`, `css/`, `js/`,
 `fonts/`, `img/`, `get/`. Dateien, die nur auf dem Server liegen, bleiben
-unberührt (kein `--delete`). Alle Dateien bekommen die Rechte 644 und alle
-Ordner 755, damit der Webserver sie ausliefern darf.
+unberührt (kein Löschen). Dateien bekommen die Rechte 644 und Ordner 755,
+damit der Webserver sie ausliefern darf.
 
 ## Einrichtung für Hetzner Webhosting (konsoleH)
 
-Stand der Hetzner-Dokumentation, die Menünamen in konsoleH können
-abweichen.
+Der Upload läuft über SFTP auf Port 22 mit einem Schlüssel für den
+FTP-Hauptbenutzer. Eine Shell oder `rsync` braucht es dafür nicht.
 
-### 1. Prüfen, ob SSH im Paket enthalten ist
+### 1. Schlüssel erzeugen
 
-SSH gibt es laut Hetzner nur bei bestimmten Paketen (Webhosting L und XL
-sowie Managed Server). Die Zugangsdaten sind die des FTP-Hauptbenutzers,
-der Port ist **222**, nicht 22. Der Hostname steht in konsoleH unter
-Einstellungen → Logindaten (Form `www123.your-server.de`).
-
-### 2. Deploy-Schlüssel erzeugen
-
-Auf dem eigenen Rechner:
+Auf dem eigenen Rechner, Passphrase leer lassen (zweimal Enter):
 
 ```bash
-ssh-keygen -t ed25519 -N "" -C mko-deploy -f mko-deploy
+ssh-keygen -t ed25519 -C mko-deploy -f mko-deploy
 ```
 
-### 3. Öffentlichen Schlüssel in konsoleH eintragen
+### 2. Öffentlichen Schlüssel in konsoleH eintragen
 
 Einstellungen → Logindaten → Öffentliche SFTP-Schlüssel → Hinzufügen. Dort
-den Inhalt von `mko-deploy.pub` einfügen. Lehnt konsoleH das Format ab,
-ins RFC4716-Format umwandeln und das Ergebnis einfügen:
+den Inhalt von `mko-deploy.pub` einfügen (eine Zeile, beginnt mit
+`ssh-ed25519`). konsoleH wandelt das Format selbst um.
+
+### 3. SFTP-Login testen
 
 ```bash
-ssh-keygen -e -f mko-deploy.pub
+sftp -P 22 -i mko-deploy BENUTZER@HOST
 ```
 
-### 4. Verbindung und rsync testen
+Kommt der Prompt `sftp>`, funktioniert der Schlüssel. Mit `ls` den
+Webordner suchen, bei einer Hauptdomain meist `public_html`.
+
+### 4. Host-Schlüssel des Servers holen
 
 ```bash
-ssh -p 222 -i mko-deploy BENUTZER@HOST 'rsync --version | head -1; ls'
+ssh-keyscan -p 22 HOST
 ```
 
-Kommt die rsync-Version und eine Ordnerliste mit `public_html` zurück,
-passt alles. Meldet der Server "rsync: command not found", geht dieser Weg
-nicht und der Upload muss auf SFTP umgestellt werden.
+Die komplette Ausgabe wird das Secret `DEPLOY_KNOWN_HOSTS`.
 
-### 5. Host-Schlüssel des Servers holen
-
-```bash
-ssh-keyscan -p 222 HOST
-```
-
-Die komplette Ausgabe wird das Secret `DEPLOY_KNOWN_HOSTS`. Sie sollte
-mit der Fingerprint-Anzeige beim ersten manuellen Login aus Schritt 4
-übereinstimmen.
-
-### 6. GitHub-Secrets
+### 5. GitHub-Secrets
 
 Im Repository unter Settings → Secrets and variables → Actions:
 
 | Secret | Inhalt |
 |---|---|
-| `DEPLOY_HOST` | Hostname aus Schritt 1 |
+| `DEPLOY_HOST` | Hostname, z. B. `www751.your-server.de` |
 | `DEPLOY_USER` | FTP-Hauptbenutzer |
-| `DEPLOY_SSH_KEY` | Inhalt der privaten Datei `mko-deploy` (ohne `.pub`) |
-| `DEPLOY_KNOWN_HOSTS` | Ausgabe aus Schritt 5 |
-| `DEPLOY_PORT` | `222` |
-| `DEPLOY_PATH` | Zielordner, meist `public_html/` |
+| `DEPLOY_SSH_KEY` | Inhalt der privaten Datei `mko-deploy` (ohne `.pub`), inklusive der Zeilen `BEGIN` und `END` |
+| `DEPLOY_KNOWN_HOSTS` | Ausgabe aus Schritt 4 |
+| `DEPLOY_PATH` | Optional. Zielordner, Standard `public_html` |
+| `DEPLOY_PORT` | Optional. Standard `22` |
 
 Die private Schlüsseldatei danach vom Rechner löschen oder im
 Passwortmanager ablegen.
 
-Hinweis zur Sicherheit: Bei Webhosting lässt sich der Schlüssel nicht auf
-rsync oder einen Ordner beschränken. Er hat Zugriff auf den ganzen
-Account. Darum einen eigenen Schlüssel nur dafür verwenden und ihn in
-konsoleH entfernen, wenn er nicht mehr gebraucht wird.
+Hinweis zur Sicherheit: Der Schlüssel gilt für den ganzen Account, nicht
+nur für einen Ordner. Darum einen eigenen Schlüssel nur dafür verwenden
+und ihn in konsoleH entfernen, wenn er nicht mehr gebraucht wird.
 
-### 7. Erster Lauf
+### 6. Erster Lauf
 
 Actions → Deploy → Run workflow, auf `main`. Der letzte Schritt ruft die
 Startseite, das CSS, das JS und das Foto live ab. Schlägt eines davon fehl,
 wird der Lauf rot.
-
-## Andere Server
-
-Eigener Server mit Root-Zugang: Schlüssel in `~/.ssh/authorized_keys` des
-Deploy-Benutzers eintragen, am besten mit `command="rrsync /PFAD",restrict`
-davor, `DEPLOY_PORT` weglassen (Standard 22). Reines FTP-Hosting ohne SSH
-braucht einen anderen Upload-Schritt.
