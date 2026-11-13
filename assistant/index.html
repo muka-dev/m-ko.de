@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en"
+  data-title-en="A support assistant that knows what your team knows | m-ko.de" data-title-de="Ein Support-Assistent, der weiß, was dein Team weiß | m-ko.de" data-title-pt="Um assistente de suporte que sabe o que a sua equipa sabe | m-ko.de"
+  data-desc-en="An assistant that answers recurring questions from your own documents and hands over to people when it matters. Set up once, cared for monthly." data-desc-de="Ein Assistent, der wiederkehrende Fragen aus deinen eigenen Unterlagen beantwortet und an Menschen übergibt, wenn es darauf ankommt. Einmal eingerichtet, monatlich betreut." data-desc-pt="Um assistente que responde a perguntas recorrentes a partir dos seus documentos e passa para pessoas quando é importante. Configurado uma vez, acompanhado mensalmente.">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A support assistant that knows what your team knows | m-ko.de</title>
+  <meta name="description" content="An assistant that answers recurring questions from your own documents and hands over to people when it matters. Set up once, cared for monthly.">
+  <meta name="author" content="Markus Kosmal">
+  <meta name="theme-color" content="#12332E">
+  <link rel="canonical" href="https://m-ko.de/assistant/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://m-ko.de/assistant/">
+  <meta property="og:title" content="A support assistant that knows what your team knows | m-ko.de">
+  <meta property="og:description" content="An assistant that answers recurring questions from your own documents and hands over to people when it matters. Set up once, cared for monthly.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    // Pick the language before first paint: saved choice, else browser language.
+    (function () {
+      var supported = ['de', 'en', 'pt'];
+      var lang = null;
+      try { lang = localStorage.getItem('lang'); } catch (e) {}
+      if (supported.indexOf(lang) === -1) {
+        lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        if (supported.indexOf(lang) === -1) lang = 'en';
+      }
+      var root = document.documentElement;
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      root.classList.add('js');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="de">Zum Inhalt springen</span><span lang="pt">Saltar para o conteúdo</span></a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../" aria-label="m-ko.de">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M8 3c0 7 16 6 16 13S8 22 8 29" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="8" cy="3.5" r="3" fill="var(--sun)"/><circle cx="8" cy="28.5" r="3" fill="var(--leaf)"/></svg>
+        <span>m-ko.de</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="../"><span lang="en">Home</span><span lang="de">Start</span><span lang="pt">Início</span></a>
+        <a href="../check/"><span lang="en">Production check</span><span lang="de">Produktionscheck</span><span lang="pt">Verificação de produção</span></a>
+        <a href="../assistant/" aria-current="page"><span lang="en">Support assistant</span><span lang="de">Support-Assistent</span><span lang="pt">Assistente de suporte</span></a>
+        <a href="#contact"><span lang="en">Contact</span><span lang="de">Kontakt</span><span lang="pt">Contacto</span></a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language / Sprache / Idioma">
+        <button type="button" data-set-lang="de" aria-pressed="false" title="Deutsch">DE</button>
+        <button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button>
+        <button type="button" data-set-lang="pt" aria-pressed="false" title="Português">PT</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="page-hero__back"><a href="../#offers"><span lang="en">← All offers</span><span lang="de">← Alle Angebote</span><span lang="pt">← Todas as ofertas</span></a></p>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>
+        <h1 lang="en">A support assistant that knows what your team knows</h1>
+        <h1 lang="de">Ein Support-Assistent, der weiß, was dein Team weiß</h1>
+        <h1 lang="pt">Um assistente de suporte que sabe o que a sua equipa sabe</h1>
+        <p class="page-hero__lede" lang="en">Your team answers the same questions again and again, although the answers are already written down somewhere: in the help pages, the manual, old tickets.</p>
+        <p class="page-hero__lede" lang="de">Dein Team beantwortet immer wieder dieselben Fragen, obwohl die Antworten längst irgendwo stehen: in den Hilfeseiten, im Handbuch, in alten Tickets.</p>
+        <p class="page-hero__lede" lang="pt">A sua equipa responde vezes sem conta às mesmas perguntas, embora as respostas já estejam escritas algures: nas páginas de ajuda, no manual, em pedidos antigos.</p>
+        <a class="btn" href="#contact">
+        <span lang="en">Ask about the assistant</span><span lang="de">Assistenten anfragen</span><span lang="pt">Perguntar pelo assistente</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section page">
+      <div class="wrap">
+        <div class="page__cols">
+          <div>
+            <h2 lang="en">What I set up</h2><h2 lang="de">Was ich einrichte</h2><h2 lang="pt">O que configuro</h2>
+            <ul class="offer__list">
+            <li><span lang="en">An assistant that answers from your documents and names its source</span><span lang="de">Einen Assistenten, der aus deinen Unterlagen antwortet und die Quelle nennt</span><span lang="pt">Um assistente que responde a partir dos seus documentos e indica a fonte</span></li>
+            <li><span lang="en">A clean handover to a person when it is unsure or the matter is sensitive</span><span lang="de">Eine saubere Übergabe an einen Menschen, wenn er unsicher ist oder das Thema heikel</span><span lang="pt">Uma passagem limpa para uma pessoa quando tem dúvidas ou o assunto é delicado</span></li>
+            <li><span lang="en">A place for the data that suits you, self-hosted if you need it</span><span lang="de">Einen Ort für die Daten, der zu dir passt, auf Wunsch selbst gehostet</span><span lang="pt">Um local para os dados que lhe convenha, alojado por si se precisar</span></li>
+            <li><span lang="en">A short introduction for the team, so it is used and trusted</span><span lang="de">Eine kurze Einführung fürs Team, damit er genutzt wird und man ihm vertraut</span><span lang="pt">Uma breve introdução para a equipa, para que seja usado e mereça confiança</span></li>
+            </ul>
+          </div>
+          <div>
+            <h2 lang="en">What I take care of each month</h2><h2 lang="de">Was ich jeden Monat übernehme</h2><h2 lang="pt">O que trato todos os meses</h2>
+            <p lang="en">I look at the questions it could not answer, close the gaps in the knowledge base and tell you what your customers are actually asking.</p>
+            <p lang="de">Ich schaue mir die Fragen an, die er nicht beantworten konnte, schließe die Lücken in der Wissensbasis und sage dir, was deine Kunden tatsächlich fragen.</p>
+            <p lang="pt">Analiso as perguntas a que não conseguiu responder, fecho as lacunas na base de conhecimento e digo-lhe o que os seus clientes realmente perguntam.</p>
+            <p class="offer__why" lang="en">I know support from the inside: I ran a support team myself for years.</p>
+            <p class="offer__why" lang="de">Support kenne ich von innen: Ich habe selbst jahrelang ein Support-Team geführt.</p>
+            <p class="offer__why" lang="pt">Conheço o suporte por dentro: eu próprio liderei durante anos uma equipa de suporte.</p>
+          </div>
+        </div>
+
+        <div class="page__terms">
+          <p class="offer__terms" lang="en">Setup once, care monthly. Both prices are settled beforehand.</p>
+          <p class="offer__terms" lang="de">Einrichtung einmalig, Betreuung monatlich. Beide Preise stehen vorher fest.</p>
+          <p class="offer__terms" lang="pt">Configuração única, acompanhamento mensal. Ambos os preços ficam definidos de antemão.</p>
+          <p class="offer__note" lang="en">The assistant takes the routine off your team. It does not replace the people who handle the difficult cases.</p>
+          <p class="offer__note" lang="de">Der Assistent nimmt deinem Team die Routine ab. Er ersetzt nicht die Menschen, die sich um die schwierigen Fälle kümmern.</p>
+          <p class="offer__note" lang="pt">O assistente tira a rotina à sua equipa. Não substitui as pessoas que tratam dos casos difíceis.</p>
+          <a class="btn" href="#contact">
+          <span lang="en">Ask about the assistant</span><span lang="de">Assistenten anfragen</span><span lang="pt">Perguntar pelo assistente</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <h2 lang="en">Feel free to send me a message</h2>
+        <h2 lang="de">Schreib mir gern</h2>
+        <h2 lang="pt">Envie-me uma mensagem quando quiser</h2>
+        <p class="contact__mail">
+          <a class="js-mail" href="#contact" data-user="post" data-host="m-ko.de">post [at] m-ko.de</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>© Markus Kosmal, m-ko.de</p>
+      <ul>
+        <li><a href="https://github.com/mko-x">GitHub mko-x</a></li>
+        <li><a href="https://github.com/muka-dev">GitHub muka-dev</a></li>
+        <li><a href="https://profiles.wordpress.org/mkox/">WordPress</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
