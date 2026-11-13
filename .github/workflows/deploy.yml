@@ -1,0 +1,93 @@
+name: Deploy
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    # Cheap checks on every pull request and push: every local file that
+    # index.html points to exists, and the scripts parse.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Referenced files exist
+        run: |
+          missing=0
+          for ref in $(grep -oE '(src|href)="[^"#]+"' index.html \
+              | sed -E 's/^(src|href)="//; s/"$//' \
+              | grep -vE '^(https?:|mailto:|data:)'); do
+            if [ ! -e "${ref#/}" ]; then
+              echo "::error::index.html references a missing file: $ref"
+              missing=1
+            fi
+          done
+          exit $missing
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Scripts parse
+        run: for f in js/*.js; do node --check "$f"; done
+
+  deploy:
+    # Only on main. Without the DEPLOY_HOST secret the job builds the site
+    # folder and skips the upload (see deploy/README.md).
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: check
+    runs-on: ubuntu-latest
+    concurrency:
+      group: deploy
+      cancel-in-progress: false
+    env:
+      DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+      DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+      DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+      DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH || 'public_html' }}
+      DEPLOY_PORT: ${{ secrets.DEPLOY_PORT || '22' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Only the website goes to the server, nothing from .git or .github.
+      # Permissions are set here, so an upload can never end in a 403.
+      - name: Assemble site folder
+        run: |
+          mkdir site
+          cp -r index.html favicon.svg css js fonts img get site/
+          chmod -R u=rwX,go=rX site
+
+      - name: Deploy over SFTP
+        if: env.DEPLOY_HOST != ''
+        run: |
+          sudo apt-get install -y -qq lftp
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          # No --delete: files on the server that are not in this repository
+          # stay untouched.
+          lftp -c "
+            set sftp:connect-program 'ssh -a -x -p $DEPLOY_PORT -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=yes -o IdentitiesOnly=yes -o BatchMode=yes';
+            set net:max-retries 3;
+            set net:reconnect-interval-base 5;
+            open -u '$DEPLOY_USER,' sftp://$DEPLOY_HOST;
+            mirror --reverse --parallel=4 --verbose site/ '$DEPLOY_PATH'
+          "
+
+      - name: Check the live site
+        if: env.DEPLOY_HOST != ''
+        run: |
+          sleep 5
+          for p in / /css/style.css /js/main.js /img/markus-kosmal.jpg; do
+            curl -fsS --retry 3 --retry-delay 5 -o /dev/null \
+              -w "%{http_code} $p\n" "https://m-ko.de$p"
+          done
+
+      - name: Deploy skipped
+        if: env.DEPLOY_HOST == ''
+        run: echo "DEPLOY_HOST secret not set, nothing uploaded. See deploy/README.md."
