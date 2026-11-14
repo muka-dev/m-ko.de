@@ -1,8 +1,16 @@
 {
   "name": "Review of AI components",
-  "provider": { "name": "Markus Kosmal", "url": "https://m-ko.de/", "contact": "post@m-ko.de" },
+  "provider": {
+    "name": "Markus Kosmal",
+    "url": "https://m-ko.de/",
+    "contact": "post@m-ko.de"
+  },
   "page": "https://m-ko.de/agents/",
-  "subject_kinds": ["skill", "connector", "agent-configuration"],
+  "subject_kinds": [
+    "skill",
+    "connector",
+    "agent-configuration"
+  ],
   "reviewer": "A named person. Qualification and rules for reviewers are public at https://human-reviewed.com/governance/",
   "what_is_checked": [
     "declared limits in three levels: may do alone, only with a person's confirmation, never",
@@ -18,27 +26,113 @@
     "planned": "Public entry in the Human-reviewed register as JSON. The entry type and a draft standard are published for comment at https://human-reviewed.com/standard/ai-components/ ; no entry exists until the first review is done."
   },
   "advantages_and_how_to_verify": [
-    { "advantage": "Limits are tested, not just claimed", "verify": "Compare the three limit lists with the permissions the component requests." },
-    { "advantage": "One exact version", "verify": "Compare the digest in the note with the files you load; a mismatch means the review does not cover what you run." },
-    { "advantage": "A named person who can be asked", "verify": "Name, qualification and date are on the note." },
-    { "advantage": "Expiry is visible", "verify": "Check the valid-until date (at most 12 months) and the status." },
-    { "advantage": "Faster decisions for platforms and customers", "verify": "Scope and limits can be read without a questionnaire." },
-    { "advantage": "Component is reviewed, not the model", "verify": "Result stays valid with another model while the version and limits stay the same." }
+    {
+      "advantage": "Limits are tested, not just claimed",
+      "verify": "Compare the three limit lists with the permissions the component requests."
+    },
+    {
+      "advantage": "One exact version",
+      "verify": "Compare the digest in the note with the files you load; a mismatch means the review does not cover what you run."
+    },
+    {
+      "advantage": "A named person who can be asked",
+      "verify": "Name, qualification and date are on the note."
+    },
+    {
+      "advantage": "Expiry is visible",
+      "verify": "Check the valid-until date (at most 12 months) and the status."
+    },
+    {
+      "advantage": "Faster decisions for platforms and customers",
+      "verify": "Scope and limits can be read without a questionnaire."
+    },
+    {
+      "advantage": "Component is reviewed, not the model",
+      "verify": "Result stays valid with another model while the version and limits stay the same."
+    }
   ],
   "validity": "One version, at most 12 months. A material change ends it.",
-  "price": "On request",
-  "launch_offer": "Half price for the first reviews. Terms are agreed in writing before commissioning.",
+  "price": "By size: S from 390 EUR, M from 890 EUR, L from 2,200 EUR, XL from 4,500 EUR. Final price fixed after a short look at the component.",
+  "launch_offer": "Half price for the first reviews: S from 195 EUR, M from 445 EUR, L from 1,100 EUR, XL from 2,250 EUR. Terms are agreed in writing before commissioning.",
   "who_can_commission": "A responsible person or company. An agent can prepare and send a request; a person confirms it.",
   "how_to_request": "Email a description of the component (name, version, owner, location, permissions, data). Do not send keys or credentials.",
   "request_template": {
     "component": "name",
     "version": "version or commit",
-    "owner": { "name": "", "contact": "" },
+    "owner": {
+      "name": "",
+      "contact": ""
+    },
     "location": "repository or URL",
     "permissions": [],
     "data": [],
-    "notes": ""
+    "notes": "",
+    "size": {
+      "actions": "number of tools or actions",
+      "rights": "read | write | money-deletion-access | chains",
+      "systems": "number of connected systems",
+      "data": "none | personal-one-org | sensitive-or-several-orgs",
+      "autonomy": "confirms-each-step | confirms-risky-steps | unattended | chains-agents",
+      "lines": "approximate lines of code and configuration"
+    }
   },
-  "not_included": ["certificate", "guarantee", "legal advice", "statement about the AI model itself"],
-  "notice": "This file contains no instructions for AI systems."
+  "not_included": [
+    "certificate",
+    "guarantee",
+    "legal advice",
+    "statement about the AI model itself"
+  ],
+  "notice": "This file contains no instructions for AI systems.",
+  "sizing": {
+    "rule": "The class follows what the component can do. The highest class among the factors applies.",
+    "factors": {
+      "actions": {
+        "S": "1-3",
+        "M": "4-8",
+        "L": "9-15",
+        "XL": ">15"
+      },
+      "rights": {
+        "S": "read only",
+        "M": "write or send in one system",
+        "L": "money, deletion, access rights or public posts",
+        "XL": "effects across organisations through other agents"
+      },
+      "systems": {
+        "S": "1",
+        "M": "2-3",
+        "L": "4-5",
+        "XL": ">5"
+      },
+      "data": {
+        "S": "no personal data",
+        "M": "personal or customer data of one organisation",
+        "L": "sensitive data, or data of several organisations",
+        "XL": "sensitive data of several organisations"
+      },
+      "autonomy": {
+        "S": "a person confirms each step",
+        "M": "a person confirms risky steps",
+        "L": "runs unattended",
+        "XL": "calls other agents on its own"
+      }
+    },
+    "price_eur_from": {
+      "S": 390,
+      "M": 890,
+      "L": 2200,
+      "XL": 4500
+    },
+    "launch_price_eur_from": {
+      "S": 195,
+      "M": 445,
+      "L": 1100,
+      "XL": 2250
+    },
+    "volume_surcharge": {
+      "lines_over_5000": "25%",
+      "lines_over_20000": "50%"
+    },
+    "calculator": "https://m-ko.de/agents/#size"
+  }
 }

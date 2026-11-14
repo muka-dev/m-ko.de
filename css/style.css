@@ -1220,3 +1220,26 @@ html:not(.js) .stop__dot { left: 50%; }
   .ladder__price { margin-left: 0; }
 }
 .offer__sub { display: block; font-family: var(--display); font-weight: 600; font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
+
+/* Agents page: sizes and estimator */
+.sizelist { list-style: none; margin: 1.25rem 0 0; padding: 0; max-width: 56rem; }
+.sizelist li { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr) 11rem; gap: 0.5rem 1.25rem; align-items: start; padding: 1rem 0; border-top: 1px solid rgba(18,51,46,.18); }
+.sizelist p { margin: 0; max-width: none; }
+.sizelist__class { font-family: var(--display); font-weight: 700; font-size: 1.6rem; line-height: 1; }
+.sizelist__price { font-family: var(--display); font-weight: 600; display: grid; gap: 0.2rem; }
+.sizelist__launch { font-family: var(--body); font-weight: 400; font-size: 0.92rem; color: var(--ink-soft); }
+.sizer { display: grid; gap: 0.75rem; max-width: 40rem; margin-top: 0.75rem; }
+.sizer__row { display: grid; gap: 0.25rem; font-weight: 600; }
+.sizer select, .sizer input { font: inherit; font-weight: 400; padding: 0.55rem 0.75rem; border: 2px solid var(--ink); border-radius: 12px; background: #fff; color: var(--ink); max-width: 100%; }
+.sizer__result { max-width: 40rem; margin-top: 1.25rem; padding: 1rem 1.25rem; border-radius: 18px; background: var(--paper-deep); }
+.sizer__class { margin: 0; font-size: 1.1rem; }
+.sizer__class strong { font-family: var(--display); font-size: 2rem; margin-left: 0.4rem; }
+.sizer__price { margin: 0.4rem 0 0.6rem; font-family: var(--display); font-weight: 600; font-size: 1.2rem; }
+.sizer__result .code { margin-top: 0.5rem; }
+@media (max-width: 40rem) {
+  .sizelist li { grid-template-columns: 3rem minmax(0, 1fr); }
+  .sizelist__price { grid-column: 2; }
+}
+.sizer { grid-template-columns: minmax(0, 1fr); }
+.sizer__row { min-width: 0; }
+.sizer select, .sizer input { width: 100%; box-sizing: border-box; }
