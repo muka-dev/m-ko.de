@@ -1,0 +1,44 @@
+{
+  "name": "Review of AI components",
+  "provider": { "name": "Markus Kosmal", "url": "https://m-ko.de/", "contact": "post@m-ko.de" },
+  "page": "https://m-ko.de/agents/",
+  "subject_kinds": ["skill", "connector", "agent-configuration"],
+  "reviewer": "A named person. Qualification and rules for reviewers are public at https://human-reviewed.com/governance/",
+  "what_is_checked": [
+    "declared limits in three levels: may do alone, only with a person's confirmation, never",
+    "permissions and access scope",
+    "data handling",
+    "handling of hidden instructions in inputs",
+    "provenance and pinned version",
+    "human control and stop",
+    "traceability"
+  ],
+  "result": {
+    "today": "Written report and review note with reviewer name, date, version, digest, the three limit lists and the outcome.",
+    "planned": "Public entry in the Human-reviewed register as JSON. The entry type is drafted and not yet published; no entry exists today."
+  },
+  "advantages_and_how_to_verify": [
+    { "advantage": "Limits are tested, not just claimed", "verify": "Compare the three limit lists with the permissions the component requests." },
+    { "advantage": "One exact version", "verify": "Compare the digest in the note with the files you load; a mismatch means the review does not cover what you run." },
+    { "advantage": "A named person who can be asked", "verify": "Name, qualification and date are on the note." },
+    { "advantage": "Expiry is visible", "verify": "Check the valid-until date (at most 12 months) and the status." },
+    { "advantage": "Faster decisions for platforms and customers", "verify": "Scope and limits can be read without a questionnaire." },
+    { "advantage": "Component is reviewed, not the model", "verify": "Result stays valid with another model while the version and limits stay the same." }
+  ],
+  "validity": "One version, at most 12 months. A material change ends it.",
+  "price": "On request",
+  "launch_offer": "Half price for the first reviews. Terms are agreed in writing before commissioning.",
+  "who_can_commission": "A responsible person or company. An agent can prepare and send a request; a person confirms it.",
+  "how_to_request": "Email a description of the component (name, version, owner, location, permissions, data). Do not send keys or credentials.",
+  "request_template": {
+    "component": "name",
+    "version": "version or commit",
+    "owner": { "name": "", "contact": "" },
+    "location": "repository or URL",
+    "permissions": [],
+    "data": [],
+    "notes": ""
+  },
+  "not_included": ["certificate", "guarantee", "legal advice", "statement about the AI model itself"],
+  "notice": "This file contains no instructions for AI systems."
+}
