@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en"
+  data-title-en="Tools | m-ko.de" data-title-de="Werkzeuge | m-ko.de" data-title-pt="Ferramentas | m-ko.de"
+  data-desc-en="Small browser tools: a verdict on what an AI may do, and a permaculture field generator. Nothing is sent anywhere." data-desc-de="Kleine Browser-Werkzeuge: ein Bescheid, was eine KI darf, und ein Permakultur-Feldgenerator. Nichts wird irgendwohin gesendet." data-desc-pt="Pequenas ferramentas no browser: uma decisão sobre o que uma IA pode fazer e um gerador de campos de permacultura. Nada é enviado.">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tools | m-ko.de</title>
+  <meta name="description" content="Small browser tools: a verdict on what an AI may do, and a permaculture field generator. Nothing is sent anywhere.">
+  <meta name="author" content="Markus Kosmal">
+  <meta name="theme-color" content="#12332E">
+  <link rel="canonical" href="https://m-ko.de/tools/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://m-ko.de/tools/">
+  <meta property="og:title" content="Tools | m-ko.de">
+  <meta property="og:description" content="Small browser tools: a verdict on what an AI may do, and a permaculture field generator. Nothing is sent anywhere.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    // Pick the language before first paint: saved choice, else browser language.
+    (function () {
+      var supported = ['de', 'en', 'pt'];
+      var lang = null;
+      try { lang = localStorage.getItem('lang'); } catch (e) {}
+      if (supported.indexOf(lang) === -1) {
+        lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        if (supported.indexOf(lang) === -1) lang = 'en';
+      }
+      var root = document.documentElement;
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      root.classList.add('js');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="de">Zum Inhalt springen</span><span lang="pt">Saltar para o conteúdo</span></a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../" aria-label="m-ko.de"><img class="brand__logo" src="../brand/logo.svg" width="220" height="40" alt="m-ko"></a>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="../"><span lang="en">Home</span><span lang="de">Start</span><span lang="pt">Início</span></a>
+        <a href="../#offers"><span lang="en">Services</span><span lang="de">Leistungen</span><span lang="pt">Serviços</span></a>
+        <a href="../about/"><span lang="en">About me</span><span lang="de">Über mich</span><span lang="pt">Sobre mim</span></a>
+        <a href="../tools/" aria-current="page"><span lang="en">Tools</span><span lang="de">Werkzeuge</span><span lang="pt">Ferramentas</span></a>
+        <a href="#contact"><span lang="en">Contact</span><span lang="de">Kontakt</span><span lang="pt">Contacto</span></a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language / Sprache / Idioma">
+        <button type="button" data-set-lang="de" aria-pressed="false" title="Deutsch">DE</button>
+        <button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button>
+        <button type="button" data-set-lang="pt" aria-pressed="false" title="Português">PT</button>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+        <span class="visually-hidden"><span lang="en">Menu</span><span lang="de">Menü</span><span lang="pt">Menu</span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="page-hero__back"><a href="../"><span lang="en">← Home</span><span lang="de">← Start</span><span lang="pt">← Início</span></a></p>
+        <h1 lang="en">Tools</h1><h1 lang="de">Werkzeuge</h1><h1 lang="pt">Ferramentas</h1>
+        <p class="page-hero__lede" lang="en">Small helpers, some useful, some for a smile. Everything runs in the browser and nothing is sent anywhere.</p><p class="page-hero__lede" lang="de">Kleine Helfer, teils nützlich, teils zum Schmunzeln. Alles läuft im Browser, und nichts wird irgendwohin gesendet.</p><p class="page-hero__lede" lang="pt">Pequenos ajudantes, alguns úteis, outros para sorrir. Tudo corre no browser e nada é enviado para lado nenhum.</p>
+      </div>
+    </section>
+
+    <section class="section verdict-section" id="verdict">
+      <div class="wrap">
+        <h2 lang="en">May the AI do that?</h2><h2 lang="de">Darf die KI das?</h2><h2 lang="pt">A IA pode fazer isso?</h2>
+        <p lang="en">Type a task and get a ruling. The three levels are the same as in my AI check: may do it alone, only with the OK of a human, or off limits. Pure fun: the detection works with keywords.</p><p lang="de">Eine Aufgabe eintippen und einen Bescheid bekommen. Die drei Stufen sind dieselben wie in meinem KI-Check: darf sie allein, nur mit dem OK eines Menschen, oder tabu. Reine Spielerei: Die Erkennung arbeitet mit Stichworten.</p><p lang="pt">Escreva uma tarefa e receba uma decisão. Os três níveis são os mesmos da minha verificação de IA: pode fazer sozinha, só com o OK de um humano, ou fica fora de questão. Pura brincadeira: a deteção usa palavras-chave.</p>
+        <form class="verdict__form" id="verdict-form" autocomplete="off">
+          <label class="visually-hidden" for="verdict-input"><span lang="en">Task</span><span lang="de">Aufgabe</span><span lang="pt">Tarefa</span></label>
+          <input id="verdict-input" type="text" maxlength="140" placeholder="e.g. send the invoices to all customers" data-ph-en="e.g. send the invoices to all customers" data-ph-de="z. B. Rechnungen an alle Kunden schicken" data-ph-pt="p. ex. enviar as faturas a todos os clientes" required>
+          <button class="btn" type="submit"><span lang="en">Get a ruling</span><span lang="de">Bescheid holen</span><span lang="pt">Obter decisão</span></button>
+        </form>
+        <ul class="chips"><li><button type="button" class="chip" data-verdict-example data-verdict-en="Delete old invoices" data-verdict-de="Alte Rechnungen löschen" data-verdict-pt="Apagar faturas antigas"><span lang="en">Delete old invoices</span><span lang="de">Alte Rechnungen löschen</span><span lang="pt">Apagar faturas antigas</span></button></li><li><button type="button" class="chip" data-verdict-example data-verdict-en="Answer a customer email" data-verdict-de="Kundenmail beantworten" data-verdict-pt="Responder a um email de cliente"><span lang="en">Answer a customer email</span><span lang="de">Kundenmail beantworten</span><span lang="pt">Responder a um email de cliente</span></button></li><li><button type="button" class="chip" data-verdict-example data-verdict-en="Summarise a report" data-verdict-de="Bericht zusammenfassen" data-verdict-pt="Resumir um relatório"><span lang="en">Summarise a report</span><span lang="de">Bericht zusammenfassen</span><span lang="pt">Resumir um relatório</span></button></li><li><button type="button" class="chip" data-verdict-example data-verdict-en="Change the admin password" data-verdict-de="Admin-Passwort ändern" data-verdict-pt="Alterar a palavra-passe de admin"><span lang="en">Change the admin password</span><span lang="de">Admin-Passwort ändern</span><span lang="pt">Alterar a palavra-passe de admin</span></button></li><li><button type="button" class="chip" data-verdict-example data-verdict-en="Book flights, without asking" data-verdict-de="Flüge buchen, ohne Rückfrage" data-verdict-pt="Reservar voos, sem perguntar"><span lang="en">Book flights, without asking</span><span lang="de">Flüge buchen, ohne Rückfrage</span><span lang="pt">Reservar voos, sem perguntar</span></button></li></ul>
+        <div id="verdict-result" aria-live="polite"></div>
+        <noscript><p lang="en">This tool needs scripts.</p><p lang="de">Dieses Werkzeug braucht Skripte.</p><p lang="pt">Esta ferramenta precisa de scripts.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section garden" id="garden">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 lang="en">A garden is a team too</h2>
+          <h2 lang="de">Auch ein Garten ist ein Team</h2>
+          <h2 lang="pt">Uma horta também é uma equipa</h2>
+          <div class="section__lede">
+            <p lang="en">I don't only put teams together from people and AI. Tell the field generator the size and location of your plot, and it lines up a matching permaculture team and draws a first plan. More on self-sufficient living at <a href="https://autark-leben.org">autark-leben.org</a>.</p>
+            <p lang="de">Teams stelle ich nicht nur aus Menschen und KI zusammen. Der Feldgenerator nimmt Größe und Lage der Fläche, stellt ein passendes Permakultur-Team auf und zeichnet einen ersten Plan. Mehr zum autarken Leben auf <a href="https://autark-leben.org">autark-leben.org</a>.</p>
+            <p lang="pt">Não junto equipas só de pessoas e IA. Indique ao gerador o tamanho e a localização do seu terreno, e ele forma uma equipa de permacultura à medida e desenha um primeiro plano. Mais sobre vida autossuficiente em <a href="https://autark-leben.org">autark-leben.org</a>.</p>
+          </div>
+        </div>
+
+        <details class="tool-wrap" data-fold open>
+          <summary class="tool-wrap__summary">
+            <span class="tool-wrap__text">
+              <strong lang="en"><span class="when-closed">Open the field generator</span><span class="when-open">Close the field generator</span></strong>
+              <strong lang="de"><span class="when-closed">Feldgenerator öffnen</span><span class="when-open">Feldgenerator schließen</span></strong>
+              <strong lang="pt"><span class="when-closed">Abrir o gerador de terreno</span><span class="when-open">Fechar o gerador de terreno</span></strong>
+              <span lang="en">Enter size and location, get a team and a plan</span>
+              <span lang="de">Größe und Lage angeben, Team und Plan bekommen</span>
+              <span lang="pt">Indique tamanho e localização, receba equipa e plano</span>
+            </span>
+            <span class="fold__chev" aria-hidden="true"></span>
+          </summary>
+        <div class="tool" id="garden-tool">
+          <form class="tool__form" id="garden-form">
+            <div class="field">
+              <label for="g-size">
+                <span lang="en">Size</span><span lang="de">Größe</span><span lang="pt">Tamanho</span>
+              </label>
+              <output class="field__value" id="g-size-out" for="g-size">120 m²</output>
+              <input type="range" id="g-size" min="0" max="100" value="53" step="1">
+            </div>
+
+            <fieldset class="field">
+              <legend><span lang="en">Location</span><span lang="de">Lage</span><span lang="pt">Localização</span></legend>
+              <div class="chips chips--stack">
+                <label><input type="radio" name="climate" value="T" checked><span><span lang="en">Central Europe</span><span lang="de">Mitteleuropa</span><span lang="pt">Europa Central</span></span></label>
+                <label><input type="radio" name="climate" value="M"><span><span lang="en">Mediterranean, e.g. Portugal</span><span lang="de">Mittelmeerraum, z. B. Portugal</span><span lang="pt">Mediterrâneo, p. ex. Portugal</span></span></label>
+                <label><input type="radio" name="climate" value="S"><span><span lang="en">Subtropics, e.g. Canary Islands</span><span lang="de">Subtropen, z. B. Kanaren</span><span lang="pt">Subtrópicos, p. ex. Canárias</span></span></label>
+                <label><input type="radio" name="climate" value="R"><span><span lang="en">Tropics, e.g. Panama</span><span lang="de">Tropen, z. B. Panama</span><span lang="pt">Trópicos, p. ex. Panamá</span></span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="field">
+              <legend><span lang="en">Sun</span><span lang="de">Sonne</span><span lang="pt">Sol</span></legend>
+              <div class="chips">
+                <label><input type="radio" name="sun" value="f" checked><span><span lang="en">Sunny</span><span lang="de">Sonnig</span><span lang="pt">Soalheiro</span></span></label>
+                <label><input type="radio" name="sun" value="p"><span><span lang="en">Partial shade</span><span lang="de">Halbschatten</span><span lang="pt">Meia-sombra</span></span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="field">
+              <legend><span lang="en">Water</span><span lang="de">Wasser</span><span lang="pt">Água</span></legend>
+              <div class="chips">
+                <label><input type="radio" name="water" value="0"><span><span lang="en">Scarce</span><span lang="de">Knapp</span><span lang="pt">Escassa</span></span></label>
+                <label><input type="radio" name="water" value="1" checked><span><span lang="en">Medium</span><span lang="de">Mittel</span><span lang="pt">Média</span></span></label>
+                <label><input type="radio" name="water" value="2"><span><span lang="en">Plenty</span><span lang="de">Reichlich</span><span lang="pt">Abundante</span></span></label>
+              </div>
+            </fieldset>
+
+            <button type="button" class="btn" id="g-shuffle">
+              <span lang="en">Line up another team</span>
+              <span lang="de">Anderes Team aufstellen</span>
+              <span lang="pt">Formar outra equipa</span>
+            </button>
+          </form>
+
+          <figure class="tool__map">
+            <div id="g-map" role="img" aria-labelledby="g-stats"></div>
+            <figcaption id="g-stats"></figcaption>
+          </figure>
+
+          <details class="tool__team fold" data-fold open>
+            <summary class="fold__summary"><h3 lang="en">Your team</h3><h3 lang="de">Das Team</h3><h3 lang="pt">A sua equipa</h3><span class="fold__meta" id="g-team-count"></span><span class="fold__chev" aria-hidden="true"></span></summary>
+            <ul class="team" id="g-team"></ul>
+          </details>
+
+          <details class="tool__plan fold" data-fold open>
+            <summary class="fold__summary"><h3 lang="en">Your plan</h3><h3 lang="de">Der Plan</h3><h3 lang="pt">O seu plano</h3><span class="fold__meta" id="g-plan-count"></span><span class="fold__chev" aria-hidden="true"></span></summary>
+            <ol class="plan" id="g-plan"></ol>
+          </details>
+
+          <p class="tool__note" lang="en">The generator works with fixed rules, right in your browser. Nothing is sent anywhere. It gives you a first orientation and doesn't replace observing your own site.</p>
+          <p class="tool__note" lang="de">Der Generator arbeitet mit festen Regeln direkt im Browser. Es werden keine Daten übertragen. Er gibt eine erste Orientierung und ersetzt nicht die Beobachtung vor Ort.</p>
+          <p class="tool__note" lang="pt">O gerador funciona com regras fixas, diretamente no seu navegador. Nenhum dado é enviado. Dá uma primeira orientação e não substitui a observação no local.</p>
+          <noscript><p class="tool__note">JavaScript required / JavaScript erforderlich / Requer JavaScript.</p></noscript>
+        </div>
+        </details>
+      </div>
+    </section>
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <h2 lang="en">Feel free to send me a message</h2>
+        <h2 lang="de">Eine Nachricht ist willkommen</h2>
+        <h2 lang="pt">Envie-me uma mensagem quando quiser</h2>
+        <p class="contact__mail">
+          <a class="js-mail" href="#contact" data-user="post" data-host="m-ko.de">post [at] <span class="nowrap">m-ko.de</span></a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p class="site-footer__brand"><img class="footer__logo" src="../brand/logo-light.svg" width="220" height="40" alt="m-ko"><span>© Markus Kosmal</span></p>
+      <ul>
+        <li><a href="https://human-reviewed.com/">human-reviewed.com</a></li>
+        <li><a href="https://github.com/mko-x">GitHub mko-x</a></li>
+        <li><a href="https://github.com/muka-dev">GitHub muka-dev</a></li>
+        <li><a href="https://profiles.wordpress.org/mkox/">WordPress</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+  <script src="../js/garden.js" defer></script>
+  <script src="../js/verdict-core.js" defer></script>
+  <script src="../js/verdict-ui.js" defer></script>
+</body>
+</html>
