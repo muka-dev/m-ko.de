@@ -44,7 +44,7 @@
   <header class="site-header">
     <div class="wrap site-header__inner">
       <a class="brand" href="#top" aria-label="m-ko.de"><img class="brand__logo" src="brand/logo.svg" width="220" height="40" alt="m-ko"></a>
-      <nav class="nav" aria-label="Main">
+      <nav class="nav" id="site-nav" aria-label="Main">
         <a href="#value"><span lang="en">Benefits</span><span lang="de">Mehrwert</span><span lang="pt">Vantagens</span></a>
         <a href="#offers"><span lang="en">Offers</span><span lang="de">Angebote</span><span lang="pt">Ofertas</span></a>
         <a href="#today"><span lang="en">What I do</span><span lang="de">Was ich mache</span><span lang="pt">O que faço</span></a>
@@ -58,6 +58,10 @@
         <button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button>
         <button type="button" data-set-lang="pt" aria-pressed="false" title="Português">PT</button>
       </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+        <span class="visually-hidden"><span lang="en">Menu</span><span lang="de">Menü</span><span lang="pt">Menu</span></span>
+      </button>
     </div>
   </header>
 
@@ -336,9 +340,9 @@
             <p class="seal__statement" lang="en">A label that shows: a named person reviewed this app.</p>
             <p class="seal__statement" lang="de">Ein Siegel, das zeigt: Ein benannter Mensch hat diese App geprüft.</p>
             <p class="seal__statement" lang="pt">Um selo que mostra: uma pessoa identificada reviu esta app.</p>
-            <p lang="en">Human-reviewed is a product of m-ko.de. I built it to bring a bit of clarity and orientation to the AI jungle. Every label links to a public entry in the register at <span class="nowrap">human-reviewed.com</span>: who reviewed which version, against which published criteria, and whether the entry is still valid.</p>
-            <p lang="de">Human-reviewed ist ein Produkt von m-ko.de. Ich habe es entwickelt, um etwas Klarheit und Orientierung in den KI-Dschungel zu bringen. Jedes Siegel verweist auf einen öffentlichen Eintrag im Register auf <span class="nowrap">human-reviewed.com</span>: wer welche Version nach welchen veröffentlichten Kriterien geprüft hat und ob der Eintrag noch gilt.</p>
-            <p lang="pt">Human-reviewed é um produto de m-ko.de. Criei-o para trazer um pouco de clareza e orientação à selva da IA. Cada selo liga a uma entrada pública no registo em <span class="nowrap">human-reviewed.com</span>: quem reviu que versão, segundo que critérios publicados, e se a entrada ainda é válida.</p>
+            <p lang="en">Human-reviewed is a product of <span class="nowrap">m-ko.de</span>. I built it to bring a bit of clarity and orientation to the AI jungle. Every label links to a public entry in the register at <span class="nowrap">human-reviewed.com</span>: who reviewed which version, against which published criteria, and whether the entry is still valid.</p>
+            <p lang="de">Human-reviewed ist ein Produkt von <span class="nowrap">m-ko.de</span>. Ich habe es entwickelt, um etwas Klarheit und Orientierung in den KI-Dschungel zu bringen. Jedes Siegel verweist auf einen öffentlichen Eintrag im Register auf <span class="nowrap">human-reviewed.com</span>: wer welche Version nach welchen veröffentlichten Kriterien geprüft hat und ob der Eintrag noch gilt.</p>
+            <p lang="pt">Human-reviewed é um produto de <span class="nowrap">m-ko.de</span>. Criei-o para trazer um pouco de clareza e orientação à selva da IA. Cada selo liga a uma entrada pública no registo em <span class="nowrap">human-reviewed.com</span>: quem reviu que versão, segundo que critérios publicados, e se a entrada ainda é válida.</p>
             <p class="offer__note" lang="en">The label does not say an app is free of defects. It says who reviewed it and when.</p>
             <p class="offer__note" lang="de">Das Siegel sagt nicht, dass eine App fehlerfrei ist. Es sagt, wer sie geprüft hat und wann.</p>
             <p class="offer__note" lang="pt">O selo não diz que uma app não tem falhas. Diz quem a reviu e quando.</p>
@@ -739,7 +743,7 @@
         <h2 lang="de">Schreib mir gern</h2>
         <h2 lang="pt">Envie-me uma mensagem quando quiser</h2>
         <p class="contact__mail">
-          <a class="js-mail" href="#contact" data-user="post" data-host="m-ko.de">post [at] m-ko.de</a>
+          <a class="js-mail" href="#contact" data-user="post" data-host="m-ko.de">post [at] <span class="nowrap">m-ko.de</span></a>
         </p>
       </div>
     </section>
