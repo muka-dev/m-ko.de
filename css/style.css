@@ -1213,7 +1213,7 @@ html:not(.js) .stop__dot { left: 50%; }
 .ladder__intro { margin: 0.6rem 0 0.7rem; font-weight: 600; max-width: none; }
 .ladder .offer__list { max-width: none; }
 .ladder__link { display: inline-block; margin-top: 0.4rem; font-weight: 600; }
-.offer--assistant { border-top: 0; padding: 1.5rem; border-radius: 22px; background: var(--paper-deep); }
+.offer--agents { border-top: 0; padding: 1.5rem; border-radius: 22px; background: var(--paper-deep); }
 .offers__note { margin-top: 2.5rem; max-width: 44rem; color: var(--ink-soft); }
 @media (max-width: 56rem) {
   .offers__layout { grid-template-columns: 1fr; }

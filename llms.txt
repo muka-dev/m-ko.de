@@ -7,7 +7,6 @@
 - [Review of AI components for agents and their operators](https://m-ko.de/agents/): a human reviews the skills, connectors and configuration of an AI agent against clear limits and puts a name and a date on the result. Machine-readable summary: https://m-ko.de/agents/offer.json . Launch offer: half price for the first reviews. Price on request.
 - [Premium AI Security Check](https://m-ko.de/security/): helps users choose settings, skills and ways of working so that an AI is used with clear limits (may do alone, needs a person's approval, stays off limits). Guide price: from 2,400 EUR; the AI check alone (inventory and three levels) from 490 EUR.
 - [Production check for AI-built apps](https://m-ko.de/check/): a human reviews an AI-built app before real users arrive. Includes the AI check. Fixed prices by size, from 890 EUR excluding VAT.
-- [Support assistant](https://m-ko.de/assistant/): an assistant that answers from a team's own documents and hands over to a person when it is unsure. Guide price: setup from 1,500 EUR, care from 150 EUR a month.
 
 ## Reviews and the register
 
