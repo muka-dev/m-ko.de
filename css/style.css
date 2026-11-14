@@ -661,6 +661,80 @@ html:not(.js) .stop__dot { left: 50%; }
   place-items: center;
 }
 
+/* Folds: the generator and its result lists open and close on phones only. */
+
+.tool-wrap > summary,
+.fold > summary { list-style: none; }
+.tool-wrap > summary::-webkit-details-marker,
+.fold > summary::-webkit-details-marker { display: none; }
+
+.fold__summary { display: flex; align-items: center; gap: 0.75rem; }
+.tool .fold__summary h3 { margin: 0; flex: 1 1 auto; }
+.fold__meta, .fold__chev { display: none; }
+
+@media (min-width: 761px) {
+  .tool-wrap > summary { display: none; }
+  .fold__summary { pointer-events: none; cursor: default; margin-bottom: 1rem; }
+}
+
+@media (max-width: 760px) {
+  .tool-wrap > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4.25rem;
+    padding: 1.1rem 1.25rem;
+    border-radius: 18px;
+    background: var(--ink);
+    color: var(--paper);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tool-wrap[open] > summary { margin-bottom: 1.75rem; }
+  .tool-wrap[open] .when-closed, .tool-wrap:not([open]) .when-open { display: none; }
+  .tool-wrap__text { display: grid; gap: 0.15rem; }
+  .tool-wrap__text strong { font-family: var(--display); font-weight: 600; font-size: 1.2rem; letter-spacing: -0.01em; }
+  .tool-wrap__text span[lang] { font-size: 0.95rem; color: color-mix(in srgb, var(--paper) 78%, transparent); }
+  .tool-wrap .tool { border-top: 0; padding-top: 0; row-gap: 1.25rem; }
+
+  .fold { border-top: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+  .fold:last-of-type { border-bottom: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+  .fold__summary { min-height: 3.5rem; padding-block: 0.6rem; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .fold[open] > .fold__summary { margin-bottom: 0.5rem; }
+  .fold__meta {
+    display: inline-grid;
+    place-items: center;
+    min-width: 1.75rem;
+    height: 1.75rem;
+    padding: 0 0.5rem;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .fold__chev {
+    display: block;
+    flex: none;
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-right: 0.25rem;
+    border-right: 2.5px solid currentColor;
+    border-bottom: 2.5px solid currentColor;
+    transform: rotate(45deg) translate(-2px, -2px);
+    transition: transform 0.2s ease;
+  }
+  .tool-wrap > summary .fold__chev { color: var(--leaf-bright); }
+  details[open] > summary > .fold__chev,
+  details[open] > summary .fold__chev { transform: rotate(-135deg) translate(-2px, -2px); }
+
+  /* Location choices as a 2 x 2 grid take less height than four stacked rows. */
+  .chips--stack { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+  .chips--stack label > span { display: flex; align-items: center; min-height: 3.25rem; padding: 0.55rem 0.85rem; font-size: 0.92rem; border-radius: 14px; }
+}
+
 /* ---------- Links ---------- */
 
 .linklist {

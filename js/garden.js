@@ -423,6 +423,26 @@
 
   /* ---------- Render ---------- */
 
+  function setCount(id, n) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = n;
+  }
+
+  /* On phones the generator and its two result lists start folded, on larger
+     screens they are always open. Without JavaScript everything stays open. */
+  var folds = document.querySelectorAll('#garden [data-fold]');
+  var phone = window.matchMedia('(max-width: 760px)');
+  function syncFolds() {
+    folds.forEach(function (d) { d.open = !phone.matches; });
+  }
+  folds.forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (!phone.matches && !d.open) d.open = true;
+    });
+  });
+  phone.addEventListener('change', syncFolds);
+  syncFolds();
+
   var seed = 20261113;
   var last = null;
 
@@ -467,6 +487,8 @@
     };
     statsEl.textContent = t.stats(ctx);
     planEl.innerHTML = t.plan(ctx).map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('');
+    setCount('g-team-count', teamEl.children.length);
+    setCount('g-plan-count', planEl.children.length);
   }
 
   form.addEventListener('input', generate);

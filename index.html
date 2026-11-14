@@ -612,6 +612,18 @@
           </div>
         </div>
 
+        <details class="tool-wrap" data-fold open>
+          <summary class="tool-wrap__summary">
+            <span class="tool-wrap__text">
+              <strong lang="en"><span class="when-closed">Open the field generator</span><span class="when-open">Close the field generator</span></strong>
+              <strong lang="de"><span class="when-closed">Feldgenerator öffnen</span><span class="when-open">Feldgenerator schließen</span></strong>
+              <strong lang="pt"><span class="when-closed">Abrir o gerador de terreno</span><span class="when-open">Fechar o gerador de terreno</span></strong>
+              <span lang="en">Enter size and location, get a team and a plan</span>
+              <span lang="de">Größe und Lage angeben, Team und Plan bekommen</span>
+              <span lang="pt">Indique tamanho e localização, receba equipa e plano</span>
+            </span>
+            <span class="fold__chev" aria-hidden="true"></span>
+          </summary>
         <div class="tool" id="garden-tool">
           <form class="tool__form" id="garden-form">
             <div class="field">
@@ -661,25 +673,22 @@
             <figcaption id="g-stats"></figcaption>
           </figure>
 
-          <div class="tool__team">
-            <h3 lang="en">Your team</h3>
-            <h3 lang="de">Dein Team</h3>
-            <h3 lang="pt">A sua equipa</h3>
+          <details class="tool__team fold" data-fold open>
+            <summary class="fold__summary"><h3 lang="en">Your team</h3><h3 lang="de">Dein Team</h3><h3 lang="pt">A sua equipa</h3><span class="fold__meta" id="g-team-count"></span><span class="fold__chev" aria-hidden="true"></span></summary>
             <ul class="team" id="g-team"></ul>
-          </div>
+          </details>
 
-          <div class="tool__plan">
-            <h3 lang="en">Your plan</h3>
-            <h3 lang="de">Dein Plan</h3>
-            <h3 lang="pt">O seu plano</h3>
+          <details class="tool__plan fold" data-fold open>
+            <summary class="fold__summary"><h3 lang="en">Your plan</h3><h3 lang="de">Dein Plan</h3><h3 lang="pt">O seu plano</h3><span class="fold__meta" id="g-plan-count"></span><span class="fold__chev" aria-hidden="true"></span></summary>
             <ol class="plan" id="g-plan"></ol>
-          </div>
+          </details>
 
           <p class="tool__note" lang="en">The generator works with fixed rules, right in your browser. Nothing is sent anywhere. It gives you a first orientation and doesn't replace observing your own site.</p>
           <p class="tool__note" lang="de">Der Generator arbeitet mit festen Regeln direkt in deinem Browser. Es werden keine Daten übertragen. Er gibt eine erste Orientierung und ersetzt nicht die Beobachtung vor Ort.</p>
           <p class="tool__note" lang="pt">O gerador funciona com regras fixas, diretamente no seu navegador. Nenhum dado é enviado. Dá uma primeira orientação e não substitui a observação no local.</p>
           <noscript><p class="tool__note">JavaScript required / JavaScript erforderlich / Requer JavaScript.</p></noscript>
         </div>
+        </details>
       </div>
     </section>
 
