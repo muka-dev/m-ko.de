@@ -4,7 +4,7 @@
 
 ## Offers
 
-- [Review of AI components for agents and their operators](https://m-ko.de/agents/): a human reviews the skills, connectors and configuration of an AI agent against clear limits and puts a name and a date on the result. Machine-readable summary: https://m-ko.de/agents/offer.json . Launch offer: half price for the first reviews. Price on request.
+- [Review of AI components for agents and their operators](https://m-ko.de/agents/): a human reviews the skills, connectors and configuration of an AI agent against clear limits and puts a name and a date on the result. Machine-readable summary: https://m-ko.de/agents/offer.json . Guide price by size (S from 390 EUR, M from 890, L from 2,200, XL from 4,500); launch offer: half price for the first reviews. Size rules and calculator: https://m-ko.de/agents/#size . A browser-only folder scanner (no upload) produces the size block and a SHA-256 digest of the component: https://m-ko.de/agents/#scan
 - [AI check and AI pentest](https://m-ko.de/security/): the AI check takes stock of how AI is used and sorts every ability into three levels (may do alone, needs a person's approval, stays off limits), from 490 EUR. The AI pentest includes the AI check and the production check, plus a real attack: a search for vulnerabilities in the system and attempts to exploit the AI, from 3,900 EUR. Pentests only with written permission and within an agreed scope.
 - [Production check for AI-built apps](https://m-ko.de/check/): a human reviews an AI-built app before real users arrive. Includes the AI check. Fixed prices by size, from 890 EUR excluding VAT.
 
