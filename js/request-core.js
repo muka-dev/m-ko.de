@@ -10,7 +10,7 @@
   var LIMITS = { subject: 200, message: 1500, name: 100, email: 200, behalf: 200 };
   var MAILTO_MAX = 1800;
   // Assembled at run time so the address is not a plain string in the page source.
-  var RECIPIENT = ['post', 'm-ko.de'];
+  var RECIPIENT = ['request', 'm-ko.de'];
 
   var LABELS = {
     en: { subject: 'Request', service: 'Service', about: 'Subject', message: 'Message', contact: 'Contact', requester: 'Sent by', agent: 'AI agent on behalf of', human: 'a person or company', size: 'Size estimate', scan: 'Scan digest', note: 'Prepared with the request assistant on m-ko.de. A responsible person confirms before anything is commissioned.', cut: '[shortened, please use "Copy text"]' },

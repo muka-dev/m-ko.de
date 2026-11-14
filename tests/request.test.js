@@ -10,7 +10,7 @@ test('a complete request is valid and has text, json and mailto', () => {
   assert.equal(r.valid, true);
   assert.match(r.text, /Prüfung für KI-Agenten/);
   assert.equal(r.json.contact.email, 'ada@example.org');
-  assert.match(r.mailto, /^mailto:post@m-ko\.de\?subject=/);
+  assert.match(r.mailto, /^mailto:request@m-ko\.de\?subject=/);
 });
 
 test('missing service, subject or a bad email are reported', () => {
