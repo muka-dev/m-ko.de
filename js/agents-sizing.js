@@ -67,6 +67,10 @@
     update();
   }
 
+  var lastReq = null;
+  // Remember the estimate for the request assistant, but only after the visitor has touched the form.
+  function remember() { try { if (lastReq) sessionStorage.setItem('mko-size', JSON.stringify({ size: lastReq })); } catch (e) { /* storage not available */ } }
+
   function update() {
     var l = lang(), t = TXT[l];
     var cls = 0, v = {};
@@ -83,6 +87,7 @@
       systems: [1, 3, 5, '>5'][v.systems], data: KEYS.data[v.data],
       autonomy: KEYS.autonomy[v.autonomy], lines: lines
     };
+    lastReq = req;
     out.innerHTML =
       '<p class="sizer__class"><span>' + t.cls + '</span> <strong>' + CLASSES[cls] + '</strong></p>' +
       '<p class="sizer__price">' + t.price + ': ' + t.from + ' ' + money(price, l) + (factor > 1 ? ' (' + t.surcharge + ')' : '') + '<br>' +
@@ -94,6 +99,8 @@
 
   form.addEventListener('input', update);
   form.addEventListener('change', update);
+  form.addEventListener('input', remember);
+  form.addEventListener('change', remember);
   // The folder scan hands over its levels; fill the form from them.
   document.addEventListener('scanresult', function (e) {
     var d = e.detail;
