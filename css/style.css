@@ -1184,3 +1184,17 @@ html:not(.js) .stop__dot { left: 50%; }
   .field input[type="range"] { height: 2.75rem; }
   .linklist a { min-height: 3.5rem; }
 }
+
+/* Agents page: at a glance, checklist */
+.glance { display: grid; gap: 0; margin: 1rem 0 0; max-width: 52rem; }
+.glance > div { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; padding: 0.85rem 0; border-top: 1px solid var(--line, rgba(18,51,46,.18)); }
+.glance dt { font-family: var(--display); font-weight: 600; }
+.glance dd { margin: 0; overflow-wrap: anywhere; }
+.checklist { margin: 0.75rem 0 0; padding-left: 1.25rem; }
+.checklist li { margin-bottom: 0.5rem; }
+.offer__list em { font-style: normal; font-weight: 600; }
+#advantages .page__cols { margin-top: 3rem; }
+@media (max-width: 40rem) {
+  .glance > div { grid-template-columns: 1fr; gap: 0.15rem; }
+}
+#advantages .page__cols h2 + .offer__list + h2 { margin-top: 2rem; }
