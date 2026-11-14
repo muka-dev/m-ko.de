@@ -7,14 +7,14 @@
 
   var supported = ['de', 'en', 'pt'];
   var titles = {
-    en: 'Markus Kosmal | IT, AI and teams | m-ko.de',
-    de: 'Markus Kosmal | IT, KI und Teams | m-ko.de',
-    pt: 'Markus Kosmal | TI, IA e equipas | m-ko.de'
+    en: 'm-ko | AI that lands with your team | Markus Kosmal',
+    de: 'm-ko | KI, die im Team ankommt | Markus Kosmal',
+    pt: 'm-ko | IA que chega à equipa | Markus Kosmal'
   };
   var descriptions = {
-    en: 'Markus Kosmal: more time, lower costs and teams that enjoy working with AI. Holistic IT and AI consulting, AI integrations for small and medium-sized businesses, team leadership.',
-    de: 'Markus Kosmal: mehr Zeit, geringere Kosten und Teams, die gern mit KI arbeiten. Ganzheitliche IT- und KI-Beratung, KI-Integrationen für KMU, Teamführung.',
-    pt: 'Markus Kosmal: mais tempo, custos mais baixos e equipas que gostam de trabalhar com IA. Consultoria integral em TI e IA, integrações de IA para PME, liderança de equipas.'
+    en: 'Markus Kosmal helps small and medium-sized businesses bring in AI so that it makes everyday work easier: listening first, building the solution, and staying until the team likes using it.',
+    de: 'Markus Kosmal hilft kleinen und mittleren Unternehmen, KI so einzuführen, dass sie den Alltag leichter macht: erst zuhören, dann die Lösung bauen und dabeibleiben, bis das Team sie gern nutzt.',
+    pt: 'Markus Kosmal ajuda pequenas e médias empresas a introduzir a IA de forma a facilitar o dia a dia: primeiro ouvir, depois construir a solução e ficar até a equipa gostar de a usar.'
   };
   var langButtons = document.querySelectorAll('[data-set-lang]');
 
