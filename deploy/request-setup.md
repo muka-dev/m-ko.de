@@ -5,7 +5,7 @@ It stays **off** until a config file exists outside the web root.
 
 ## Steps (once)
 
-1. **Mailbox.** In konsoleH (Hetzner) create the mailbox `anfragen@m-ko.de` and forward it to `post@m-ko.de`.
+1. **Mailbox.** Done: mailbox `anfragen@m-ko.de` with the aliases `request@`, `requests@` and `r@` (konsoleH).
 2. **Config folder.** Via SFTP create `mko-private/` in the home directory, next to `public_html/` (not inside it).
 3. **Config file.** Copy `deploy/request-config.example.php` there as `request-config.php`, set a random `salt`
    (`openssl rand -hex 16`) and check `to` and `from`. Set permissions to 600.
@@ -21,7 +21,7 @@ It stays **off** until a config file exists outside the web root.
    ```
    The answer has a `ref`; the mail should arrive at `anfragen@m-ko.de` within a minute. Look in the spam folder too.
 6. **Deliverability.** If mails land in spam, check the SPF record of `m-ko.de` (it must allow the Hetzner web server) and ask Hetzner support whether DKIM is available for web hosting. Alternative: switch the script to authenticated SMTP.
-7. **Request assistant.** Once the mailbox works, change `RECIPIENT` in `js/request-core.js` from `post` to `anfragen` so the mail link uses the new address.
+7. **Request assistant.** The mail link already uses `request@m-ko.de`; send a test mail to it and check that it arrives in `anfragen@`.
 
 ## Switching it off
 

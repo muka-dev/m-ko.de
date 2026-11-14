@@ -55,7 +55,7 @@
   "price": "By size: S from 390 EUR, M from 890 EUR, L from 2,200 EUR, XL from 4,500 EUR. Final price fixed after a short look at the component.",
   "launch_offer": "Half price for the first reviews: S from 195 EUR, M from 445 EUR, L from 1,100 EUR, XL from 2,250 EUR. Terms are agreed in writing before commissioning.",
   "who_can_commission": "A responsible person or company. An agent can prepare and send a request; a person confirms it.",
-  "how_to_request": "Email a description of the component (name, version, owner, location, permissions, data). Do not send keys or credentials.",
+  "how_to_request": "Use https://m-ko.de/request/ (text, JSON, mail link), POST to the request endpoint below, or email request@m-ko.de with a description of the component (name, version, owner, location, permissions, data). Do not send keys or credentials.",
   "request_template": {
     "component": "name",
     "version": "version or commit",
