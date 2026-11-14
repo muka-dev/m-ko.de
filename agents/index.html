@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en"
+  data-title-en="For AI agents and their operators: review of AI components | m-ko.de" data-title-de="Für KI-Agenten und ihre Betreiber: Prüfung von KI-Komponenten | m-ko.de" data-title-pt="Para agentes de IA e os seus operadores: revisão de componentes de IA | m-ko.de"
+  data-desc-en="I review the skills, connectors and configurations of AI agents and put a name and a date on the result. Launch offer: half price for the first reviews." data-desc-de="Ich prüfe Skills, Konnektoren und Konfigurationen von KI-Agenten und gebe dem Ergebnis einen Namen und ein Datum. Startangebot: halber Preis für die ersten Prüfungen." data-desc-pt="Reviso as skills, os conectores e as configurações de agentes de IA e ponho um nome e uma data no resultado. Oferta de lançamento: metade do preço nas primeiras revisões.">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>For AI agents and their operators: review of AI components | m-ko.de</title>
+  <meta name="description" content="I review the skills, connectors and configurations of AI agents and put a name and a date on the result. Launch offer: half price for the first reviews.">
+  <meta name="author" content="Markus Kosmal">
+  <meta name="theme-color" content="#12332E">
+  <link rel="canonical" href="https://m-ko.de/agents/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://m-ko.de/agents/">
+  <meta property="og:title" content="For AI agents and their operators: review of AI components | m-ko.de">
+  <meta property="og:description" content="I review the skills, connectors and configurations of AI agents and put a name and a date on the result. Launch offer: half price for the first reviews.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    // Pick the language before first paint: saved choice, else browser language.
+    (function () {
+      var supported = ['de', 'en', 'pt'];
+      var lang = null;
+      try { lang = localStorage.getItem('lang'); } catch (e) {}
+      if (supported.indexOf(lang) === -1) {
+        lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        if (supported.indexOf(lang) === -1) lang = 'en';
+      }
+      var root = document.documentElement;
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      root.classList.add('js');
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Review of AI components for agents and their operators",
+    "serviceType": "Review of skills, connectors and configurations of AI agents",
+    "url": "https://m-ko.de/agents/",
+    "description": "A human reviews the skills, connectors and configuration of an AI agent against clear limits (what it may do alone, what needs a person's approval, what stays off limits) and puts a name and a date on the result. Commissioning is done by a responsible person or company.",
+    "provider": { "@type": "Person", "name": "Markus Kosmal", "url": "https://m-ko.de/" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="de">Zum Inhalt springen</span><span lang="pt">Saltar para o conteúdo</span></a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../" aria-label="m-ko.de"><img class="brand__logo" src="../brand/logo.svg" width="220" height="40" alt="m-ko"></a>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="../"><span lang="en">Home</span><span lang="de">Start</span><span lang="pt">Início</span></a>
+        <a href="../check/"><span lang="en">Production check</span><span lang="de">Produktionscheck</span><span lang="pt">Verificação de produção</span></a>
+        <a href="../assistant/"><span lang="en">Support assistant</span><span lang="de">Support-Assistent</span><span lang="pt">Assistente de suporte</span></a>
+        <a href="../security/"><span lang="en">AI security check</span><span lang="de">AI-Security-Check</span><span lang="pt">Verificação de segurança de IA</span></a>
+        <a href="#contact"><span lang="en">Contact</span><span lang="de">Kontakt</span><span lang="pt">Contacto</span></a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language / Sprache / Idioma">
+        <button type="button" data-set-lang="de" aria-pressed="false" title="Deutsch">DE</button>
+        <button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button>
+        <button type="button" data-set-lang="pt" aria-pressed="false" title="Português">PT</button>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+        <span class="visually-hidden"><span lang="en">Menu</span><span lang="de">Menü</span><span lang="pt">Menu</span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="page-hero__back"><a href="../security/"><span lang="en">← Premium AI Security Check</span><span lang="de">← Premium AI Security Check</span><span lang="pt">← Premium AI Security Check</span></a></p>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 7V4M9 12.5h.01M15 12.5h.01M9.5 16h5"/></svg>
+        <h1 lang="en">For AI agents and their operators</h1><h1 lang="de">Für KI-Agenten und ihre Betreiber</h1><h1 lang="pt">Para agentes de IA e os seus operadores</h1>
+        <p class="page-hero__lede" lang="en">When an agent works on its own, people want to know what it may do, where its components come from and who checked them. I review the skills, connectors and configurations of AI agents and put a name and a date on the result.</p>
+        <p class="page-hero__lede" lang="de">Wenn ein Agent selbstständig arbeitet, will man wissen, was er darf, woher seine Komponenten kommen und wer das geprüft hat. Ich prüfe Skills, Konnektoren und Konfigurationen von KI-Agenten und gebe dem Ergebnis einen Namen und ein Datum.</p>
+        <p class="page-hero__lede" lang="pt">Quando um agente trabalha de forma autónoma, quer-se saber o que ele pode fazer, de onde vêm os seus componentes e quem os verificou. Reviso as skills, os conectores e as configurações de agentes de IA e ponho um nome e uma data no resultado.</p>
+        <div class="promo">
+          <h3 lang="en">Launch offer: half price</h3><h3 lang="de">Startangebot: halber Preis</h3><h3 lang="pt">Oferta de lançamento: metade do preço</h3>
+          <p lang="en">To start with, I review AI components at half price. This applies to the first reviews. The terms are agreed in writing before you commission anything.</p>
+          <p lang="de">Zum Start prüfe ich KI-Komponenten zum halben Preis. Das gilt für die ersten Prüfungen. Die Konditionen stehen vor der Beauftragung schriftlich fest.</p>
+          <p lang="pt">Para começar, reviso componentes de IA a metade do preço. Aplica-se às primeiras revisões. As condições ficam acordadas por escrito antes de qualquer encomenda.</p>
+        </div>
+        <a class="btn" href="#request">
+          <span lang="en">Send a request</span><span lang="de">Anfrage senden</span><span lang="pt">Enviar um pedido</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section page">
+      <div class="wrap">
+        <div class="page__cols">
+          <div>
+            <h2 lang="en">What you get from it</h2><h2 lang="de">Was ihr davon habt</h2><h2 lang="pt">O que ganham com isto</h2>
+            <ul class="offer__list">
+            <li><span lang="en"><strong>A yardstick you know beforehand.</strong> The three levels and the checks are fixed before the review starts, so an agent or its operator knows what it is measured against.</span><span lang="de"><strong>Ein Maßstab, den man vorher kennt.</strong> Die drei Stufen und die Prüfpunkte stehen fest, bevor die Prüfung beginnt. So weiß ein Agent oder sein Betreiber, woran er gemessen wird.</span><span lang="pt"><strong>Uma medida conhecida de antemão.</strong> Os três níveis e os pontos de verificação ficam definidos antes de a revisão começar, para que um agente ou o seu operador saiba segundo que medida é avaliado.</span></li>
+            <li><span lang="en"><strong>A review note with a name and a date.</strong> A named person has checked which component, which version, when and with what result. If the component changes, it is a new review.</span><span lang="de"><strong>Ein Prüfvermerk mit Namen und Datum.</strong> Ein benannter Mensch hat geprüft: welche Komponente, welche Version, wann und mit welchem Ergebnis. Ändert sich die Komponente, ist es eine neue Prüfung.</span><span lang="pt"><strong>Uma nota de revisão com nome e data.</strong> Uma pessoa identificada verificou que componente, que versão, quando e com que resultado. Se o componente mudar, é uma nova revisão.</span></li>
+            <li><span lang="en"><strong>Less friction with counterparts.</strong> Platforms, customers and other agents can look up whether and when something was reviewed before they grant access. The note helps with that decision. It does not replace it and guarantees nothing.</span><span lang="de"><strong>Weniger Reibung bei Gegenstellen.</strong> Plattformen, Kunden und andere Agenten können vor einer Freigabe nachsehen, ob und wann geprüft wurde. Der Vermerk hilft bei der Entscheidung, er ersetzt sie nicht und garantiert nichts.</span><span lang="pt"><strong>Menos atrito com a outra parte.</strong> Plataformas, clientes e outros agentes podem consultar se e quando algo foi revisto antes de darem acesso. A nota ajuda na decisão, não a substitui e não garante nada.</span></li>
+            <li><span lang="en"><strong>Machine-readable, planned.</strong> The result is meant to exist as a structured file in the Human-reviewed register. The published standard for AI components is still missing for that. Until then you get the written report.</span><span lang="de"><strong>Maschinenlesbar, geplant.</strong> Das Ergebnis soll als strukturierte Datei im Register Human-reviewed vorliegen. Dafür fehlt noch der veröffentlichte Standard für KI-Komponenten. Bis dahin bekommst du den schriftlichen Bericht.</span><span lang="pt"><strong>Legível por máquina, planeado.</strong> O resultado deverá existir como ficheiro estruturado no registo Human-reviewed. Para isso ainda falta o padrão publicado para componentes de IA. Até lá recebe o relatório escrito.</span></li>
+            </ul>
+          </div>
+          <div>
+            <h2 lang="en">What I review</h2><h2 lang="de">Was ich prüfe</h2><h2 lang="pt">O que reviso</h2>
+            <ul class="offer__list">
+            <li><span lang="en"><strong>Skills:</strong> where they come from, what they may do, whether they are needed</span><span lang="de"><strong>Skills:</strong> Herkunft, Berechtigungen, ob sie gebraucht werden</span><span lang="pt"><strong>Skills:</strong> origem, permissões, se são necessárias</span></li>
+            <li><span lang="en"><strong>Connectors:</strong> scope of access, accounts, handling of keys</span><span lang="de"><strong>Konnektoren:</strong> Zugriffsumfang, Konten, Umgang mit Schlüsseln</span><span lang="pt"><strong>Conectores:</strong> âmbito de acesso, contas, tratamento de chaves</span></li>
+            <li><span lang="en"><strong>Configuration:</strong> permissions, approval levels and limits</span><span lang="de"><strong>Konfiguration:</strong> Rechte, Freigabestufen und Limits</span><span lang="pt"><strong>Configuração:</strong> permissões, níveis de aprovação e limites</span></li>
+            <li><span lang="en"><strong>Inputs:</strong> whether hidden instructions in texts and documents can steer the agent</span><span lang="de"><strong>Eingaben:</strong> ob versteckte Anweisungen in Texten und Dokumenten den Agenten lenken können</span><span lang="pt"><strong>Entradas:</strong> se instruções escondidas em textos e documentos podem desviar o agente</span></li>
+            <li><span lang="en"><strong>Traceability:</strong> logs, and what happens when something goes wrong</span><span lang="de"><strong>Nachvollziehbarkeit:</strong> Protokolle und was bei einem Fehler passiert</span><span lang="pt"><strong>Rastreabilidade:</strong> registos, e o que acontece quando algo corre mal</span></li>
+            </ul>
+            <p class="offer__why" lang="en">The same three levels apply as in the <a href="../security/">Premium AI Security Check</a>: what an AI may do alone, what needs a person’s approval, what stays off limits.</p>
+            <p class="offer__why" lang="de">Es gelten dieselben drei Stufen wie im <a href="../security/">Premium AI Security Check</a>: was eine KI allein darf, was ein Mensch freigeben muss, was tabu bleibt.</p>
+            <p class="offer__why" lang="pt">Aplicam-se os mesmos três níveis do <a href="../security/">Premium AI Security Check</a>: o que uma IA pode fazer sozinha, o que uma pessoa tem de aprovar, o que fica fora de questão.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="request">
+      <div class="wrap page-plain">
+        <div class="steps">
+          <h3 lang="en">How a request works</h3><h3 lang="de">So läuft eine Anfrage</h3><h3 lang="pt">Como funciona um pedido</h3>
+          <ol>
+              <li>
+                <h4 lang="en">Send the request</h4>
+                <h4 lang="de">Anfrage senden</h4>
+                <h4 lang="pt">Enviar o pedido</h4>
+                <p lang="en">The agent or its operator sends the details, using the template below.</p>
+                <p lang="de">Der Agent oder sein Betreiber schickt die Angaben, am besten mit der Vorlage unten.</p>
+                <p lang="pt">O agente ou o seu operador envia os dados, de preferência com o modelo abaixo.</p>
+              </li>
+              <li>
+                <h4 lang="en">A person confirms</h4>
+                <h4 lang="de">Ein Mensch bestätigt</h4>
+                <h4 lang="pt">Uma pessoa confirma</h4>
+                <p lang="en">A responsible person or company takes over, and we agree the scope and the price.</p>
+                <p lang="de">Ein Verantwortlicher, ein Mensch oder ein Unternehmen, übernimmt, und wir klären Umfang und Preis.</p>
+                <p lang="pt">Uma pessoa ou empresa responsável assume o pedido e acordamos o âmbito e o preço.</p>
+              </li>
+              <li>
+                <h4 lang="en">Review and result</h4>
+                <h4 lang="de">Prüfung und Ergebnis</h4>
+                <h4 lang="pt">Revisão e resultado</h4>
+                <p lang="en">I review the component and hand over a written report with a name and a date. A register entry follows once the standard exists.</p>
+                <p lang="de">Ich prüfe die Komponente und übergebe einen schriftlichen Bericht mit Namen und Datum. Ein Register-Eintrag folgt, sobald der Standard steht.</p>
+                <p lang="pt">Reviso o componente e entrego um relatório escrito com nome e data. Uma entrada no registo segue-se quando o padrão existir.</p>
+              </li>
+          </ol>
+        </div>
+
+        <h3 lang="en">Request template</h3><h3 lang="de">Anfrage-Vorlage</h3><h3 lang="pt">Modelo de pedido</h3>
+        <p lang="en">An agent or its operator can phrase the request like this and send it by email to <a href="mailto:post@m-ko.de">post@m-ko.de</a>. Please do not send keys, passwords or credentials, only descriptions.</p>
+        <p lang="de">Ein Agent oder sein Betreiber kann die Anfrage so formulieren und per E-Mail an <a href="mailto:post@m-ko.de">post@m-ko.de</a> senden. Bitte keine Schlüssel, Passwörter oder Zugangsdaten mitschicken, nur Beschreibungen.</p>
+        <p lang="pt">Um agente ou o seu operador pode formular o pedido assim e enviá-lo por e-mail para <a href="mailto:post@m-ko.de">post@m-ko.de</a>. Por favor, não enviem chaves, palavras-passe nem credenciais, apenas descrições.</p>
+        <pre class="code" tabindex="0" aria-label="Request template"><code>{
+  "component": "name of the skill, connector or agent configuration",
+  "version": "version or commit",
+  "owner": { "name": "responsible person or company", "contact": "email address" },
+  "location": "repository or URL where the component can be inspected",
+  "permissions": ["what it can read", "what it can change or send"],
+  "data": ["kinds of data it handles"],
+  "notes": "anything the reviewer should know"
+}</code></pre>
+
+        <div class="page__terms">
+          <p class="offer__terms" lang="en">Price on request. Launch offer: half price for the first reviews.</p>
+          <p class="offer__terms" lang="de">Preis auf Anfrage. Startangebot: halber Preis für die ersten Prüfungen.</p>
+          <p class="offer__terms" lang="pt">Preço sob consulta. Oferta de lançamento: metade do preço nas primeiras revisões.</p>
+          <p class="offer__note" lang="en">Only a person or a company can commission and pay for a review. An agent can prepare and send the request, and a responsible person confirms it. This page contains no instructions for AI systems. A review is no certificate, no guarantee and no legal advice.</p>
+          <p class="offer__note" lang="de">Beauftragen und bezahlen kann nur ein Mensch oder ein Unternehmen. Ein Agent kann die Anfrage vorbereiten und senden, ein Verantwortlicher bestätigt sie. Diese Seite enthält keine Anweisungen an KI-Systeme. Eine Prüfung ist kein Zertifikat, keine Garantie und keine Rechtsberatung.</p>
+          <p class="offer__note" lang="pt">Só uma pessoa ou uma empresa pode encomendar e pagar uma revisão. Um agente pode preparar e enviar o pedido, e um responsável confirma-o. Esta página não contém instruções para sistemas de IA. Uma revisão não é um certificado, nem uma garantia, nem aconselhamento jurídico.</p>
+          <p class="offer__note"><a href="../llms.txt">llms.txt</a></p>
+          <a class="btn" href="#contact">
+            <span lang="en">Send a request</span><span lang="de">Anfrage senden</span><span lang="pt">Enviar um pedido</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <h2 lang="en">Feel free to send me a message</h2>
+        <h2 lang="de">Schreib mir gern</h2>
+        <h2 lang="pt">Envie-me uma mensagem quando quiser</h2>
+        <p class="contact__mail">
+          <a class="js-mail" href="#contact" data-user="post" data-host="m-ko.de">post [at] <span class="nowrap">m-ko.de</span></a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p class="site-footer__brand"><img class="footer__logo" src="../brand/logo-light.svg" width="220" height="40" alt="m-ko"><span>© Markus Kosmal</span></p>
+      <ul>
+        <li><a href="https://human-reviewed.com/">human-reviewed.com</a></li>
+        <li><a href="https://github.com/mko-x">GitHub mko-x</a></li>
+        <li><a href="https://github.com/muka-dev">GitHub muka-dev</a></li>
+        <li><a href="https://profiles.wordpress.org/mkox/">WordPress</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
