@@ -117,18 +117,8 @@ a:hover { text-decoration-color: var(--sun); }
   gap: 1.5rem;
   min-height: var(--header-h);
 }
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: -0.01em;
-  text-decoration: none;
-  margin-right: auto;
-}
-.brand__mark { width: 1.6rem; height: 1.6rem; }
+.brand { display: inline-flex; align-items: center; text-decoration: none; margin-right: auto; }
+.brand__logo { display: block; height: 1.9rem; width: auto; }
 
 .nav { display: flex; gap: 1.5rem; }
 .nav a {
@@ -161,29 +151,51 @@ a:hover { text-decoration-color: var(--sun); }
 
 /* ---------- Hero ---------- */
 
-.hero { padding-block: clamp(3.5rem, 10vw, 8rem) clamp(3rem, 8vw, 6rem); }
-
+.hero { padding-block: clamp(3rem, 8vw, 6.5rem) clamp(2.5rem, 6vw, 4.5rem); }
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 2.5rem clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
 .hero__hello {
-  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
   color: var(--ink-soft);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.1rem;
 }
 .hero h1 {
-  font-size: clamp(2.5rem, 7.6vw, 6.25rem);
-  line-height: 0.98;
+  font-size: clamp(2.4rem, 5.6vw, 4.75rem);
+  line-height: 1;
   letter-spacing: -0.035em;
-  max-width: 14em;
+  max-width: 11em;
+  text-wrap: balance;
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
 }
-.hero__below {
-  display: grid;
-  grid-template-columns: minmax(0, 34rem) auto;
-  justify-content: space-between;
-  align-items: end;
-  gap: 2.5rem;
-  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+.hero__intro { font-size: clamp(1.1rem, 1.6vw, 1.25rem); line-height: 1.55; max-width: 34rem; }
+.hero__action { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem; margin-top: 1.75rem; }
+.hero__buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; margin: 0; }
+.hero__link { font-weight: 600; }
+
+/* The connector figure on the light hero. */
+.connector--hero .connector__lines path { stroke: color-mix(in srgb, var(--ink) 28%, transparent); }
+.connector--hero .connector__people circle { stroke: var(--paper); }
+.connector--hero .connector__ai rect { fill: var(--lagoon); stroke: var(--paper); }
+.connector--hero .connector__flow--back { stroke: var(--lagoon); }
+.connector--hero .connector__labels text { fill: var(--ink); }
+
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.75rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
 }
-.hero__intro { font-size: clamp(1.15rem, 1.8vw, 1.35rem); line-height: 1.5; }
-.hero__action { display: grid; gap: 1rem; justify-items: start; }
+.trust__label { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+.trust__list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 1.75rem; margin: 0; padding: 0; }
+.trust__list a { font-family: var(--display); font-weight: 600; font-size: 1.1rem; text-decoration: none; }
+.trust__list a:hover { text-decoration: underline; text-decoration-color: var(--leaf); text-decoration-thickness: 0.1em; text-underline-offset: 0.2em; }
 
 .status {
   display: inline-flex;
@@ -329,7 +341,7 @@ html:not(.js) .stop__dot { left: 50%; }
 .today__lede { max-width: 38rem; font-size: 1.2rem; line-height: 1.55; }
 .today__top {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 2.5rem clamp(2rem, 5vw, 4rem);
   align-items: center;
   margin-bottom: clamp(3rem, 7vw, 5rem);
@@ -403,15 +415,6 @@ html:not(.js) .stop__dot { left: 50%; }
 .thoreau figcaption { margin-top: 0.75rem; color: color-mix(in srgb, var(--paper) 70%, transparent); }
 
 /* ---------- Value: benefits, process, example calculation ---------- */
-
-.hero__benefit {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-}
 
 .value { background: var(--paper-deep); --leaf-deep: #1F6B2E; }
 .value h2 { color: var(--leaf-deep); font-size: clamp(1.5rem, 2.6vw, 2rem); letter-spacing: -0.02em; margin-bottom: 1.5rem; }
@@ -809,6 +812,47 @@ html:not(.js) .stop__dot { left: 50%; }
 .seal__link { margin: 1rem 0 0; }
 .nowrap { white-space: nowrap; }
 
+
+.site-footer__brand { display: inline-flex; align-items: center; gap: 1rem; }
+.footer__logo { display: block; height: 1.6rem; width: auto; }
+
+/* ---------- Brand page ---------- */
+
+.bp-hero { padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 4vw, 3rem); }
+.bp-hero h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); letter-spacing: -0.035em; max-width: 12em; margin-bottom: 1.25rem; text-wrap: balance; }
+.bp-hero p { font-size: 1.25rem; max-width: 36rem; }
+.bp-section { padding-block: clamp(2.5rem, 6vw, 4.5rem); border-top: 2px solid var(--ink); }
+.bp-section h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+.bp-section h3 { font-size: 1.3rem; margin: 0 0 0.4rem; }
+.bp-section p { max-width: 38rem; }
+.bp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.bp-tile { border-radius: 18px; padding: 2rem 1.5rem; display: grid; place-items: center; min-height: 9rem; }
+.bp-tile--light { background: var(--paper-deep); }
+.bp-tile--dark { background: var(--ink); }
+.bp-tile img { display: block; max-width: 100%; height: auto; }
+.bp-parts { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1.5rem; }
+.bp-parts li { border-top: 2px solid var(--ink); padding-top: 1rem; }
+.bp-swatches { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1.25rem; }
+.bp-swatch { border-radius: 16px; overflow: hidden; background: var(--paper); border: 1.5px solid var(--ink); display: grid; }
+.bp-swatch__chip { height: 6rem; }
+.bp-swatch__text { padding: 0.9rem 1rem 1.1rem; font-size: 0.98rem; line-height: 1.4; }
+.bp-swatch__name { font-family: var(--display); font-weight: 700; font-size: 1.2rem; display: block; }
+.bp-swatch__hex { font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+.bp-type { margin-top: 1.5rem; display: grid; gap: 1.75rem; }
+.bp-type__display { font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.05; letter-spacing: -0.03em; margin: 0; }
+.bp-type__body { font-size: 1.15rem; margin: 0; max-width: 36rem; }
+.bp-type small { color: var(--ink-soft); display: block; margin-top: 0.35rem; font-size: 0.95rem; }
+.bp-voice { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; gap: 0.9rem; max-width: 40rem; }
+.bp-voice li { padding-left: 1.5rem; position: relative; }
+.bp-voice li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--sun); }
+.bp-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.bp-compare > div { border-radius: 16px; padding: 1.25rem 1.5rem; }
+.bp-compare__before { background: var(--paper-deep); }
+.bp-compare__after { background: var(--ink); color: var(--paper); }
+.bp-compare p { margin: 0 0 0.6rem; }
+.bp-compare__label { font-weight: 700; font-size: 0.95rem; }
+.bp-downloads { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+
 /* ---------- Small screens ---------- */
 
 @media (max-width: 940px) {
@@ -818,10 +862,12 @@ html:not(.js) .stop__dot { left: 50%; }
 
 @media (max-width: 760px) {
   body { font-size: 1.0625rem; }
-  .hero__below,
+  .hero__grid,
+  .bp-compare,
   .section__head,
   .today__cols { grid-template-columns: minmax(0, 1fr); }
-  .hero__below { align-items: start; }
+  .connector--hero { max-width: 24rem; }
+  .brand__logo { height: 1.6rem; }
   .linklist a,
   .services li { grid-template-columns: 2.25rem minmax(0, 1fr); }
   .services li p { grid-column: 2; }
