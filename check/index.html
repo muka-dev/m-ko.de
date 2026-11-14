@@ -41,7 +41,7 @@
   <header class="site-header">
     <div class="wrap site-header__inner">
       <a class="brand" href="../" aria-label="m-ko.de"><img class="brand__logo" src="../brand/logo.svg" width="220" height="40" alt="m-ko"></a>
-      <nav class="nav" aria-label="Main">
+      <nav class="nav" id="site-nav" aria-label="Main">
         <a href="../"><span lang="en">Home</span><span lang="de">Start</span><span lang="pt">Início</span></a>
         <a href="../check/" aria-current="page"><span lang="en">Production check</span><span lang="de">Produktionscheck</span><span lang="pt">Verificação de produção</span></a>
         <a href="../assistant/"><span lang="en">Support assistant</span><span lang="de">Support-Assistent</span><span lang="pt">Assistente de suporte</span></a>
@@ -52,6 +52,10 @@
         <button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button>
         <button type="button" data-set-lang="pt" aria-pressed="false" title="Português">PT</button>
       </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+        <span class="visually-hidden"><span lang="en">Menu</span><span lang="de">Menü</span><span lang="pt">Menu</span></span>
+      </button>
     </div>
   </header>
 
@@ -161,9 +165,9 @@
               <h3 lang="en">The Human-reviewed label</h3>
               <h3 lang="de">Das Siegel „Human-reviewed“</h3>
               <h3 lang="pt">O selo «Human-reviewed»</h3>
-              <p lang="en">Once the critical findings are fixed and I have checked them again, your app may carry this label. It links to a public entry in the register at <span class="nowrap">human-reviewed.com</span>, which shows when I reviewed the app, which version, and what the review covered. Human-reviewed is a product of m-ko.de.</p>
-              <p lang="de">Sind die kritischen Befunde behoben und von mir nachgeprüft, darf deine App dieses Siegel tragen. Es verweist auf einen öffentlichen Eintrag im Register auf <span class="nowrap">human-reviewed.com</span>. Dort steht, wann ich die App geprüft habe, welche Version und was die Prüfung umfasste. Human-reviewed ist ein Produkt von m-ko.de.</p>
-              <p lang="pt">Quando os pontos críticos estiverem corrigidos e eu os tiver verificado de novo, a sua app pode usar este selo. Liga a uma entrada pública no registo em <span class="nowrap">human-reviewed.com</span>, que mostra quando revi a app, que versão e o que a revisão abrangeu. Human-reviewed é um produto de m-ko.de.</p>
+              <p lang="en">Once the critical findings are fixed and I have checked them again, your app may carry this label. It links to a public entry in the register at <span class="nowrap">human-reviewed.com</span>, which shows when I reviewed the app, which version, and what the review covered. Human-reviewed is a product of <span class="nowrap">m-ko.de</span>.</p>
+              <p lang="de">Sind die kritischen Befunde behoben und von mir nachgeprüft, darf deine App dieses Siegel tragen. Es verweist auf einen öffentlichen Eintrag im Register auf <span class="nowrap">human-reviewed.com</span>. Dort steht, wann ich die App geprüft habe, welche Version und was die Prüfung umfasste. Human-reviewed ist ein Produkt von <span class="nowrap">m-ko.de</span>.</p>
+              <p lang="pt">Quando os pontos críticos estiverem corrigidos e eu os tiver verificado de novo, a sua app pode usar este selo. Liga a uma entrada pública no registo em <span class="nowrap">human-reviewed.com</span>, que mostra quando revi a app, que versão e o que a revisão abrangeu. Human-reviewed é um produto de <span class="nowrap">m-ko.de</span>.</p>
               <p class="offer__note" lang="en">The label says that an experienced person looked closely, and when. It does not say the app is unbreakable.</p>
               <p class="offer__note" lang="de">Das Siegel sagt, dass ein erfahrener Mensch genau hingeschaut hat, und wann. Es sagt nicht, dass die App unangreifbar ist.</p>
               <p class="offer__note" lang="pt">O selo diz que uma pessoa experiente olhou com atenção, e quando. Não diz que a app é invulnerável.</p>
@@ -192,7 +196,7 @@
         <h2 lang="de">Schreib mir gern</h2>
         <h2 lang="pt">Envie-me uma mensagem quando quiser</h2>
         <p class="contact__mail">
-          <a class="js-mail" href="#contact" data-user="post" data-host="m-ko.de">post [at] m-ko.de</a>
+          <a class="js-mail" href="#contact" data-user="post" data-host="m-ko.de">post [at] <span class="nowrap">m-ko.de</span></a>
         </p>
       </div>
     </section>

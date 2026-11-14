@@ -41,7 +41,7 @@
   <header class="site-header">
     <div class="wrap site-header__inner">
       <a class="brand" href="../" aria-label="m-ko.de"><img class="brand__logo" src="../brand/logo.svg" width="220" height="40" alt="m-ko"></a>
-      <nav class="nav" aria-label="Main">
+      <nav class="nav" id="site-nav" aria-label="Main">
         <a href="../"><span lang="en">Home</span><span lang="de">Start</span><span lang="pt">Início</span></a>
         <a href="../check/"><span lang="en">Production check</span><span lang="de">Produktionscheck</span><span lang="pt">Verificação de produção</span></a>
         <a href="../assistant/" aria-current="page"><span lang="en">Support assistant</span><span lang="de">Support-Assistent</span><span lang="pt">Assistente de suporte</span></a>
@@ -52,6 +52,10 @@
         <button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button>
         <button type="button" data-set-lang="pt" aria-pressed="false" title="Português">PT</button>
       </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+        <span class="visually-hidden"><span lang="en">Menu</span><span lang="de">Menü</span><span lang="pt">Menu</span></span>
+      </button>
     </div>
   </header>
 
@@ -115,7 +119,7 @@
         <h2 lang="de">Schreib mir gern</h2>
         <h2 lang="pt">Envie-me uma mensagem quando quiser</h2>
         <p class="contact__mail">
-          <a class="js-mail" href="#contact" data-user="post" data-host="m-ko.de">post [at] m-ko.de</a>
+          <a class="js-mail" href="#contact" data-user="post" data-host="m-ko.de">post [at] <span class="nowrap">m-ko.de</span></a>
         </p>
       </div>
     </section>

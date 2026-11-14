@@ -44,6 +44,33 @@
     });
   });
 
+  /* ---------- Menu on small screens ---------- */
+
+  var header = document.querySelector('.site-header');
+  var toggle = header && header.querySelector('.menu-toggle');
+  if (header && toggle) {
+    var setOpen = function (open) {
+      header.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', function () {
+      setOpen(!header.classList.contains('is-open'));
+    });
+    header.querySelector('.nav').addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('click', function (e) {
+      if (!header.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && header.classList.contains('is-open')) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    window.matchMedia('(min-width: 941px)').addEventListener('change', function () { setOpen(false); });
+  }
+
   /* ---------- Mail address (assembled here to keep it away from harvesters) ---------- */
 
   document.querySelectorAll('.js-mail').forEach(function (a) {
