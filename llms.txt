@@ -8,6 +8,11 @@
 - [AI check and AI pentest](https://m-ko.de/security/): the AI check takes stock of how AI is used and sorts every ability into three levels (may do alone, needs a person's approval, stays off limits), from 490 EUR. The AI pentest includes the AI check and the production check, plus a real attack: a search for vulnerabilities in the system and attempts to exploit the AI, from 3,900 EUR. Pentests only with written permission and within an agreed scope.
 - [Production check for AI-built apps](https://m-ko.de/check/): a human reviews an AI-built app before real users arrive. Includes the AI check. Fixed prices by size, from 890 EUR excluding VAT.
 
+## About and tools
+
+- [About me](https://m-ko.de/about/): background, path and links of Markus Kosmal.
+- [Tools](https://m-ko.de/tools/): small browser tools (a joke verdict on what an AI may do, a permaculture field generator). Nothing is sent anywhere.
+
 ## Reviews and the register
 
 - [Human-reviewed](https://human-reviewed.com/): a public register of reviews. Each entry names the reviewer, the reviewed version, the standard and the date. A review is not a certificate and not a guarantee.
