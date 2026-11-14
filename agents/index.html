@@ -170,6 +170,24 @@
       </div>
     </section>
 
+    <section class="section page" id="scan">
+      <div class="wrap">
+        <h2 lang="en">Scan a folder in the browser</h2><h2 lang="de">Ordner im Browser scannen</h2><h2 lang="pt">Analisar uma pasta no browser</h2>
+        <p lang="en">Choose the folder of a skill, connector or agent configuration. The scan runs in this browser only; no file is uploaded. It counts actions, rights, systems, data hints and lines, and forms a SHA-256 digest over the files it read, so the result is tied to exactly this version.</p><p lang="de">Den Ordner einer Skill, eines Konnektors oder einer Agent-Konfiguration auswählen. Der Scan läuft nur in diesem Browser, es wird keine Datei hochgeladen. Er zählt Aktionen, Rechte, Systeme, Hinweise auf Daten und Zeilen und bildet einen SHA-256-Digest über die gelesenen Dateien, sodass das Ergebnis an genau diese Version gebunden ist.</p><p lang="pt">Escolha a pasta de uma skill, de um conector ou de uma configuração de agente. A análise decorre apenas neste browser; nenhum ficheiro é enviado. Conta ações, permissões, sistemas, indícios de dados e linhas, e forma um digest SHA-256 dos ficheiros lidos, de modo que o resultado fica ligado exatamente a esta versão.</p>
+        <div class="scan" id="scan-box">
+          <div class="scan__drop" id="scan-drop">
+            <p><span lang="en">Drop a folder here, or</span><span lang="de">Ordner hierher ziehen oder</span><span lang="pt">Largar uma pasta aqui, ou</span></p>
+            <label class="btn scan__pick" for="scan-input"><span lang="en">Choose a folder</span><span lang="de">Ordner auswählen</span><span lang="pt">Escolher uma pasta</span></label>
+            <input class="visually-hidden" id="scan-input" type="file" webkitdirectory multiple>
+          </div>
+          <p class="offer__note" id="scan-status" aria-live="polite"></p>
+          <div class="sizer__result" id="scan-result"></div>
+        </div>
+        <p class="offer__note" lang="en">A self-declaration, not proof. When the component reaches me, the same scanner runs again on the delivered files. If the result differs, class and price are adjusted. The scanner is a heuristic: it does not see instructions that are loaded at runtime, and it cannot tell whether data of several organisations is involved.</p><p class="offer__note" lang="de">Eine Selbstauskunft, kein Nachweis. Sobald die Komponente bei mir ist, läuft derselbe Scanner nochmal über die gelieferten Dateien. Weicht das Ergebnis ab, werden Klasse und Preis angepasst. Der Scanner arbeitet mit Mustern: Er sieht keine Anweisungen, die erst zur Laufzeit nachgeladen werden, und er erkennt nicht, ob Daten mehrerer Organisationen betroffen sind.</p><p class="offer__note" lang="pt">Uma autodeclaração, não uma prova. Quando o componente chegar até mim, o mesmo scanner corre de novo sobre os ficheiros entregues. Se o resultado diferir, a classe e o preço são ajustados. O scanner usa padrões: não vê instruções carregadas só em tempo de execução e não reconhece se estão envolvidos dados de várias organizações.</p>
+        <p class="offer__note" lang="en">The scanner is open: <a href='../js/scanner-core.js'>js/scanner-core.js</a></p><p class="offer__note" lang="de">Der Scanner ist offen: <a href='../js/scanner-core.js'>js/scanner-core.js</a></p><p class="offer__note" lang="pt">O scanner é aberto: <a href='../js/scanner-core.js'>js/scanner-core.js</a></p>
+      </div>
+    </section>
+
     <section class="section" id="request">
       <div class="wrap page-plain">
         <div class="steps">
@@ -221,6 +239,7 @@
     "autonomy": "confirms-each-step | confirms-risky-steps | unattended | chains-agents",
     "lines": "approximate lines of code and configuration"
   },
+  "scan": "optional: scanner name, version and SHA-256 digest from the folder scan on this page",
   "notes": "anything the reviewer should know"
 }</code></pre>
 
@@ -265,5 +284,7 @@
 
   <script src="../js/main.js" defer></script>
   <script src="../js/agents-sizing.js" defer></script>
+  <script src="../js/scanner-core.js" defer></script>
+  <script src="../js/agents-scan.js" defer></script>
 </body>
 </html>

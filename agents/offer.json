@@ -134,5 +134,12 @@
       "lines_over_20000": "50%"
     },
     "calculator": "https://m-ko.de/agents/#size"
+  },
+  "scanner": {
+    "what": "Browser-only scan of a skill, connector or agent configuration folder. Nothing is uploaded. Outputs the size block and a SHA-256 digest over the files read.",
+    "page": "https://m-ko.de/agents/#scan",
+    "source": "https://m-ko.de/js/scanner-core.js",
+    "status": "The result is a self-declaration. The scanner runs again on the delivered files; a different result adjusts class and price.",
+    "digest": "SHA-256 over lines '<sha256 of file>  <path>' sorted by path; the root folder name is not part of it."
   }
 }

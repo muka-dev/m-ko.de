@@ -94,6 +94,13 @@
 
   form.addEventListener('input', update);
   form.addEventListener('change', update);
+  // The folder scan hands over its levels; fill the form from them.
+  document.addEventListener('scanresult', function (e) {
+    var d = e.detail;
+    FACTORS.forEach(function (f) { form.elements[f.id].value = d.levels[f.id]; });
+    form.elements.lines.value = d.size.lines;
+    update();
+  });
   document.addEventListener('langchange', build);
   build();
 })();
