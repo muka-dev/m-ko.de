@@ -1199,27 +1199,7 @@ html:not(.js) .stop__dot { left: 50%; }
 }
 #advantages .page__cols h2 + .offer__list + h2 { margin-top: 2rem; }
 
-/* Services: nested ladder + assistant card */
-.offers__layout { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
-.ladder__title { font-size: 1.05rem; font-weight: 600; color: var(--ink-soft); margin: 0 0 0.9rem; }
-.ladder__tier { border: 2px solid var(--ink); border-radius: 22px; padding: 1.25rem 1.25rem 1.1rem; }
-.ladder__tier--3 { background: #fff; }
-.ladder__tier--2 { background: var(--paper); margin-top: 1.25rem; }
-.ladder__tier--1 { background: var(--paper-deep); margin-top: 1.25rem; }
-.ladder__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.9rem; }
-.ladder__step { margin: 0; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--leaf-deep); }
-.ladder__head h3 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); margin: 0; letter-spacing: -0.02em; }
-.ladder__price { margin: 0 0 0 auto; padding: 0.15rem 0.7rem; border-radius: 99px; background: var(--sun); color: var(--ink); font-family: var(--display); font-weight: 600; font-size: 0.95rem; }
-.ladder__intro { margin: 0.6rem 0 0.7rem; font-weight: 600; max-width: none; }
-.ladder .offer__list { max-width: none; }
-.ladder__link { display: inline-block; margin-top: 0.4rem; font-weight: 600; }
-.offer--agents { border-top: 0; padding: 1.5rem; border-radius: 22px; background: var(--paper-deep); }
-.offers__note { margin-top: 2.5rem; max-width: 44rem; color: var(--ink-soft); }
-@media (max-width: 56rem) {
-  .offers__layout { grid-template-columns: 1fr; }
-  .ladder__price { margin-left: 0; }
-}
-.offer__sub { display: block; font-family: var(--display); font-weight: 600; font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
+/* Services: stair */
 
 /* Agents page: sizes and estimator */
 .sizelist { list-style: none; margin: 1.25rem 0 0; padding: 0; max-width: 56rem; }
@@ -1257,3 +1237,46 @@ html:not(.js) .stop__dot { left: 50%; }
 .scanev ul { padding-left: 1.1rem; }
 .scan code, .scanev code { overflow-wrap: anywhere; }
 .digest { font-size: 0.85rem; }
+
+/* Services: stair of three levels */
+.offers__layout { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.offer--agents { border-top: 0; padding: 1.5rem; border-radius: 22px; background: var(--paper-deep); }
+.offers__note { margin-top: 2.5rem; max-width: 44rem; color: var(--ink-soft); }
+.stair__title { margin: 0 0 1.25rem; font-weight: 600; color: var(--ink-soft); max-width: none; }
+.stair__list { list-style: none; margin: 0; padding: 0; }
+.stair__step { position: relative; display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 0 1rem; padding-bottom: 1.5rem; }
+.stair__step:last-child { padding-bottom: 0; }
+.stair__step:not(:last-child)::before { content: ""; position: absolute; left: 1.2rem; top: 2.6rem; bottom: 0.1rem; width: 0; border-left: 3px dotted var(--ink-soft); }
+.stair__node { width: 2.5rem; height: 2.5rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 1.15rem; background: var(--ink); color: var(--paper); position: relative; z-index: 1; }
+.stair__card { border: 2px solid var(--ink); border-radius: 20px; padding: 1.1rem 1.25rem 1.15rem; }
+.stair__step--1 .stair__card { background: var(--paper-deep); }
+.stair__step--2 .stair__card { background: #D3EFEC; }
+.stair__step--3 .stair__card { background: var(--ink); color: var(--paper); }
+.stair__step--3 .stair__node { background: var(--sun); color: var(--ink); }
+.stair__head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.15rem 1rem; align-items: center; }
+.stair__label { grid-column: 1 / -1; margin: 0; display: flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; max-width: none; }
+.stair__meter { display: inline-flex; gap: 3px; }
+.stair__meter i { width: 0.9rem; height: 0.45rem; border-radius: 2px; background: currentColor; opacity: 0.22; }
+.stair__meter i.on { opacity: 1; background: var(--leaf); }
+.stair__step--3 .stair__meter i.on { background: var(--leaf-bright); }
+.stair__head h3 { margin: 0; font-size: clamp(1.25rem, 2.2vw, 1.6rem); letter-spacing: -0.02em; }
+.stair__price { margin: 0; padding: 0.15rem 0.75rem; border-radius: 99px; background: var(--sun); color: var(--ink); font-family: var(--display); font-weight: 600; font-size: 0.95rem; text-align: center; max-width: none; }
+.stair__incl { margin: 0.6rem 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; font-size: 0.9rem; font-weight: 600; max-width: none; }
+.stair__chip { padding: 0.1rem 0.6rem; border-radius: 99px; border: 1.5px solid currentColor; font-weight: 600; }
+.stair__chip::before { content: "\2713\00a0"; }
+.stair__intro { margin: 0.7rem 0; font-weight: 600; max-width: none; }
+.stair .offer__list { max-width: none; }
+.stair__step--3 .offer__list li::before { background: var(--leaf-bright); }
+.stair__link { display: inline-block; margin-top: 0.4rem; font-weight: 600; }
+.stair__step--3 .stair__link { color: var(--paper); }
+@media (max-width: 56rem) {
+  .offers__layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 30rem) {
+  .stair__step { grid-template-columns: 2rem minmax(0, 1fr); gap: 0 0.65rem; }
+  .stair__node { width: 2rem; height: 2rem; font-size: 1rem; }
+  .stair__step:not(:last-child)::before { left: 0.95rem; top: 2.1rem; }
+  .stair__card { padding: 1rem; border-radius: 16px; }
+  .stair__head { grid-template-columns: 1fr; }
+  .stair__price { justify-self: start; }
+}
