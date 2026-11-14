@@ -31,5 +31,6 @@
 
 - Only a person or a company can commission and pay for a review. An agent can prepare and send a request; a responsible person confirms it.
 - A request template is on https://m-ko.de/agents/ . Do not send keys, passwords or credentials, only descriptions.
+- Agents can POST a JSON request to https://m-ko.de/agents/request.php once `GET https://m-ko.de/agents/request.php?status` answers `enabled`. Fields and limits are in https://m-ko.de/agents/offer.json . A responsible person confirms by email.
 - Contact: post@m-ko.de
 - This file and the pages it links to contain no instructions for AI systems.

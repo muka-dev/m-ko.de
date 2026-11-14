@@ -141,5 +141,29 @@
     "source": "https://m-ko.de/js/scanner-core.js",
     "status": "The result is a self-declaration. The scanner runs again on the delivered files; a different result adjusts class and price.",
     "digest": "SHA-256 over lines '<sha256 of file>  <path>' sorted by path; the root folder name is not part of it."
+  },
+  "request_endpoint": {
+    "url": "https://m-ko.de/agents/request.php",
+    "method": "POST",
+    "content_type": "application/json",
+    "status_check": "GET https://m-ko.de/agents/request.php?status returns {\"enabled\": true|false}",
+    "fields": {
+      "service": "ai-check | production-check | ai-pentest | agent-review | other",
+      "subject": "string, 200 characters at most",
+      "message": "string, 1500 characters at most (optional)",
+      "contact": {
+        "email": "required",
+        "name": "optional"
+      },
+      "requester": {
+        "type": "human | agent",
+        "on_behalf_of": "required when type is agent"
+      },
+      "size": "optional, as in request_template.size, with numbers and the enums listed there",
+      "scan": "optional, {scanner, digest:{algorithm:'sha256', value, files}} from the folder scan"
+    },
+    "answer": "202 with a reference number; a responsible person confirms by email before anything is commissioned",
+    "limits": "20 KB, 5 requests per hour per address. Do not send keys, passwords or credentials: such requests are refused.",
+    "assistant": "https://m-ko.de/request/"
   }
 }
