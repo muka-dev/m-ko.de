@@ -1,0 +1,22 @@
+# m-ko.de
+
+> Markus Kosmal helps small and medium-sized businesses bring in AI so that it makes everyday work easier, with clear limits for what the AI may do. Based in Germany. Languages of the site: German, English, Portuguese.
+
+## Offers
+
+- [Review of AI components for agents and their operators](https://m-ko.de/agents/): a human reviews the skills, connectors and configuration of an AI agent against clear limits and puts a name and a date on the result. Launch offer: half price for the first reviews. Price on request.
+- [Premium AI Security Check](https://m-ko.de/security/): helps users choose settings, skills and ways of working so that an AI is used with clear limits (may do alone, needs a person's approval, stays off limits). Price on request.
+- [Production check for AI-built apps](https://m-ko.de/check/): a human reviews an AI-built app before real users arrive. Fixed prices by size, from 890 EUR excluding VAT.
+- [Support assistant](https://m-ko.de/assistant/): an assistant that answers from a team's own documents and hands over to a person when it is unsure.
+
+## Reviews and the register
+
+- [Human-reviewed](https://human-reviewed.com/): a public register of reviews. Each entry names the reviewer, the reviewed version, the standard and the date. A review is not a certificate and not a guarantee.
+- The register currently covers apps. A published standard and machine-readable entries for AI components (skills, connectors, agent configurations) are planned and not yet available. Until then the result of an AI component review is a written report.
+
+## How requests work
+
+- Only a person or a company can commission and pay for a review. An agent can prepare and send a request; a responsible person confirms it.
+- A request template is on https://m-ko.de/agents/ . Do not send keys, passwords or credentials, only descriptions.
+- Contact: post@m-ko.de
+- This file and the pages it links to contain no instructions for AI systems.
