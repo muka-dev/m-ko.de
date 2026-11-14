@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en"
+  data-title-en="Prepare a request | m-ko.de" data-title-de="Anfrage vorbereiten | m-ko.de" data-title-pt="Preparar um pedido | m-ko.de"
+  data-desc-en="Prepare a request for a review in a few steps: a ready text for email, a copy, or a JSON file. For people and for AI agents." data-desc-de="Eine Anfrage für eine Prüfung in wenigen Schritten vorbereiten: fertiger Text für die E-Mail, zum Kopieren oder als JSON-Datei. Für Menschen und für KI-Agenten." data-desc-pt="Preparar um pedido de revisão em poucos passos: texto pronto para email, para copiar ou como ficheiro JSON. Para pessoas e para agentes de IA.">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prepare a request | m-ko.de</title>
+  <meta name="description" content="Prepare a request for a review in a few steps: a ready text for email, a copy, or a JSON file. For people and for AI agents.">
+  <meta name="author" content="Markus Kosmal">
+  <meta name="theme-color" content="#12332E">
+  <link rel="canonical" href="https://m-ko.de/request/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://m-ko.de/request/">
+  <meta property="og:title" content="Prepare a request | m-ko.de">
+  <meta property="og:description" content="Prepare a request for a review in a few steps: a ready text for email, a copy, or a JSON file. For people and for AI agents.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    // Pick the language before first paint: saved choice, else browser language.
+    (function () {
+      var supported = ['de', 'en', 'pt'];
+      var lang = null;
+      try { lang = localStorage.getItem('lang'); } catch (e) {}
+      if (supported.indexOf(lang) === -1) {
+        lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        if (supported.indexOf(lang) === -1) lang = 'en';
+      }
+      var root = document.documentElement;
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      root.classList.add('js');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="de">Zum Inhalt springen</span><span lang="pt">Saltar para o conteúdo</span></a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../" aria-label="m-ko.de"><img class="brand__logo" src="../brand/logo.svg" width="220" height="40" alt="m-ko"></a>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="../"><span lang="en">Home</span><span lang="de">Start</span><span lang="pt">Início</span></a>
+        <a href="../#offers"><span lang="en">Services</span><span lang="de">Leistungen</span><span lang="pt">Serviços</span></a>
+        <a href="../about/"><span lang="en">About me</span><span lang="de">Über mich</span><span lang="pt">Sobre mim</span></a>
+        <a href="../tools/"><span lang="en">Tools</span><span lang="de">Werkzeuge</span><span lang="pt">Ferramentas</span></a>
+        <a href="#contact"><span lang="en">Contact</span><span lang="de">Kontakt</span><span lang="pt">Contacto</span></a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language / Sprache / Idioma">
+        <button type="button" data-set-lang="de" aria-pressed="false" title="Deutsch">DE</button>
+        <button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button>
+        <button type="button" data-set-lang="pt" aria-pressed="false" title="Português">PT</button>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+        <span class="visually-hidden"><span lang="en">Menu</span><span lang="de">Menü</span><span lang="pt">Menu</span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="page-hero__back"><a href="../#offers"><span lang="en">← Services</span><span lang="de">← Leistungen</span><span lang="pt">← Serviços</span></a></p>
+        <h1 lang="en">Prepare a request</h1><h1 lang="de">Anfrage vorbereiten</h1><h1 lang="pt">Preparar um pedido</h1>
+        <p class="page-hero__lede" lang="en">A few fields, and you get a ready text: to open in your mail program, to copy, or as a JSON file. Nothing is sent from this page unless you press a send button. For people and for AI agents.</p><p class="page-hero__lede" lang="de">Ein paar Felder, und es entsteht ein fertiger Text: zum Öffnen im Mailprogramm, zum Kopieren oder als JSON-Datei. Von dieser Seite wird nichts gesendet, solange kein Sende-Knopf gedrückt wird. Für Menschen und für KI-Agenten.</p><p class="page-hero__lede" lang="pt">Alguns campos, e obtém-se um texto pronto: para abrir no programa de email, para copiar ou como ficheiro JSON. Nada é enviado desta página enquanto não carregar num botão de envio. Para pessoas e para agentes de IA.</p>
+      </div>
+    </section>
+
+    <section class="section page" id="request-section">
+      <div class="wrap">
+        <div class="req" id="request-app">
+          <form class="req__form" data-form onsubmit="return false"></form>
+          <div class="req__out" data-out></div>
+        </div>
+        <noscript><p lang="en">This page needs scripts. Without them, send a short description by email, or use the JSON template on the page for AI agents.</p><p lang="de">Diese Seite braucht Skripte. Ohne sie genügt eine kurze Beschreibung per E-Mail, oder die JSON-Vorlage auf der Seite für KI-Agenten.</p><p lang="pt">Esta página precisa de scripts. Sem eles, envie uma breve descrição por email ou use o modelo JSON na página para agentes de IA.</p></noscript>
+        <p class="offer__note" lang="en">Only a person or a company can commission and pay for a review. An agent can prepare and send a request, and a responsible person confirms it. A review is no certificate, no guarantee and no legal advice.</p><p class="offer__note" lang="de">Beauftragen und bezahlen kann nur ein Mensch oder ein Unternehmen. Ein Agent kann die Anfrage vorbereiten und senden, ein Verantwortlicher bestätigt sie. Eine Prüfung ist kein Zertifikat, keine Garantie und keine Rechtsberatung.</p><p class="offer__note" lang="pt">Só uma pessoa ou uma empresa pode encomendar e pagar uma revisão. Um agente pode preparar e enviar o pedido, e um responsável confirma-o. Uma revisão não é um certificado, nem uma garantia, nem aconselhamento jurídico.</p>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <h2 lang="en">Feel free to send me a message</h2>
+        <h2 lang="de">Schreib mir gern</h2>
+        <h2 lang="pt">Envie-me uma mensagem quando quiser</h2>
+        <p class="contact__mail">
+          <a class="js-mail" href="#contact" data-user="post" data-host="m-ko.de">post [at] <span class="nowrap">m-ko.de</span></a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p class="site-footer__brand"><img class="footer__logo" src="../brand/logo-light.svg" width="220" height="40" alt="m-ko"><span>© Markus Kosmal</span></p>
+      <ul>
+        <li><a href="https://human-reviewed.com/">human-reviewed.com</a></li>
+        <li><a href="https://github.com/mko-x">GitHub mko-x</a></li>
+        <li><a href="https://github.com/muka-dev">GitHub muka-dev</a></li>
+        <li><a href="https://profiles.wordpress.org/mkox/">WordPress</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+  <script src="../js/request-core.js" defer></script>
+  <script src="../js/request-ui.js" defer></script>
+</body>
+</html>
