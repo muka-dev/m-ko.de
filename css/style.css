@@ -1307,8 +1307,25 @@ html:not(.js) .stop__dot { left: 50%; }
 .verdict__hint { margin: 0; font-size: 0.88rem; opacity: 0.85; max-width: none; }
 .verdict-section { background: var(--paper-deep); }
 
+<<<<<<< HEAD
 /* Privacy and imprint */
 .legal__wrap { max-width: 46rem; }
 .legal h2 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); margin: 2.25rem 0 0.5rem; }
 .legal p { max-width: none; }
 .todo { background: #FFE9A6; color: var(--ink); padding: 0 0.25rem; border-radius: 4px; }
+=======
+/* Request assistant */
+.contact__request { margin: 1.25rem 0 0; }
+.req { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; max-width: 46rem; }
+.req__form { display: grid; gap: 0.9rem; }
+.req__row { display: grid; gap: 0.25rem; font-weight: 600; min-width: 0; }
+.req__row[hidden] { display: none; }
+.req input, .req select, .req textarea { font: inherit; font-weight: 400; width: 100%; box-sizing: border-box; padding: 0.6rem 0.8rem; border: 2px solid var(--ink); border-radius: 12px; background: #fff; color: var(--ink); }
+.req__check { display: flex; gap: 0.6rem; align-items: flex-start; }
+.req__check input { width: auto; margin-top: 0.25rem; }
+.req__trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.req__actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.75rem; }
+.btn--ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+.btn--ghost:hover { background: var(--ink); color: var(--paper); }
+.btn[aria-disabled="true"] { opacity: 0.5; }
+>>>>>>> origin/main

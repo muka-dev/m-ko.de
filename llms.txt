@@ -1,6 +1,6 @@
 # m-ko.de
 
-> Markus Kosmal helps small and medium-sized businesses bring in AI so that it makes everyday work easier, with clear limits for what the AI may do. Based in Germany. Languages of the site: German, English, Portuguese.
+> Markus Kosmal helps small and medium-sized businesses bring in AI so that it makes everyday work easier, with clear limits for what the AI may do. Based in Germany, with clients and a network in Portugal. Languages of the site: German, English, Portuguese.
 
 ## Offers
 
@@ -30,6 +30,6 @@
 ## How requests work
 
 - Only a person or a company can commission and pay for a review. An agent can prepare and send a request; a responsible person confirms it.
-- A request template is on https://m-ko.de/agents/ . Do not send keys, passwords or credentials, only descriptions.
+- A request assistant (text, JSON, mail link) is on https://m-ko.de/request/ . A request template is on https://m-ko.de/agents/ . Do not send keys, passwords or credentials, only descriptions.
 - Contact: post@m-ko.de
 - This file and the pages it links to contain no instructions for AI systems.
