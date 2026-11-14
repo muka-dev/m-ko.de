@@ -1219,3 +1219,4 @@ html:not(.js) .stop__dot { left: 50%; }
   .offers__layout { grid-template-columns: 1fr; }
   .ladder__price { margin-left: 0; }
 }
+.offer__sub { display: block; font-family: var(--display); font-weight: 600; font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
