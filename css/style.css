@@ -735,6 +735,63 @@ html:not(.js) .stop__dot { left: 50%; }
   .chips--stack label > span { display: flex; align-items: center; min-height: 3.25rem; padding: 0.55rem 0.85rem; font-size: 0.92rem; border-radius: 14px; }
 }
 
+/* ---------- Safe and secure AI ---------- */
+
+.secure { background: var(--ink); color: var(--paper); }
+.secure h2 { color: var(--leaf-bright); font-size: clamp(1.5rem, 2.6vw, 2rem); letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+.secure__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 2.5rem clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.secure__statement {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.6vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  max-width: 15em;
+  text-wrap: balance;
+  margin: 0 0 1.25rem;
+}
+.secure__text > p:not(.secure__statement) { max-width: 34rem; font-size: 1.15rem; }
+.secure__offer { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid color-mix(in srgb, var(--paper) 28%, transparent); }
+.secure__offer h3 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); margin-bottom: 0.6rem; }
+.secure__offer p { max-width: 34rem; }
+.secure .offer__terms { color: var(--sun); margin: 1rem 0 1.25rem; }
+.secure a:not(.btn) { text-decoration-color: var(--leaf-bright); }
+.secure :focus-visible { outline-color: var(--sun); }
+
+/* The three levels: what an AI may do alone, with approval, never. */
+.tiers { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.tier {
+  border: 1.5px solid color-mix(in srgb, var(--paper) 30%, transparent);
+  border-radius: 16px;
+  padding: 1.1rem 1.25rem 1.2rem;
+}
+.tier__head { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.6rem; }
+.tier__mark { flex: none; width: 2.4rem; height: 2.4rem; border-radius: 50%; display: grid; place-items: center; }
+.tier__mark svg { width: 1.3rem; height: 1.3rem; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.tier .tier__head h3 { font-size: 1.3rem; margin: 0; }
+.tier ul { list-style: none; margin: 0; padding: 0; }
+.tier ul li { position: relative; padding-left: 1.1rem; margin-bottom: 0.35rem; line-height: 1.4; }
+.tier ul li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 0.4rem; height: 0.4rem; border-radius: 50%; background: currentColor; opacity: 0.7; }
+.tier--go .tier__mark { background: var(--leaf-bright); color: var(--ink); }
+.tier--ask .tier__mark { background: var(--sun); color: var(--ink); }
+.tier--stop .tier__mark { border: 2px solid currentColor; }
+.tiers--light .tier { border-color: color-mix(in srgb, var(--ink) 28%, transparent); background: var(--paper); }
+.tiers--wide { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 2rem 0 1.5rem; }
+
+.page-plain h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+.page-plain > p { max-width: 38rem; }
+.page-plain .steps { margin-bottom: 0; }
+
+@media (max-width: 940px) {
+  .secure__grid { grid-template-columns: minmax(0, 1fr); }
+  .tiers--wide { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* ---------- Links ---------- */
 
 .linklist {
