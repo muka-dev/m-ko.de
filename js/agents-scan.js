@@ -70,7 +70,8 @@
     out.innerHTML = '';
     if (!items.length) { status.textContent = TXT[lang()].none; return; }
     toInputs(items).then(S.scan).then(function (r) {
-      last = r; status.textContent = ''; render(); document.dispatchEvent(new CustomEvent('scanresult', { detail: r }));
+      last = r; status.textContent = '';
+      try { sessionStorage.setItem('mko-scan', JSON.stringify({ size: r.size, scan: { scanner: r.scanner, digest: r.digest } })); } catch (e) { /* storage not available */ } render(); document.dispatchEvent(new CustomEvent('scanresult', { detail: r }));
     }).catch(function (e) { status.textContent = TXT[lang()].error + ' ' + e.message; });
   }
 
