@@ -12,7 +12,7 @@
 ## Reviews and the register
 
 - [Human-reviewed](https://human-reviewed.com/): a public register of reviews. Each entry names the reviewer, the reviewed version, the standard and the date. A review is not a certificate and not a guarantee.
-- The register currently covers apps. A draft entry type and standard for AI components (skills, connectors, agent configurations) exist and are not yet published; there are no entries for AI components today. Until then the result of an AI component review is a written report and a review note.
+- The register currently covers apps. A draft standard and entry type for AI components (skills, connectors, agent configurations) is published for comment: https://human-reviewed.com/standard/ai-components/ . There are no entries for AI components until the first review is done. Until then the result of an AI component review is a written report and a review note.
 
 ## What a review of an AI component gives you, and how to check it
 

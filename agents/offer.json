@@ -15,7 +15,7 @@
   ],
   "result": {
     "today": "Written report and review note with reviewer name, date, version, digest, the three limit lists and the outcome.",
-    "planned": "Public entry in the Human-reviewed register as JSON. The entry type is drafted and not yet published; no entry exists today."
+    "planned": "Public entry in the Human-reviewed register as JSON. The entry type and a draft standard are published for comment at https://human-reviewed.com/standard/ai-components/ ; no entry exists until the first review is done."
   },
   "advantages_and_how_to_verify": [
     { "advantage": "Limits are tested, not just claimed", "verify": "Compare the three limit lists with the permissions the component requests." },
