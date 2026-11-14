@@ -1198,3 +1198,25 @@ html:not(.js) .stop__dot { left: 50%; }
   .glance > div { grid-template-columns: 1fr; gap: 0.15rem; }
 }
 #advantages .page__cols h2 + .offer__list + h2 { margin-top: 2rem; }
+
+/* Services: nested ladder + assistant card */
+.offers__layout { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.ladder__title { font-size: 1.05rem; font-weight: 600; color: var(--ink-soft); margin: 0 0 0.9rem; }
+.ladder__tier { border: 2px solid var(--ink); border-radius: 22px; padding: 1.25rem 1.25rem 1.1rem; }
+.ladder__tier--3 { background: #fff; }
+.ladder__tier--2 { background: var(--paper); margin-top: 1.25rem; }
+.ladder__tier--1 { background: var(--paper-deep); margin-top: 1.25rem; }
+.ladder__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.9rem; }
+.ladder__step { margin: 0; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--leaf-deep); }
+.ladder__head h3 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); margin: 0; letter-spacing: -0.02em; }
+.ladder__price { margin: 0 0 0 auto; padding: 0.15rem 0.7rem; border-radius: 99px; background: var(--sun); color: var(--ink); font-family: var(--display); font-weight: 600; font-size: 0.95rem; }
+.ladder__intro { margin: 0.6rem 0 0.7rem; font-weight: 600; max-width: none; }
+.ladder .offer__list { max-width: none; }
+.ladder__link { display: inline-block; margin-top: 0.4rem; font-weight: 600; }
+.offer--agents { border-top: 0; padding: 1.5rem; border-radius: 22px; background: var(--paper-deep); }
+.offers__note { margin-top: 2.5rem; max-width: 44rem; color: var(--ink-soft); }
+@media (max-width: 56rem) {
+  .offers__layout { grid-template-columns: 1fr; }
+  .ladder__price { margin-left: 0; }
+}
+.offer__sub { display: block; font-family: var(--display); font-weight: 600; font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
