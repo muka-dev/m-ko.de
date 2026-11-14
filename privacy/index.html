@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en"
+  data-title-en="Privacy | m-ko.de" data-title-de="Datenschutz | m-ko.de" data-title-pt="Privacidade | m-ko.de"
+  data-desc-en="How this site handles personal data: no cookies, no tracking, nothing loaded from third parties." data-desc-de="Wie diese Seite mit personenbezogenen Daten umgeht: keine Cookies, kein Tracking, nichts von Dritten nachgeladen." data-desc-pt="Como este site trata dados pessoais: sem cookies, sem rastreamento, nada carregado de terceiros.">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy | m-ko.de</title>
+  <meta name="description" content="How this site handles personal data: no cookies, no tracking, nothing loaded from third parties.">
+  <meta name="author" content="Markus Kosmal">
+  <meta name="theme-color" content="#12332E">
+  <link rel="canonical" href="https://m-ko.de/privacy/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://m-ko.de/privacy/">
+  <meta property="og:title" content="Privacy | m-ko.de">
+  <meta property="og:description" content="How this site handles personal data: no cookies, no tracking, nothing loaded from third parties.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    // Pick the language before first paint: saved choice, else browser language.
+    (function () {
+      var supported = ['de', 'en', 'pt'];
+      var lang = null;
+      try { lang = localStorage.getItem('lang'); } catch (e) {}
+      if (supported.indexOf(lang) === -1) {
+        lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        if (supported.indexOf(lang) === -1) lang = 'en';
+      }
+      var root = document.documentElement;
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      root.classList.add('js');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="de">Zum Inhalt springen</span><span lang="pt">Saltar para o conteúdo</span></a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../" aria-label="m-ko.de"><img class="brand__logo" src="../brand/logo.svg" width="220" height="40" alt="m-ko"></a>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="../"><span lang="en">Home</span><span lang="de">Start</span><span lang="pt">Início</span></a>
+        <a href="../#offers"><span lang="en">Services</span><span lang="de">Leistungen</span><span lang="pt">Serviços</span></a>
+        <a href="../about/"><span lang="en">About me</span><span lang="de">Über mich</span><span lang="pt">Sobre mim</span></a>
+        <a href="../tools/"><span lang="en">Tools</span><span lang="de">Werkzeuge</span><span lang="pt">Ferramentas</span></a>
+        <a href="#contact"><span lang="en">Contact</span><span lang="de">Kontakt</span><span lang="pt">Contacto</span></a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language / Sprache / Idioma">
+        <button type="button" data-set-lang="de" aria-pressed="false" title="Deutsch">DE</button>
+        <button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button>
+        <button type="button" data-set-lang="pt" aria-pressed="false" title="Português">PT</button>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+        <span class="visually-hidden"><span lang="en">Menu</span><span lang="de">Menü</span><span lang="pt">Menu</span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="page-hero__back"><a href="../"><span lang="en">← Home</span><span lang="de">← Start</span><span lang="pt">← Início</span></a></p>
+        <h1 lang="en">Privacy</h1><h1 lang="de">Datenschutz</h1><h1 lang="pt">Privacidade</h1>
+        <p class="page-hero__lede" lang="en">In short: this site sets no cookies, uses no analytics or advertising tools and loads nothing from third-party servers.</p><p class="page-hero__lede" lang="de">Kurz gesagt: Diese Seite setzt keine Cookies, nutzt keine Analyse- oder Werbewerkzeuge und lädt nichts von fremden Servern nach.</p><p class="page-hero__lede" lang="pt">Em resumo: este site não define cookies, não usa ferramentas de análise ou publicidade e não carrega nada de servidores de terceiros.</p>
+      </div>
+    </section>
+
+    <section class="section page legal">
+      <div class="wrap legal__wrap">
+        <h2 lang="en">1. Controller</h2><h2 lang="de">1. Verantwortlicher</h2><h2 lang="pt">1. Responsável</h2>
+        <p lang="en">The controller for data processing on this site is Markus Kosmal, <mark class="todo">[[postal address]]</mark>, email: <a class="js-mail" href="#" data-user="post" data-host="m-ko.de">post [at] <span class="nowrap">m-ko.de</span></a>.</p><p lang="de">Verantwortlich für die Datenverarbeitung auf dieser Seite ist Markus Kosmal, <mark class="todo">[[Anschrift]]</mark>, E-Mail: <a class="js-mail" href="#" data-user="post" data-host="m-ko.de">post [at] <span class="nowrap">m-ko.de</span></a>.</p><p lang="pt">O responsável pelo tratamento de dados neste site é Markus Kosmal, <mark class="todo">[[morada]]</mark>, email: <a class="js-mail" href="#" data-user="post" data-host="m-ko.de">post [at] <span class="nowrap">m-ko.de</span></a>.</p>
+        <h2 lang="en">2. Hosting and server logs</h2><h2 lang="de">2. Hosting und Server-Logfiles</h2><h2 lang="pt">2. Alojamento e registos do servidor</h2>
+        <p lang="en">The site is hosted by Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany. When a page is opened, the web server stores technically necessary data in log files: IP address, date and time, requested address, status code, amount of data, browser identifier and referrer. Without them the site can neither be delivered nor protected against abuse. The legal basis is Art. 6(1)(f) GDPR (legitimate interest in stable and secure operation). The log files are kept for <mark class="todo">[[check the retention period of the hosting package and enter it]]</mark>. A data processing agreement with Hetzner <mark class="todo">[[confirm that it is concluded in the customer account]]</mark>. The server is located in <mark class="todo">[[confirm: Germany]]</mark>.</p><p lang="de">Die Seite wird bei der Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Deutschland, gehostet. Beim Aufruf einer Seite speichert der Webserver technisch notwendige Daten in Logfiles: IP-Adresse, Datum und Uhrzeit, aufgerufene Adresse, Statuscode, Datenmenge, Browserkennung und Referrer. Ohne sie lässt sich die Seite weder ausliefern noch gegen Missbrauch schützen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am stabilen und sicheren Betrieb). Die Logfiles werden <mark class="todo">[[Speicherdauer laut Hosting-Paket prüfen und eintragen]]</mark> aufbewahrt. Ein Vertrag zur Auftragsverarbeitung mit Hetzner <mark class="todo">[[im Kundenkonto abschließen bzw. Abschluss bestätigen]]</mark>. Der Server steht in <mark class="todo">[[bestätigen: Deutschland]]</mark>.</p><p lang="pt">O site é alojado pela Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Alemanha. Quando uma página é aberta, o servidor web guarda em ficheiros de registo os dados tecnicamente necessários: endereço IP, data e hora, endereço pedido, código de estado, volume de dados, identificação do browser e referrer. Sem eles, o site não pode ser entregue nem protegido contra abusos. A base jurídica é o art. 6.º, n.º 1, al. f) do RGPD (interesse legítimo no funcionamento estável e seguro). Os registos são conservados por <mark class="todo">[[verificar e indicar o prazo de conservação do pacote de alojamento]]</mark>. Um contrato de subcontratação com a Hetzner <mark class="todo">[[confirmar que está celebrado na conta de cliente]]</mark>. O servidor está localizado em <mark class="todo">[[confirmar: Alemanha]]</mark>.</p>
+        <h2 lang="en">3. No cookies, storage in the browser</h2><h2 lang="de">3. Keine Cookies, Speicher im Browser</h2><h2 lang="pt">3. Sem cookies, armazenamento no browser</h2>
+        <p lang="en">The site sets no cookies. In the browser it stores only the chosen language (DE, EN or PT) in localStorage. This value has no personal reference and only serves the function the visitor asked for. The request assistant and the tools keep inputs and results in the browser for the duration of the session at most (sessionStorage), so they can be carried from one page to the next. Neither leaves the browser, and both can be deleted in the browser settings.</p><p lang="de">Die Seite setzt keine Cookies. Im Browser wird nur die gewählte Sprache (DE, EN oder PT) in localStorage gespeichert. Dieser Wert hat keinen Personenbezug und dient allein der gewünschten Funktion. Der Anfrage-Assistent und die Werkzeuge legen Eingaben und Ergebnisse höchstens für die Dauer der Sitzung im Browser ab (sessionStorage), damit sie von einer Seite zur nächsten mitgenommen werden können. Beides verlässt den Browser nicht und lässt sich in den Browser-Einstellungen löschen.</p><p lang="pt">O site não define cookies. No browser guarda apenas o idioma escolhido (DE, EN ou PT) em localStorage. Este valor não tem referência pessoal e serve apenas a função pedida pelo visitante. O assistente de pedidos e as ferramentas mantêm entradas e resultados no browser, no máximo durante a sessão (sessionStorage), para poderem passar de uma página para outra. Nenhum dos dois sai do browser, e ambos podem ser apagados nas definições do browser.</p>
+        <h2 lang="en">4. Tools and scanner</h2><h2 lang="de">4. Werkzeuge und Scanner</h2><h2 lang="pt">4. Ferramentas e scanner</h2>
+        <p lang="en">The size estimator, the folder scanner, the field generator and the tool "May the AI do that?" run entirely in the browser. Inputs and scanned files are not transmitted.</p><p lang="de">Der Größenrechner, der Ordner-Scanner, der Feldgenerator und das Werkzeug „Darf die KI das?“ laufen vollständig im Browser. Eingaben und gescannte Dateien werden nicht übertragen.</p><p lang="pt">O estimador de tamanho, o scanner de pastas, o gerador de campos e a ferramenta «A IA pode fazer isso?» funcionam inteiramente no browser. As entradas e os ficheiros analisados não são transmitidos.</p>
+        <h2 lang="en">5. Fonts and scripts</h2><h2 lang="de">5. Schriften und Skripte</h2><h2 lang="pt">5. Tipos de letra e scripts</h2>
+        <p lang="en">Fonts and scripts are delivered from this domain. The site does not embed Google Fonts, content delivery networks, analytics tools or social networks.</p><p lang="de">Schriften und Skripte werden von dieser Domain ausgeliefert. Es werden weder Google Fonts, Content-Delivery-Netzwerke, Analysewerkzeuge noch soziale Netzwerke eingebunden.</p><p lang="pt">Os tipos de letra e os scripts são entregues a partir deste domínio. O site não incorpora Google Fonts, redes de distribuição de conteúdos, ferramentas de análise nem redes sociais.</p>
+        <h2 lang="en">6. Contact by email</h2><h2 lang="de">6. Kontakt per E-Mail</h2><h2 lang="pt">6. Contacto por email</h2>
+        <p lang="en">If you write to me, I process your details (name, email address, content of the message) to answer the request. The legal basis is Art. 6(1)(b) GDPR for pre-contractual requests, otherwise Art. 6(1)(f). The data is deleted once it is no longer needed for the purpose and no retention duty applies <mark class="todo">[[check statutory retention periods for business correspondence]]</mark>. The emails are held by the provider of my mailbox <mark class="todo">[[enter the mailbox provider, probably Hetzner Online GmbH]]</mark>.</p><p lang="de">Wer mir schreibt, dessen Angaben (Name, E-Mail-Adresse, Inhalt der Nachricht) verarbeite ich, um die Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglichen Anfragen, sonst lit. f. Die Daten werden gelöscht, sobald sie für den Zweck nicht mehr erforderlich sind und keine Aufbewahrungspflicht entgegensteht <mark class="todo">[[gesetzliche Aufbewahrungsfristen für Geschäftskorrespondenz prüfen]]</mark>. Die E-Mails liegen beim Anbieter meines Postfachs <mark class="todo">[[Postfach-Anbieter eintragen, vermutlich Hetzner Online GmbH]]</mark>.</p><p lang="pt">Quem me escreve vê os seus dados (nome, endereço de email, conteúdo da mensagem) tratados para responder ao pedido. A base jurídica é o art. 6.º, n.º 1, al. b) do RGPD para pedidos pré-contratuais, caso contrário a al. f). Os dados são eliminados quando deixam de ser necessários para a finalidade e não existe dever de conservação <mark class="todo">[[verificar os prazos legais de conservação da correspondência comercial]]</mark>. Os emails ficam no fornecedor da minha caixa de correio <mark class="todo">[[indicar o fornecedor da caixa de correio, provavelmente Hetzner Online GmbH]]</mark>.</p>
+        <h2 lang="en">7. Request assistant and direct sending</h2><h2 lang="de">7. Anfrage-Assistent und Direktversand</h2><h2 lang="pt">7. Assistente de pedidos e envio direto</h2>
+        <p lang="en">The request assistant builds the text of a request in the browser. Nothing is sent until a way of sending is chosen: opening in the mail program, copying, downloading the JSON file, or "Send directly". With direct sending (also by AI agents through the address /agents/request.php), service, subject, message, name, email address and, if attached, size estimate and scan digest go to the server and from there by email to me. The server does not store the request in a database. To prevent abuse it remembers, for at most 24 hours, an irreversibly shortened value (hash) of the IP address and the number of requests. The legal basis is Art. 6(1)(b) and (f) GDPR. Whoever asks as an AI agent or on behalf of others must be authorised to do so and may only send information that may be passed on. Please do not send keys, passwords or credentials.</p><p lang="de">Der Anfrage-Assistent baut den Text einer Anfrage im Browser. Es wird nichts gesendet, bis ein Sende-Weg gewählt wird: Öffnen im Mailprogramm, Kopieren, Download der JSON-Datei oder „Direkt senden“. Beim Direktversand (auch durch KI-Agenten über die Adresse /agents/request.php) gehen Leistung, Gegenstand, Nachricht, Name, E-Mail-Adresse und, falls angehängt, Größenabschätzung und Scan-Digest an den Server und von dort als E-Mail an mich. Der Server speichert die Anfrage nicht in einer Datenbank. Zur Abwehr von Missbrauch merkt er sich für höchstens 24 Stunden einen nicht umkehrbar gekürzten Wert (Hash) der IP-Adresse und die Zahl der Anfragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b und f DSGVO. Wer als KI-Agent oder im Auftrag anderer anfragt, muss dazu befugt sein und darf nur Angaben senden, die weitergegeben werden dürfen. Bitte keine Schlüssel, Passwörter oder Zugangsdaten senden.</p><p lang="pt">O assistente de pedidos constrói o texto de um pedido no browser. Nada é enviado até se escolher uma forma de envio: abrir no programa de email, copiar, descarregar o ficheiro JSON ou «Enviar diretamente». No envio direto (também por agentes de IA através do endereço /agents/request.php), o serviço, o assunto, a mensagem, o nome, o endereço de email e, se anexados, a estimativa de tamanho e o digest da análise seguem para o servidor e daí por email para mim. O servidor não guarda o pedido numa base de dados. Para evitar abusos, memoriza durante no máximo 24 horas um valor encurtado de forma irreversível (hash) do endereço IP e o número de pedidos. A base jurídica é o art. 6.º, n.º 1, al. b) e f) do RGPD. Quem pede como agente de IA ou em nome de terceiros tem de estar autorizado a fazê-lo e só pode enviar informações que possam ser transmitidas. Por favor, não enviem chaves, palavras-passe nem credenciais.</p>
+        <h2 lang="en">8. External links</h2><h2 lang="de">8. Externe Links</h2><h2 lang="pt">8. Ligações externas</h2>
+        <p lang="en">The site links to other services (for example GitHub, Docker Hub, WordPress.org, human-reviewed.com). When a link is clicked, the privacy notices of that service apply; no data is sent there beforehand. human-reviewed.com is operated by me.</p><p lang="de">Die Seite verlinkt auf andere Angebote (zum Beispiel GitHub, Docker Hub, WordPress.org, human-reviewed.com). Beim Anklicken gelten deren Datenschutzhinweise; vorher werden keine Daten dorthin übertragen. human-reviewed.com wird von mir betrieben.</p><p lang="pt">O site liga a outros serviços (por exemplo GitHub, Docker Hub, WordPress.org, human-reviewed.com). Ao clicar numa ligação, aplicam-se as informações de privacidade desse serviço; antes disso, nenhum dado é enviado para lá. O human-reviewed.com é operado por mim.</p>
+        <h2 lang="en">9. Rights</h2><h2 lang="de">9. Rechte</h2><h2 lang="pt">9. Direitos</h2>
+        <p lang="en">Data subjects have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction (Art. 18), data portability (Art. 20) and objection (Art. 21), and the right to withdraw a consent. There is also the right to lodge a complaint with a data protection supervisory authority, <mark class="todo">[[enter the competent supervisory authority, depending on the seat]]</mark>. Requests about this go to the address above.</p><p lang="de">Betroffene haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21) sowie auf Widerruf einer Einwilligung. Außerdem besteht ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde, <mark class="todo">[[zuständige Aufsichtsbehörde je nach Sitz eintragen]]</mark>. Anfragen dazu bitte an die oben genannte Adresse.</p><p lang="pt">Os titulares dos dados têm direito de acesso (art. 15.º do RGPD), retificação (art. 16.º), apagamento (art. 17.º), limitação (art. 18.º), portabilidade (art. 20.º) e oposição (art. 21.º), bem como o direito de retirar um consentimento. Existe ainda o direito de apresentar reclamação a uma autoridade de controlo, <mark class="todo">[[indicar a autoridade de controlo competente, consoante a sede]]</mark>. Os pedidos a este respeito devem ser enviados para o endereço acima.</p>
+        <h2 lang="en">10. No automated decisions</h2><h2 lang="de">10. Keine automatisierten Entscheidungen</h2><h2 lang="pt">10. Sem decisões automatizadas</h2>
+        <p lang="en">There is no automated decision-making, including profiling. Requests that come from AI agents are read and confirmed by me personally.</p><p lang="de">Es findet keine automatisierte Entscheidungsfindung einschließlich Profiling statt. Anfragen, die von KI-Agenten kommen, werden von mir persönlich gelesen und bestätigt.</p><p lang="pt">Não existe tomada de decisões automatizada, incluindo definição de perfis. Os pedidos provenientes de agentes de IA são lidos e confirmados por mim pessoalmente.</p>
+        <h2 lang="en">11. Version</h2><h2 lang="de">11. Stand</h2><h2 lang="pt">11. Versão</h2>
+        <p lang="en">Version of <mark class="todo">[[enter date]]</mark>. Changes are published here.</p><p lang="de">Stand: <mark class="todo">[[Datum eintragen]]</mark>. Änderungen werden hier veröffentlicht.</p><p lang="pt">Versão de <mark class="todo">[[indicar a data]]</mark>. As alterações são publicadas aqui.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p class="site-footer__brand"><img class="footer__logo" src="../brand/logo-light.svg" width="220" height="40" alt="m-ko"><span>© Markus Kosmal</span></p>
+      <ul>
+        <li><a href="https://human-reviewed.com/">human-reviewed.com</a></li>
+        <li><a href="../privacy/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span><span lang="pt">Privacidade</span></a></li>
+        <li><a href="../imprint/"><span lang="en">Imprint</span><span lang="de">Impressum</span><span lang="pt">Aviso legal</span></a></li>
+        <li><a href="https://github.com/mko-x">GitHub mko-x</a></li>
+        <li><a href="https://github.com/muka-dev">GitHub muka-dev</a></li>
+        <li><a href="https://profiles.wordpress.org/mkox/">WordPress</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -38,6 +38,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: No open placeholders on the legal pages
+        run: |
+          if grep -rln 'class="todo"' --include=index.html .; then
+            echo "::error::Open placeholders (class=todo) remain on the pages listed above"
+            exit 1
+          fi
       - name: Scripts parse
         run: for f in js/*.js; do node --check "$f"; done
       - name: Scanner tests
@@ -67,7 +73,7 @@ jobs:
       - name: Assemble site folder
         run: |
           mkdir site
-          cp -r index.html favicon.svg llms.txt css js fonts img get check assistant security agents brand about tools site/
+          cp -r index.html favicon.svg llms.txt css js fonts img get check assistant security agents brand about tools privacy imprint site/
           chmod -R u=rwX,go=rX site
 
       - name: Deploy over SFTP
