@@ -21,7 +21,9 @@ function startServer(opts = {}) {
       'mail_dir' => '${mailDir}', 'rate_dir' => '${path.join(dir, 'rate')}', 'per_hour' => ${opts.perHour || 100}, 'per_day' => 1000 ];`);
   }
   const p = port++;
-  const child = spawn('php', ['-S', `127.0.0.1:${p}`, '-t', ROOT], { env: { ...process.env, MKO_REQUEST_CONFIG: cfgPath }, stdio: 'ignore' });
+  const env = { ...process.env, MKO_REQUEST_CONFIG: cfgPath };
+  if (opts.viaHome) { delete env.MKO_REQUEST_CONFIG; env.HOME = opts.viaHome; }
+  const child = spawn('php', ['-S', `127.0.0.1:${p}`, '-t', ROOT], { env, stdio: 'ignore' });
   return { url: `http://127.0.0.1:${p}/agents/request.php`, mailDir, stop: () => child.kill() };
 }
 async function ready(url) {
@@ -119,4 +121,14 @@ test('a broken config says why, without paths', { skip: !hasPhp }, async (t) => 
     assert.equal(j.enabled, false);
     assert.equal(j.reason, reason);
   }
+});
+
+test('the config is also found in the home directory when PHP sees another web root path', { skip: !hasPhp }, async (t) => {
+  const home = fs.mkdtempSync(path.join(os.tmpdir(), 'mko-home-'));
+  fs.mkdirSync(path.join(home, 'mko-private'));
+  fs.writeFileSync(path.join(home, 'mko-private', 'request-config.php'),
+    `<?php return ['to' => 'a@example.org', 'from' => 'a@example.org', 'salt' => 'x', 'mail_dir' => '${home}', 'rate_dir' => '${path.join(home, 'rate')}'];`);
+  const s = startServer({ viaHome: home }); await ready(s.url);
+  t.after(() => s.stop());
+  assert.equal((await (await fetch(s.url + '?status')).json()).enabled, true);
 });
