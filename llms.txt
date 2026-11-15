@@ -13,6 +13,8 @@
 - [About me](https://m-ko.de/about/): background, path and links of Markus Kosmal.
 - [Tools](https://m-ko.de/tools/): small browser tools (a joke verdict on what an AI may do, a permaculture field generator). Nothing is sent anywhere.
 
+- [Sustainable AI](https://m-ko.de/sustainability/): figures with sources on the energy, water and heat use of AI, what can be said for sure and what cannot, and what is done in projects. The AI check includes an assessment of resource use.
+
 ## Reviews and the register
 
 - [Human-reviewed](https://human-reviewed.com/): a public register of reviews. Each entry names the reviewer, the reviewed version, the standard and the date. A review is not a certificate and not a guarantee.

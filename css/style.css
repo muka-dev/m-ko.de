@@ -144,7 +144,8 @@ a:hover { text-decoration-color: var(--sun); }
   background: transparent;
   border: 0;
   border-radius: 999px;
-  padding: 0.4rem 0.65rem;
+  padding: 0.55rem 0.7rem;
+  min-height: 2rem;
   cursor: pointer;
 }
 .lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
@@ -921,7 +922,7 @@ html:not(.js) .stop__dot { left: 50%; }
 
 .nav a[aria-current="page"] { border-bottom-color: var(--leaf); }
 
-.page-hero { --leaf-deep: #1F6B2E; padding-block: clamp(2.5rem, 7vw, 5rem) clamp(2.5rem, 6vw, 4.5rem); }
+.page-hero { --leaf-deep: #1F6B2E; padding-block: clamp(2.5rem, 7vw, 5rem) clamp(2rem, 5vw, 3.5rem); }
 .page-hero__back { margin-bottom: clamp(2rem, 5vw, 3.5rem); }
 .page-hero .icon { width: 3rem; height: 3rem; color: var(--leaf-deep); margin-bottom: 1rem; }
 .page-hero h1 {
@@ -1308,7 +1309,6 @@ html:not(.js) .stop__dot { left: 50%; }
 .verdict-section { background: var(--paper-deep); }
 
 /* Privacy and imprint */
-.legal__wrap { max-width: 46rem; }
 .legal h2 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); margin: 2.25rem 0 0.5rem; }
 .legal p { max-width: none; }
 .todo { background: #FFE9A6; color: var(--ink); padding: 0 0.25rem; border-radius: 4px; }
@@ -1327,3 +1327,11 @@ html:not(.js) .stop__dot { left: 50%; }
 .btn--ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
 .btn--ghost:hover { background: var(--ink); color: var(--paper); }
 .btn[aria-disabled="true"] { opacity: 0.5; }
+
+/* Final polish */
+.page-hero__lede:last-child { margin-bottom: 0; }
+.fold__summary { min-height: 2.75rem; }
+.legal { background: var(--paper); padding-top: clamp(0.5rem, 2vw, 1.5rem); }
+.legal__wrap { max-width: var(--wrap); }
+.legal__wrap > * { max-width: 46rem; }
+.legal__wrap > h2:first-child { margin-top: 0; }

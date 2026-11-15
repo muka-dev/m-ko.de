@@ -75,7 +75,7 @@ jobs:
       - name: Assemble site folder
         run: |
           mkdir site
-          cp -r index.html favicon.svg llms.txt css js fonts img get check assistant security agents brand about tools request privacy imprint site/
+          cp -r index.html favicon.svg llms.txt css js fonts img get check assistant security agents brand about tools request privacy imprint sustainability site/
           chmod -R u=rwX,go=rX site
 
       - name: Deploy over SFTP
