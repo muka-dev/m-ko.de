@@ -26,18 +26,30 @@ function out(int $code, array $data): never
     exit;
 }
 
-function load_config(): ?array
+// Returns [config|null, reason]. The reason is one of: ok, missing, unreadable, invalid, incomplete.
+// It never contains a path or a value, so it is safe to show in ?status.
+function load_config(): array
 {
     $path = getenv('MKO_REQUEST_CONFIG') ?: dirname(__DIR__, 2) . '/mko-private/request-config.php';
     if (!is_file($path)) {
-        return null;
+        return [null, 'missing'];
     }
-    $cfg = require $path;
-    if (!is_array($cfg) || empty($cfg['to']) || empty($cfg['from']) || empty($cfg['salt'])) {
-        return null;
+    if (!is_readable($path)) {
+        return [null, 'unreadable'];
+    }
+    try {
+        $cfg = require $path;
+    } catch (Throwable $e) {
+        return [null, 'invalid'];
+    }
+    if (!is_array($cfg)) {
+        return [null, 'invalid'];
+    }
+    if (empty($cfg['to']) || empty($cfg['from']) || empty($cfg['salt'])) {
+        return [null, 'incomplete'];
     }
     $cfg['path'] = $path;
-    return $cfg;
+    return [$cfg, 'ok'];
 }
 
 function clean_text(mixed $v, int $max): ?string
@@ -179,7 +191,7 @@ function validate(array $d): array
 }
 
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
-$cfg = load_config();
+[$cfg, $cfgReason] = load_config();
 
 if ($method === 'OPTIONS') {
     http_response_code(204);
@@ -189,7 +201,7 @@ if ($method === 'GET') {
     if (!isset($_GET['status'])) {
         out(405, ['error' => 'Use POST with a JSON body, or GET ?status.']);
     }
-    out(200, ['enabled' => $cfg !== null, 'method' => 'POST', 'content_type' => 'application/json',
+    out(200, ['enabled' => $cfg !== null] + ($cfg === null ? ['reason' => $cfgReason] : []) + ['method' => 'POST', 'content_type' => 'application/json',
         'description' => 'https://m-ko.de/agents/offer.json', 'notice' => 'Do not send keys, passwords or credentials. A responsible person confirms by email.']);
 }
 if ($method !== 'POST') {
