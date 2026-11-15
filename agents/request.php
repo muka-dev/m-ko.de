@@ -26,12 +26,47 @@ function out(int $code, array $data): never
     exit;
 }
 
+// Places where the config file may be, in order. Shared hosting often shows PHP a different path
+// than SFTP does (for example /usr/www/users/NAME for the web root but /usr/home/NAME for the home),
+// so several candidates are tried.
+function config_candidates(): array
+{
+    $file = '/mko-private/request-config.php';
+    $list = [];
+    if (($env = getenv('MKO_REQUEST_CONFIG')) !== false && $env !== '') {
+        return [$env]; // explicit setting wins (used by the tests)
+    }
+    $list[] = dirname(__DIR__, 2) . $file;                       // one level above the web root
+    foreach ([getenv('HOME') ?: '', $_SERVER['HOME'] ?? ''] as $home) {
+        if (is_string($home) && $home !== '') {
+            $list[] = rtrim($home, '/') . $file;                 // the account's home
+        }
+    }
+    if (function_exists('posix_getpwuid') && function_exists('posix_geteuid')) {
+        $pw = @posix_getpwuid(posix_geteuid());
+        if (is_array($pw) && !empty($pw['dir'])) {
+            $list[] = rtrim($pw['dir'], '/') . $file;
+        }
+    }
+    $name = basename(dirname(__DIR__));                          // /usr/www/users/NAME/agents -> NAME
+    if ($name !== '' && $name !== '.' && $name !== '/') {
+        $list[] = '/usr/home/' . $name . $file;
+    }
+    return array_values(array_unique($list));
+}
+
 // Returns [config|null, reason]. The reason is one of: ok, missing, unreadable, invalid, incomplete.
 // It never contains a path or a value, so it is safe to show in ?status.
 function load_config(): array
 {
-    $path = getenv('MKO_REQUEST_CONFIG') ?: dirname(__DIR__, 2) . '/mko-private/request-config.php';
-    if (!is_file($path)) {
+    $path = null;
+    foreach (config_candidates() as $candidate) {
+        if (@is_file($candidate)) {
+            $path = $candidate;
+            break;
+        }
+    }
+    if ($path === null) {
         return [null, 'missing'];
     }
     if (!is_readable($path)) {

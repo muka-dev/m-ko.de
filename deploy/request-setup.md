@@ -23,6 +23,10 @@ It stays **off** until a config file exists outside the web root.
 6. **Deliverability.** If mails land in spam, check the SPF record of `m-ko.de` (it must allow the Hetzner web server) and ask Hetzner support whether DKIM is available for web hosting. Alternative: switch the script to authenticated SMTP.
 7. **Request assistant.** The mail link already uses `request@m-ko.de`; send a test mail to it and check that it arrives in `anfragen@`.
 
+## Where the script looks
+
+PHP on shared hosting often sees different paths than SFTP (web root `/usr/www/users/NAME`, home `/usr/home/NAME`). The script therefore tries, in order: one level above the web root, `$HOME`, the account's home from the system, and `/usr/home/NAME` derived from the web root folder name. Put the file in `mko-private/request-config.php` in your SFTP home (next to `public_html`) and one of these will find it. `GET ?status` says `reason: missing` if none did.
+
 ## Switching it off
 
 Delete or rename `mko-private/request-config.php`. The endpoint then answers `503` and the "Send directly" button disappears.
