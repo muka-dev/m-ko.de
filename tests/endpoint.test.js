@@ -101,6 +101,22 @@ test('rate limit', { skip: !hasPhp }, async (t) => {
 test('without a config file it is off', { skip: !hasPhp }, async (t) => {
   const s = startServer({ noConfig: true }); await ready(s.url);
   t.after(() => s.stop());
-  assert.equal((await (await fetch(s.url + '?status')).json()).enabled, false);
+  const j = await (await fetch(s.url + '?status')).json();
+  assert.equal(j.enabled, false);
+  assert.equal(j.reason, 'missing');
+  assert.ok(!JSON.stringify(j).includes('/'.concat('tmp')));
   assert.equal((await post(s.url, good)).status, 503);
+});
+
+test('a broken config says why, without paths', { skip: !hasPhp }, async (t) => {
+  for (const [body, reason] of [["<?php return ['to' => 'a@b.de'];", 'incomplete'], ['<?php return "text";', 'invalid'], ['<?php this is not php', 'invalid']]) {
+    const s = startServer({ noConfig: true });
+    const dir = path.dirname(path.join(s.mailDir));
+    fs.writeFileSync(path.join(dir, 'request-config.php'), body);
+    await ready(s.url);
+    const j = await (await fetch(s.url + '?status')).json();
+    s.stop();
+    assert.equal(j.enabled, false);
+    assert.equal(j.reason, reason);
+  }
 });
