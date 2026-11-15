@@ -1,6 +1,6 @@
 # m-ko.de
 
-> Markus Kosmal helps small and medium-sized businesses bring in AI so that it makes everyday work easier, with clear limits for what the AI may do. Based in Germany, with clients and a network in Portugal. Languages of the site: German, English, Portuguese.
+> Markus Kosmal helps small and medium-sized businesses bring in AI so that it makes everyday work easier, with clear limits for what the AI may do. Based in Germany. Languages of the site: German, English, Portuguese.
 
 ## Offers
 
