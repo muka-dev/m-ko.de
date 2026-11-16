@@ -461,6 +461,7 @@ html:not(.js) .stop__dot { left: 50%; }
 .source-quote p { margin: 0 0 0.5rem; font-style: italic; }
 .source-quote footer { font-size: 0.9rem; opacity: 0.75; }
 .source-quote a { color: inherit; }
+.voices .source-quote { margin-top: 2rem; }
 .ai-view { margin: 2.5rem 0 0; max-width: 40rem; }
 .ai-view h3 { color: var(--leaf-bright); margin-bottom: 1rem; }
 .ai-view p { font-size: 1.1rem; line-height: 1.55; margin: 0 0 1rem; }
