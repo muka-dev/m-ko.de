@@ -456,6 +456,11 @@ html:not(.js) .stop__dot { left: 50%; }
 .thoreau blockquote { margin: 0; }
 .thoreau blockquote p { font-style: italic; font-size: 1.3rem; line-height: 1.5; max-width: 30rem; }
 .thoreau figcaption { margin-top: 0.75rem; color: color-mix(in srgb, var(--paper) 70%, transparent); }
+.source-quote { margin: 2rem 0 0; padding-left: 1.25rem; border-left: 3px solid currentColor; max-width: 40rem; }
+.source-quote blockquote { margin: 0; }
+.source-quote p { margin: 0 0 0.5rem; font-style: italic; }
+.source-quote footer { font-size: 0.9rem; opacity: 0.75; }
+.source-quote a { color: inherit; }
 
 /* ---------- Value: benefits, process, example calculation ---------- */
 
