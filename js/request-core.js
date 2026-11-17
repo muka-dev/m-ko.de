@@ -6,7 +6,9 @@
 })(typeof self !== 'undefined' ? self : this, function () {
   'use strict';
 
-  var SERVICES = ['consulting', 'ai-check', 'production-check', 'ai-pentest', 'agent-review', 'other'];
+  var SERVICES = ['ai-adoption',  'interim',  'production-check',  'security-review',  'agent-review',  'other'];
+  // Older values still arrive from saved links and agents; map them to the current ones.
+  var LEGACY = { consulting: 'ai-adoption', 'ai-check': 'security-review', 'ai-pentest': 'security-review' };
   var LIMITS = { subject: 200, message: 1500, name: 100, email: 200, behalf: 200 };
   var MAILTO_MAX = 1800;
   // Assembled at run time so the address is not a plain string in the page source.
@@ -18,9 +20,9 @@
     pt: { subject: 'Pedido', service: 'Serviço', about: 'Assunto', message: 'Mensagem', contact: 'Contacto', requester: 'Enviado por', agent: 'Agente de IA em nome de', human: 'pessoa ou empresa', size: 'Estimativa de tamanho', scan: 'Digest da análise', note: 'Preparado com o assistente de pedidos em m-ko.de. Um responsável confirma antes de qualquer encomenda.', cut: '[encurtado, use «Copiar texto»]' }
   };
   var SERVICE_NAMES = {
-    en: { consulting: 'AI project or consulting', 'ai-check': 'AI check', 'production-check': 'Production check', 'ai-pentest': 'AI pentest', 'agent-review': 'Review for AI agents', other: 'Other' },
-    de: { consulting: 'KI-Projekt oder Beratung', 'ai-check': 'KI-Check', 'production-check': 'Produktionscheck', 'ai-pentest': 'AI-Pentest', 'agent-review': 'Prüfung für KI-Agenten', other: 'Sonstiges' },
-    pt: { consulting: 'Projeto de IA ou consultoria', 'ai-check': 'Verificação de IA', 'production-check': 'Verificação de produção', 'ai-pentest': 'Pentest de IA', 'agent-review': 'Revisão para agentes de IA', other: 'Outro' }
+    en: { 'ai-adoption': 'AI adoption', 'interim': 'Interim IT lead', 'production-check': 'Production check', 'security-review': 'AI security review', 'agent-review': 'Review for AI agents', 'other': 'Other' },
+    de: { 'ai-adoption': 'KI-Einführung', 'interim': 'IT-Leitung auf Zeit', 'production-check': 'Produktionscheck', 'security-review': 'KI-Sicherheitsreview', 'agent-review': 'Prüfung für KI-Agenten', 'other': 'Sonstiges' },
+    pt: { 'ai-adoption': 'Adoção de IA', 'interim': 'Direção de TI interina', 'production-check': 'Verificação de produção', 'security-review': 'Revisão de segurança de IA', 'agent-review': 'Revisão para agentes de IA', 'other': 'Outro' }
   };
 
   function clean(s, max) { return String(s == null ? '' : s).replace(/\r/g, '').trim().slice(0, max); }
@@ -33,7 +35,8 @@
     var lang = f.lang === 'de' || f.lang === 'pt' ? f.lang : 'en';
     var L = LABELS[lang];
     var errors = [];
-    var service = SERVICES.indexOf(f.service) !== -1 ? f.service : '';
+    var service = LEGACY[f.service] || f.service;
+    service = SERVICES.indexOf(service) !== -1 ? service : '';
     var subject = oneLine(f.subject, LIMITS.subject);
     var message = clean(f.message, LIMITS.message);
     var name = oneLine(f.name, LIMITS.name);
@@ -76,5 +79,5 @@
     return { valid: errors.length === 0, errors: errors, json: json, text: text, subject: mailSubject, mailto: link, truncated: cut };
   }
 
-  return { SERVICES: SERVICES, LIMITS: LIMITS, build: build };
+  return { SERVICES: SERVICES, LEGACY: LEGACY, LIMITS: LIMITS, build: build };
 });

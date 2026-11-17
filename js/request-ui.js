@@ -37,14 +37,15 @@
       noSecrets: 'Por favor, não enviem chaves, palavras-passe nem credenciais, apenas descrições.'
     }
   };
-  var SERVICES = { en: { consulting: 'AI project or consulting', 'ai-check': 'AI check', 'production-check': 'Production check', 'ai-pentest': 'AI pentest', 'agent-review': 'Review for AI agents', other: 'Other' },
-    de: { consulting: 'KI-Projekt oder Beratung', 'ai-check': 'KI-Check', 'production-check': 'Produktionscheck', 'ai-pentest': 'AI-Pentest', 'agent-review': 'Prüfung für KI-Agenten', other: 'Sonstiges' },
-    pt: { consulting: 'Projeto de IA ou consultoria', 'ai-check': 'Verificação de IA', 'production-check': 'Verificação de produção', 'ai-pentest': 'Pentest de IA', 'agent-review': 'Revisão para agentes de IA', other: 'Outro' } };
+  var SERVICES = { en: { 'ai-adoption': 'AI adoption', 'interim': 'Interim IT lead', 'production-check': 'Production check', 'security-review': 'AI security review', 'agent-review': 'Review for AI agents', 'other': 'Other' },
+    de: { 'ai-adoption': 'KI-Einführung', 'interim': 'IT-Leitung auf Zeit', 'production-check': 'Produktionscheck', 'security-review': 'KI-Sicherheitsreview', 'agent-review': 'Prüfung für KI-Agenten', 'other': 'Sonstiges' },
+    pt: { 'ai-adoption': 'Adoção de IA', 'interim': 'Direção de TI interina', 'production-check': 'Verificação de produção', 'security-review': 'Revisão de segurança de IA', 'agent-review': 'Revisão para agentes de IA', 'other': 'Outro' } };
 
   var state = { service: '', agent: false, behalf: '', subject: '', message: '', name: '', email: '', attach: true, website: '' };
   var endpoint = false;
   var params = new URLSearchParams(location.search);
-  if (C.SERVICES.indexOf(params.get('service')) !== -1) state.service = params.get('service');
+  var wanted = (C.LEGACY && C.LEGACY[params.get('service')]) || params.get('service');
+  if (C.SERVICES.indexOf(wanted) !== -1) state.service = wanted;
   if (params.get('agent') === '1') state.agent = true;
 
   function lang() { var l = document.documentElement.getAttribute('lang'); return l === 'de' || l === 'pt' ? l : 'en'; }
