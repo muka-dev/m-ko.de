@@ -5,7 +5,7 @@
 ## Offers
 
 - [AI adoption in the business](https://m-ko.de/adoption/): three steps. AI ready (workshop, three rated use cases, rules for AI use, basic training) from 1,490 EUR, credited against a pilot. AI pilot (one use case live in 4 to 8 weeks, connected to existing systems) from 8,000 EUR. AI care (monthly slot, updates, rights and costs) from 790 EUR a month.
-- [Interim IT lead](https://m-ko.de/interim/): interim IT or engineering lead, usually 2 to 3 days a week for 3 to 6 months, from 950 EUR a day. Based in Nuremberg (Germany) and Aljezur (Portugal, Lisbon to Algarve); on site worldwide with travel, accommodation and meals at cost. Also Scrum Master, agile coaching and GitLab/DevOps setup on their own.
+- [Interim IT lead](https://m-ko.de/interim/): interim IT or engineering lead, usually 2 to 3 days a week for a few weeks up to 6 months, from 950 EUR a day. Based in Nuremberg (Germany) and Aljezur (Portugal, Lisbon to Algarve); on site worldwide with travel, accommodation and meals at cost. Also Scrum Master, agile coaching and GitLab/DevOps setup on their own.
 - [Production check for AI-built apps](https://m-ko.de/check/): fixed prices by size, from 890 EUR.
 - [AI security review](https://m-ko.de/security/): rights, connections, data and hidden instructions, with report and second look, from 1,900 EUR. A full penetration test only with a specialised partner.
 - [Review of AI components for agents and their operators](https://m-ko.de/agents/): see the page and https://m-ko.de/agents/offer.json for sizes and the launch offer.
