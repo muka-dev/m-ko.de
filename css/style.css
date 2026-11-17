@@ -1389,5 +1389,5 @@ html:not(.js) .stop__dot { left: 50%; }
 .threats li { border-top: 2px solid var(--ink); padding-top: 0.9rem; }
 .threats strong { display: block; font-family: var(--display); font-size: 1.2rem; margin-bottom: 0.35rem; }
 .threats code { font-size: 0.9em; background: color-mix(in srgb, var(--ink) 8%, transparent); padding: 0.05em 0.3em; border-radius: 4px; }
-.threats__tag { display: inline-block; margin-bottom: 0.55rem; padding: 0.1rem 0.6rem; border: 1.5px solid var(--lagoon); border-radius: 999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; color: var(--ink); }
+.threats__tag { display: inline-block; margin: 0 0.3rem 0.55rem 0; padding: 0.1rem 0.6rem; border: 1.5px solid var(--lagoon); border-radius: 999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; color: var(--ink); }
 .sos__note { max-width: 46rem; margin: 0 0 1.75rem; font-size: 0.92rem; }
