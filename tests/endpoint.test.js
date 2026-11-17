@@ -66,6 +66,7 @@ test('endpoint', { skip: !hasPhp }, async (t) => {
     assert.equal(res.status, 422);
     res = await post(s.url, { ...good, requester: { type: 'agent' } });
     assert.ok((await res.json()).fields.includes('requester.on_behalf_of'));
+    assert.equal((await post(s.url, { ...good, service: 'consulting' })).status, 202);
     res = await post(s.url, { ...good, service: 'free-lunch' });
     assert.equal(res.status, 422);
   });

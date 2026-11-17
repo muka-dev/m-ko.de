@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assistant/
+
+Sitemap: https://m-ko.de/sitemap.xml

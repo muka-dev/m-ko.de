@@ -14,7 +14,7 @@ header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
 const MAX_BODY = 20000;
-const SERVICES = ['ai-check', 'production-check', 'ai-pentest', 'agent-review', 'other'];
+const SERVICES = ['consulting', 'ai-check', 'production-check', 'ai-pentest', 'agent-review', 'other'];
 const RIGHTS = ['read', 'write', 'money-deletion-access', 'chains'];
 const DATA = ['none', 'personal-one-org', 'sensitive-or-several-orgs', 'sensitive-several-orgs'];
 const AUTONOMY = ['confirms-each-step', 'confirms-risky-steps', 'unattended', 'chains-agents'];

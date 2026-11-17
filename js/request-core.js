@@ -6,7 +6,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
   'use strict';
 
-  var SERVICES = ['ai-check', 'production-check', 'ai-pentest', 'agent-review', 'other'];
+  var SERVICES = ['consulting', 'ai-check', 'production-check', 'ai-pentest', 'agent-review', 'other'];
   var LIMITS = { subject: 200, message: 1500, name: 100, email: 200, behalf: 200 };
   var MAILTO_MAX = 1800;
   // Assembled at run time so the address is not a plain string in the page source.
@@ -18,9 +18,9 @@
     pt: { subject: 'Pedido', service: 'Serviço', about: 'Assunto', message: 'Mensagem', contact: 'Contacto', requester: 'Enviado por', agent: 'Agente de IA em nome de', human: 'pessoa ou empresa', size: 'Estimativa de tamanho', scan: 'Digest da análise', note: 'Preparado com o assistente de pedidos em m-ko.de. Um responsável confirma antes de qualquer encomenda.', cut: '[encurtado, use «Copiar texto»]' }
   };
   var SERVICE_NAMES = {
-    en: { 'ai-check': 'AI check', 'production-check': 'Production check', 'ai-pentest': 'AI pentest', 'agent-review': 'Review for AI agents', other: 'Other' },
-    de: { 'ai-check': 'KI-Check', 'production-check': 'Produktionscheck', 'ai-pentest': 'AI-Pentest', 'agent-review': 'Prüfung für KI-Agenten', other: 'Sonstiges' },
-    pt: { 'ai-check': 'Verificação de IA', 'production-check': 'Verificação de produção', 'ai-pentest': 'Pentest de IA', 'agent-review': 'Revisão para agentes de IA', other: 'Outro' }
+    en: { consulting: 'AI project or consulting', 'ai-check': 'AI check', 'production-check': 'Production check', 'ai-pentest': 'AI pentest', 'agent-review': 'Review for AI agents', other: 'Other' },
+    de: { consulting: 'KI-Projekt oder Beratung', 'ai-check': 'KI-Check', 'production-check': 'Produktionscheck', 'ai-pentest': 'AI-Pentest', 'agent-review': 'Prüfung für KI-Agenten', other: 'Sonstiges' },
+    pt: { consulting: 'Projeto de IA ou consultoria', 'ai-check': 'Verificação de IA', 'production-check': 'Verificação de produção', 'ai-pentest': 'Pentest de IA', 'agent-review': 'Revisão para agentes de IA', other: 'Outro' }
   };
 
   function clean(s, max) { return String(s == null ? '' : s).replace(/\r/g, '').trim().slice(0, max); }
