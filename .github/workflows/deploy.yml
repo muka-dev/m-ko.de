@@ -36,6 +36,29 @@ jobs:
             done
           done
           exit $missing
+      - name: Build one address per language
+        run: python3 deploy/build_site.py site
+      - name: Built pages link to existing files
+        working-directory: site
+        run: |
+          missing=0
+          for page in $(find . -name index.html | sed 's|^\./||'); do
+            dir=$(dirname "$page")
+            for ref in $(grep -oE '(src|href|action)="[^"#]+"' "$page" \
+                | sed -E 's/^(src|href|action)="//; s/"$//' \
+                | grep -vE '^(https?:|mailto:|data:)'); do
+              ref="${ref%%\?*}"
+              case "$ref" in
+                /*) target=".${ref}" ;;
+                *)  target="$dir/$ref" ;;
+              esac
+              if [ ! -e "$target" ]; then
+                echo "::error::$page references a missing file: $ref"
+                missing=1
+              fi
+            done
+          done
+          exit $missing
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -73,10 +96,10 @@ jobs:
 
       # Only the website goes to the server, nothing from .git or .github.
       # Permissions are set here, so an upload can never end in a 403.
+      # German at /, English at /en/, Portuguese at /pt/ (see deploy/build_site.py).
       - name: Assemble site folder
         run: |
-          mkdir site
-          cp -r index.html favicon.svg llms.txt robots.txt sitemap.xml css js fonts img get check assistant security agents brand about adoption interim tools request privacy imprint sustainability site/
+          python3 deploy/build_site.py site
           chmod -R u=rwX,go=rX site
 
       - name: Deploy over SFTP
@@ -101,7 +124,7 @@ jobs:
         if: env.DEPLOY_HOST != ''
         run: |
           sleep 5
-          for p in / /css/style.css /js/main.js /img/markus-kosmal.jpg; do
+          for p in / /en/ /pt/ /css/style.css /js/main.js /img/markus-kosmal.jpg; do
             curl -fsS --retry 3 --retry-delay 5 -o /dev/null \
               -w "%{http_code} $p\n" "https://m-ko.de$p"
           done
