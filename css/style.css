@@ -1391,3 +1391,59 @@ html:not(.js) .stop__dot { left: 50%; }
 .threats code { font-size: 0.9em; background: color-mix(in srgb, var(--ink) 8%, transparent); padding: 0.05em 0.3em; border-radius: 4px; }
 .threats__tag { display: inline-block; margin: 0 0.3rem 0.55rem 0; padding: 0.1rem 0.6rem; border: 1.5px solid var(--lagoon); border-radius: 999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; color: var(--ink); }
 .sos__note { max-width: 46rem; margin: 0 0 1.75rem; font-size: 0.92rem; }
+
+/* Emergency button in the hero */
+.hero--sos { background: var(--ink); color: #fff; --alarm: #E5372A; --alarm-d: #8E1A12; overflow: hidden; }
+.sos-hero { text-align: center; }
+.sos-hero__hello { color: #9FC2B9; margin: 0 0 1rem; font-size: clamp(1rem, 1.6vw, 1.15rem); }
+.hero--sos h1 { color: #fff; max-width: 14em; margin: 0 auto 1rem; font-size: clamp(2.2rem, 5.6vw, 4rem); }
+.hero--sos h1 em { font-style: normal; color: var(--sun); }
+.sos-hero__lede { max-width: 36rem; margin: 0 auto; font-size: clamp(1.1rem, 1.7vw, 1.3rem); color: #CFE0DA; }
+.sos-stage { position: relative; width: min(34rem, 100%); min-height: 15.5rem; margin: 1rem auto 0; display: grid; place-items: center; }
+.sos-phone { position: relative; z-index: 2; display: block; border-radius: 50%; -webkit-tap-highlight-color: transparent; text-decoration: none; }
+.sos-phone:focus-visible { outline: 4px solid var(--sun); outline-offset: 8px; }
+.sos-phone__cap { display: grid; place-items: center; width: clamp(9rem, 28vw, 11.5rem); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%, #FF7A6B 0, var(--alarm) 45%, var(--alarm-d) 100%);
+  box-shadow: 0 0.9rem 0 #6F120C, 0 1.8rem 2rem rgba(0, 0, 0, 0.45);
+  transform-origin: 50% 60%; animation: sos-ring 1.6s infinite; transition: filter 0.15s; }
+.sos-phone:hover .sos-phone__cap { filter: brightness(1.1); }
+.sos-phone__cap svg { width: 55%; height: 55%; fill: #fff; }
+.sos-phone:active .sos-phone__cap, .sos-phone.is-pressed .sos-phone__cap { animation: none; transform: translateY(0.7rem); box-shadow: 0 0.1rem 0 #6F120C, 0 0.5rem 1rem rgba(0, 0, 0, 0.4); }
+@keyframes sos-ring { 0%, 40%, 100% { transform: rotate(0); } 5% { transform: rotate(-14deg); } 10% { transform: rotate(14deg); } 15% { transform: rotate(-12deg); } 20% { transform: rotate(12deg); } 25% { transform: rotate(-8deg); } 30% { transform: rotate(8deg); } 35% { transform: rotate(0); } }
+.sos-wave { position: absolute; left: 50%; top: 50%; width: clamp(9rem, 28vw, 11.5rem); aspect-ratio: 1; border-radius: 50%; border: 5px solid var(--alarm); opacity: 0; animation: sos-wave 1.6s ease-out infinite; }
+.sos-wave + .sos-wave { animation-delay: 0.5s; }
+@keyframes sos-wave { 0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.7; } 100% { transform: translate(-50%, -50%) scale(1.9); opacity: 0; } }
+.sos-lamp { position: absolute; top: 0.8rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--alarm); box-shadow: 0 0 1.5rem 0.5rem var(--alarm); animation: sos-blink 1s steps(2) infinite; }
+.sos-lamp--l { left: 8%; } .sos-lamp--r { right: 8%; animation-delay: 0.5s; }
+@keyframes sos-blink { 50% { opacity: 0.15; box-shadow: none; } }
+.sos-bubble { position: absolute; z-index: 3; max-width: 58%; padding: 0.35rem 0.85rem; border: 2px solid #fff; border-radius: 1rem; background: var(--ink); color: #fff; font-weight: 700; font-size: 0.88rem; line-height: 1.3; opacity: 0; animation: sos-pop 9s infinite; }
+.sos-bubble:nth-of-type(1) { top: 0.5rem; left: 0; }
+.sos-bubble:nth-of-type(2) { top: 5rem; right: 0; animation-delay: 3s; }
+.sos-bubble:nth-of-type(3) { bottom: 0.5rem; left: 2%; animation-delay: 6s; }
+@keyframes sos-pop { 0%, 3% { opacity: 0; transform: scale(0.6); } 6%, 28% { opacity: 1; transform: scale(1); } 33%, 100% { opacity: 0; } }
+.sos-hint { margin: 0.9rem 0 0; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: var(--sun); }
+.sos-tags { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin: 1.25rem 0 0; padding: 0; }
+.sos-tags a { display: block; padding: 0.45rem 1rem; border: 1.5px solid rgba(255, 255, 255, 0.45); border-radius: 999px; color: #fff; font-weight: 700; text-decoration: none; }
+.sos-tags a:hover { background: var(--sun); border-color: var(--sun); color: var(--ink); }
+.hero--sos .hero__action { justify-content: center; margin-top: 1.75rem; }
+.hero--sos .hero__link, .hero--sos .status { color: #fff; }
+.hero--sos .proof { justify-content: center; }
+.hero--sos .proof li { border-color: rgba(255, 255, 255, 0.45); }
+.hero--sos .trust { border-top-color: rgba(255, 255, 255, 0.2); }
+.hero--sos .trust__label { color: #9FC2B9; }
+.hero--sos .trust__list a { color: #fff; }
+.sos-flash { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; pointer-events: none; color: #fff;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), #E5372A 0, #8E1A12 100%);
+  clip-path: circle(0 at var(--x, 50%) var(--y, 50%)); font: 900 clamp(2rem, 8vw, 5rem) / 1 var(--display); text-align: center; padding: 1rem; overflow-wrap: anywhere; }
+.sos-flash.is-in { animation: sos-in 0.95s ease-in forwards; }
+.sos-flash.is-out { clip-path: circle(150% at var(--x, 50%) var(--y, 50%)); animation: sos-out 0.9s 0.2s ease-out forwards; }
+@keyframes sos-in { to { clip-path: circle(150% at var(--x, 50%) var(--y, 50%)); } }
+@keyframes sos-out { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
+.sos__call { margin: 1.25rem 0 0; }
+@media (prefers-reduced-motion: reduce) {
+  .sos-phone__cap, .sos-wave, .sos-lamp, .sos-bubble { animation: none; }
+  .sos-bubble { opacity: 1; position: static; display: inline-block; margin: 0.3rem; }
+  .sos-stage { display: block; min-height: 0; text-align: center; }
+  .sos-wave { display: none; }
+  .sos-phone { display: inline-block; margin: 1rem 0; }
+}

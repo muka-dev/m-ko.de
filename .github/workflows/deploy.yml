@@ -71,7 +71,7 @@ jobs:
       - name: Scripts parse
         run: for f in js/*.js; do node --check "$f"; done
       - name: PHP syntax
-        run: php -l agents/request.php
+        run: php -l agents/request.php && php -l agents/call.php
       - name: Tests (scanner, verdict, request builder, endpoint)
         run: node --test tests/*.test.js
 
