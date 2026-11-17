@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de"
+  data-title-en="Emergency 101 | m-ko.de" data-title-de="Notruf 101 | m-ko.de" data-title-pt="Emergência 101 | m-ko.de"
+  data-desc-en="Help, I have no AI. Help, I have AI. Quick first aid for AI in production, security and leadership gaps, from Markus Kosmal." data-desc-de="Hilfe, ich hab keine KI. Hilfe, ich habe KI. Erste Hilfe bei KI im Betrieb, bei Sicherheitslücken und fehlender Leitung, von Markus Kosmal." data-desc-pt="Socorro, não tenho IA. Socorro, tenho IA. Primeiros socorros para IA em produção, segurança e falta de liderança, por Markus Kosmal.">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notruf 101 | m-ko.de</title>
+  <meta name="description" content="Hilfe, ich hab keine KI. Hilfe, ich habe KI. Erste Hilfe bei KI im Betrieb, bei Sicherheitslücken und fehlender Leitung, von Markus Kosmal.">
+  <meta name="author" content="Markus Kosmal">
+  <meta name="theme-color" content="#12332E">
+  <link rel="canonical" href="https://m-ko.de/emergency/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://m-ko.de/emergency/">
+  <meta property="og:title" content="Notruf 101 | m-ko.de">
+  <meta property="og:description" content="Hilfe, ich hab keine KI. Hilfe, ich habe KI. Erste Hilfe bei KI im Betrieb, bei Sicherheitslücken und fehlender Leitung, von Markus Kosmal.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    // Pick the language before first paint: saved choice, else browser language.
+    (function () {
+      var supported = ['de', 'en', 'pt'];
+      var lang = null;
+      try { lang = localStorage.getItem('lang'); } catch (e) {}
+      if (supported.indexOf(lang) === -1) {
+        lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        if (supported.indexOf(lang) === -1) lang = 'en';
+      }
+      var root = document.documentElement;
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      root.classList.add('js');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="de">Zum Inhalt springen</span><span lang="pt">Saltar para o conteúdo</span></a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../" aria-label="m-ko.de"><img class="brand__logo" src="../brand/logo.svg" width="220" height="40" alt="m-ko"></a>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="../#offers"><span lang="en">Services</span><span lang="de">Leistungen</span><span lang="pt">Serviços</span></a>
+        <a href="../adoption/"><span lang="en">AI adoption</span><span lang="de">KI-Einführung</span><span lang="pt">Adoção de IA</span></a>
+        <a href="../interim/"><span lang="en">Interim IT lead</span><span lang="de">IT-Leitung auf Zeit</span><span lang="pt">Direção de TI interina</span></a>
+        <a href="../about/"><span lang="en">About me</span><span lang="de">Über mich</span><span lang="pt">Sobre mim</span></a>
+        <a href="#contact"><span lang="en">Contact</span><span lang="de">Kontakt</span><span lang="pt">Contacto</span></a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language / Sprache / Idioma">
+        <button type="button" data-set-lang="de" aria-pressed="true" title="Deutsch">DE</button>
+        <button type="button" data-set-lang="en" aria-pressed="false" title="English">EN</button>
+        <button type="button" data-set-lang="pt" aria-pressed="false" title="Português">PT</button>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+        <span class="visually-hidden"><span lang="en">Menu</span><span lang="de">Menü</span><span lang="pt">Menu</span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero emergency">
+      <div class="wrap">
+        <p class="page-hero__back"><a href="../"><span lang="en">← Home</span><span lang="de">← Startseite</span><span lang="pt">← Início</span></a></p>
+        <p class="sos__tag"><span class="sos__light" aria-hidden="true"></span><span lang="en">Emergency line</span><span lang="de">Notrufzentrale</span><span lang="pt">Central de emergência</span></p>
+        <h1><span lang="en">Emergency 101: </span><span lang="de">Notruf 101: </span><span lang="pt">Emergência 101: </span><span class="sos__scream">Aaaaaaaaaaiiiiiiii</span></h1>
+        <p class="page-hero__lede" lang="en">Please stay calm. There is no hold music here. First find out which emergency this is, then the matching crew rolls out.</p><p class="page-hero__lede" lang="de">Bitte Ruhe bewahren. Hier gibt es keine Warteschleife. Erst klären, welcher Notfall vorliegt, dann rückt der passende Einsatz aus.</p><p class="page-hero__lede" lang="pt">Por favor, calma. Aqui não há música de espera. Primeiro percebe-se que emergência é, depois sai a equipa certa.</p>
+      </div>
+    </section>
+
+    <section class="section page">
+      <div class="wrap">
+        <div class="page__cols">
+          <div class="sos__card">
+            <h2><span lang="en">Help, I have no AI.</span><span lang="de">Hilfe, ich hab keine KI.</span><span lang="pt">Socorro, não tenho IA.</span></h2>
+            <p lang="en">Everyone talks about AI, and in the company nothing runs yet. The competition is not further along either, but that does not help at 3 a.m.</p><p lang="de">Alle reden über KI, und im Betrieb läuft noch nichts. Die Konkurrenz ist auch nicht weiter, aber das hilft um drei Uhr nachts wenig.</p><p lang="pt">Toda a gente fala de IA e na empresa ainda nada funciona. A concorrência também não está mais adiante, mas isso não ajuda às três da manhã.</p>
+            <p class="sos__rx"><strong><span lang="en">Crew:</span><span lang="de">Einsatz:</span><span lang="pt">Equipa:</span></strong> <span lang="en">AI adoption with me, from the first call to an assistant the team uses every day.</span><span lang="de">KI-Einführung durch mich: vom Erstgespräch bis zum Assistenten, den das Team täglich nutzt.</span><span lang="pt">Adoção de IA comigo: da primeira conversa a um assistente que a equipa usa todos os dias.</span></p>
+            <a class="btn" href="../adoption/"><span lang="en">See AI adoption</span><span lang="de">KI-Einführung ansehen</span><span lang="pt">Ver adoção de IA</span></a>
+          </div>
+          <div class="sos__card">
+            <h2><span lang="en">Help, I have AI.</span><span lang="de">Hilfe, ich habe KI.</span><span lang="pt">Socorro, tenho IA.</span></h2>
+            <ul class="sos__list">
+              <li><strong lang="en">“Somehow we rolled the AI proof of concept out to prod.”</strong><strong lang="de">„Wir haben irgendwie den AI Proof of Concept in Prod ausgerollt.“</strong><strong lang="pt">“Lançámos, sei lá como, a prova de conceito de IA em produção.”</strong><span lang="en">Diagnosis: an experiment with no exit. First aid: production check.</span><span lang="de">Diagnose: Experiment ohne Ausgang. Erste Hilfe: Produktionscheck.</span><span lang="pt">Diagnóstico: uma experiência sem saída. Primeiros socorros: verificação de produção.</span></li>
+              <li><strong lang="en">“The AI deleted everything.”</strong><strong lang="de">„Die AI hat alles gelöscht.“</strong><strong lang="pt">“A IA apagou tudo.”</strong><span lang="en">Diagnosis: write access seemed like a good idea. First aid: rights, backups, approvals.</span><span lang="de">Diagnose: Schreibrechte schienen eine gute Idee. Erste Hilfe: Rechte, Backups, Freigaben.</span><span lang="pt">Diagnóstico: o acesso de escrita parecia boa ideia. Primeiros socorros: permissões, cópias de segurança, aprovações.</span></li>
+              <li><strong lang="en">“The coffee machine looked at me angrily.”</strong><strong lang="de">„Die Kaffeemaschine hat mich böse angeschaut.“</strong><strong lang="pt">“A máquina de café olhou-me com maus modos.”</strong><span lang="en">Diagnosis: unclear. Probably an agent with too many permissions or too little sleep. First aid: security review, then coffee.</span><span lang="de">Diagnose: unklar. Vermutlich ein Agent mit zu vielen Rechten oder zu wenig Schlaf. Erste Hilfe: Sicherheitsreview, danach Kaffee.</span><span lang="pt">Diagnóstico: pouco claro. Provavelmente um agente com permissões a mais ou sono a menos. Primeiros socorros: revisão de segurança, depois café.</span></li>
+            </ul>
+            <p class="sos__links">
+              <a class="btn" href="../check/"><span lang="en">Production check</span><span lang="de">Produktionscheck</span><span lang="pt">Verificação de produção</span></a>
+              <a class="btn btn--ghost" href="../security/"><span lang="en">AI security review</span><span lang="de">KI-Sicherheitsreview</span><span lang="pt">Revisão de segurança de IA</span></a>
+              <a class="hero__link" href="../interim/"><span lang="en">Interim IT lead</span><span lang="de">IT-Leitung auf Zeit</span><span lang="pt">Direção de TI interina</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2><span lang="en">Who shows up</span><span lang="de">Wer anrückt</span><span lang="pt">Quem aparece</span></h2>
+        <blockquote class="sos__quote">
+          <p lang="en">AI with security, strategy and lean leadership: as interim tech lead and fractional CTO I deliver technical solutions in person, with a real feel for patterns, right at the company’s site, from the first roadmap to productive operation.</p><p lang="de">KI mit Security, Strategie und Lean Leadership: Als Interims-Tech-Lead und Fractional CTO liefere ich technische Lösungen persönlich und mit echtem Musterverständnis direkt vor Ort am Standort des Unternehmens, von der ersten Roadmap bis zum produktiven Betrieb.</p><p lang="pt">IA com segurança, estratégia e lean leadership: como tech lead interino e fractional CTO entrego soluções técnicas pessoalmente e com um verdadeiro sentido de padrões, diretamente no local da empresa, do primeiro roadmap à operação produtiva.</p>
+          <p lang="en">Btw: I am autistic. That is my biggest advantage in systems analysis and security architecture.</p><p lang="de">Btw: Ich bin Autist. Das ist mein größter Vorteil bei der Systemanalyse und der Sicherheitsarchitektur.</p><p lang="pt">Btw: Sou autista. Essa é a minha maior vantagem na análise de sistemas e na arquitetura de segurança.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section page" id="threat-model">
+      <div class="wrap">
+        <h2><span lang="en">Threat model for AI agents</span><span lang="de">Bedrohungsmodell für KI-Agenten</span><span lang="pt">Modelo de ameaças para agentes de IA</span></h2>
+        <p class="sos__intro" lang="en">AI agents execute shell commands, read and write files, use credentials and call external APIs. They do this autonomously, often over many steps and with few checkpoints. That creates risks that traditional security tooling was not built for.</p><p class="sos__intro" lang="de">KI-Agenten führen Shell-Befehle aus, lesen und schreiben Dateien, nutzen Zugangsdaten und rufen externe APIs auf. Sie tun das autonom, oft über viele Schritte und mit wenigen Kontrollpunkten. Daraus entstehen Risiken, für die klassische Sicherheitswerkzeuge nicht gebaut wurden.</p><p class="sos__intro" lang="pt">Os agentes de IA executam comandos de shell, leem e escrevem ficheiros, usam credenciais e chamam APIs externas. Fazem-no de forma autónoma, muitas vezes ao longo de muitos passos e com poucos pontos de controlo. Daí surgem riscos para os quais as ferramentas de segurança tradicionais não foram concebidas.</p>
+        <ul class="threats">
+<li><span class="threats__tag" title="Prompt Injection">OWASP LLM01:2025</span><span class="threats__tag" title="Agent Goal Hijack">OWASP ASI01</span><strong lang="en">Prompt injection</strong><strong lang="de">Prompt Injection</strong><strong lang="pt">Prompt injection</strong><p lang="en">Text planted in a file, an issue or a web page redirects the agent in the middle of a task.</p><p lang="de">Eingeschleuster Text in einer Datei, einem Issue oder auf einer Webseite lenkt den Agenten mitten in der Aufgabe um.</p><p lang="pt">Texto plantado num ficheiro, num issue ou numa página web desvia o agente a meio de uma tarefa.</p></li>
+<li><span class="threats__tag" title="Excessive Agency">OWASP LLM06:2025</span><span class="threats__tag" title="Tool Misuse and Exploitation">OWASP ASI02</span><strong lang="en">Unintended destructive actions</strong><strong lang="de">Unbeabsichtigte destruktive Aktionen</strong><strong lang="pt">Ações destrutivas não intencionais</strong><p lang="en">The agent misreads an instruction and runs something irreversible, such as a recursive delete, a force push or a DROP TABLE.</p><p lang="de">Der Agent deutet eine Anweisung falsch und führt einen nicht umkehrbaren Befehl aus, etwa ein rekursives Löschen, einen Force-Push oder ein DROP TABLE.</p><p lang="pt">O agente interpreta mal uma instrução e executa algo irreversível, como uma eliminação recursiva, um force push ou um DROP TABLE.</p></li>
+<li><span class="threats__tag" title="Sensitive Information Disclosure">OWASP LLM02:2025</span><span class="threats__tag" title="Tool Misuse and Exploitation">OWASP ASI02</span><strong lang="en">Secret exfiltration</strong><strong lang="de">Abfluss von Geheimnissen</strong><strong lang="pt">Fuga de segredos</strong><p lang="en">While debugging, the agent reads <code>.env</code> or credential files and sends the content outbound, through a tool call, a URL or the model context.</p><p lang="de">Beim Debuggen liest der Agent <code>.env</code> oder Zugangsdaten-Dateien und überträgt den Inhalt nach außen, über einen Tool-Aufruf, eine URL oder den Modellkontext.</p><p lang="pt">Ao depurar, o agente lê <code>.env</code> ou ficheiros de credenciais e envia o conteúdo para fora, através de uma chamada a uma ferramenta, de um URL ou do contexto do modelo.</p></li>
+<li><span class="threats__tag" title="Identity and Privilege Abuse">OWASP ASI03</span><strong lang="en">No visibility, no identity</strong><strong lang="de">Fehlende Sichtbarkeit und Identität</strong><strong lang="pt">Sem visibilidade nem identidade</strong><p lang="en">An agent spawns subagents. The people using it cannot tell which instance did what, and on whose behalf.</p><p lang="de">Ein Agent startet Subagenten. Für die Nutzenden bleibt unklar, welche Instanz was in wessen Auftrag getan hat.</p><p lang="pt">Um agente cria subagentes. Quem o usa não consegue saber que instância fez o quê, nem em nome de quem.</p></li>
+<li><span class="threats__tag" title="Excessive Agency">OWASP LLM06:2025</span><span class="threats__tag" title="Identity and Privilege Abuse">OWASP ASI03</span><strong lang="en">Privilege escalation</strong><strong lang="de">Rechteausweitung</strong><strong lang="pt">Escalada de privilégios</strong><p lang="en">To fix a permission error, the agent edits <code>sudoers</code>, CI pipelines or file permissions.</p><p lang="de">Um einen Berechtigungsfehler zu beheben, ändert der Agent <code>sudoers</code>, CI-Pipelines oder Dateirechte.</p><p lang="pt">Para corrigir um erro de permissões, o agente altera o <code>sudoers</code>, pipelines de CI ou permissões de ficheiros.</p></li>
+<li><span class="threats__tag" title="Supply Chain">OWASP LLM03:2025</span><span class="threats__tag" title="Agentic Supply Chain Vulnerabilities">OWASP ASI04</span><strong lang="en">Dependency manipulation</strong><strong lang="de">Manipulation von Abhängigkeiten</strong><strong lang="pt">Manipulação de dependências</strong><p lang="en">Following injected input, the agent installs or rewrites a package.</p><p lang="de">Auf Anweisung aus eingeschleustem Input installiert oder überschreibt der Agent ein Paket.</p><p lang="pt">Seguindo uma instrução injetada, o agente instala ou reescreve um pacote.</p></li>
+<li><span class="threats__tag" title="Supply Chain">OWASP LLM03:2025</span><span class="threats__tag" title="Agentic Supply Chain Vulnerabilities">OWASP ASI04</span><strong lang="en">Supply chain risk</strong><strong lang="de">Risiko in der Lieferkette</strong><strong lang="pt">Risco na cadeia de abastecimento</strong><p lang="en">Optimising for velocity, the agent installs a vulnerable package or one with a zero-day.</p><p lang="de">Der Agent optimiert auf Geschwindigkeit und installiert dabei ein verwundbares oder ein 0-Day-behaftetes Paket.</p><p lang="pt">Ao otimizar a velocidade, o agente instala um pacote vulnerável ou com uma vulnerabilidade zero-day.</p></li>
+        <li><span class="threats__tag" title="Improper Output Handling">OWASP LLM05:2025</span><span class="threats__tag" title="Unexpected Code Execution (RCE)">OWASP ASI05</span><strong lang="en">Unexpected code execution</strong><strong lang="de">Unerwartete Codeausführung</strong><strong lang="pt">Execução inesperada de código</strong><p lang="en">The agent generates code in real time and runs it. Injected input turns text into something executable, such as scripts, deserialised objects or template code, that reaches the host or leaves the sandbox.</p><p lang="de">Der Agent erzeugt Code in Echtzeit und führt ihn aus. Eingeschleuster Input macht aus Text etwas Ausführbares, etwa Skripte, deserialisierte Objekte oder Template-Code, das den Host erreicht oder die Sandbox verlässt.</p><p lang="pt">O agente gera código em tempo real e executa-o. Input injetado transforma texto em algo executável, como scripts, objetos desserializados ou código de templates, que chega ao host ou sai da sandbox.</p></li>
+<li><span class="threats__tag" title="Vector and Embedding Weaknesses">OWASP LLM08:2025</span><span class="threats__tag" title="Memory &amp; Context Poisoning">OWASP ASI06</span><strong lang="en">Memory and context poisoning</strong><strong lang="de">Vergiftung von Gedächtnis und Kontext</strong><strong lang="pt">Envenenamento de memória e contexto</strong><p lang="en">Manipulated data lands in the agent’s memory, summaries or RAG store and skews later reasoning, planning and tool use, long after the original input.</p><p lang="de">Manipulierte Daten gelangen in Gedächtnis, Zusammenfassungen oder RAG-Speicher des Agenten und verzerren spätere Planung und Tool-Nutzung, lange nach der ursprünglichen Eingabe.</p><p lang="pt">Dados manipulados chegam à memória, aos resumos ou ao repositório RAG do agente e distorcem o raciocínio, o planeamento e o uso de ferramentas muito depois da entrada original.</p></li>
+<li><span class="threats__tag" title="Data and Model Poisoning">OWASP LLM04:2025</span><strong lang="en">Poisoned data and models</strong><strong lang="de">Vergiftete Daten und Modelle</strong><strong lang="pt">Dados e modelos envenenados</strong><p lang="en">Tampered training, fine-tuning or embedding data plants backdoors or biased behaviour in the model the agent runs on.</p><p lang="de">Manipulierte Trainings-, Fine-Tuning- oder Embedding-Daten pflanzen Hintertüren oder Verzerrungen in das Modell, auf dem der Agent läuft.</p><p lang="pt">Dados de treino, de fine-tuning ou de embeddings adulterados plantam backdoors ou enviesamentos no modelo em que o agente corre.</p></li>
+<li><span class="threats__tag" title="Insecure Inter-Agent Communication">OWASP ASI07</span><strong lang="en">Insecure inter-agent communication</strong><strong lang="de">Unsichere Kommunikation zwischen Agenten</strong><strong lang="pt">Comunicação insegura entre agentes</strong><p lang="en">Messages between agents lack authentication, integrity checks or validation, so they can be spoofed, intercepted or manipulated.</p><p lang="de">Nachrichten zwischen Agenten sind weder authentifiziert noch auf Integrität oder Inhalt geprüft und lassen sich fälschen, abfangen oder verändern.</p><p lang="pt">As mensagens entre agentes não têm autenticação, verificação de integridade nem validação, e podem ser falsificadas, intercetadas ou alteradas.</p></li>
+<li><span class="threats__tag" title="Cascading Failures">OWASP ASI08</span><strong lang="en">Cascading failures</strong><strong lang="de">Kaskadenfehler</strong><strong lang="pt">Falhas em cascata</strong><p lang="en">A single fault, such as a hallucination, a corrupted tool or poisoned memory, spreads across agents and workflows and grows into system-wide damage.</p><p lang="de">Ein einzelner Fehler, etwa eine Halluzination, ein manipuliertes Tool oder vergifteter Speicher, breitet sich über Agenten und Abläufe aus und wächst zu einem Schaden im ganzen System.</p><p lang="pt">Uma única falha, como uma alucinação, uma ferramenta corrompida ou memória envenenada, propaga-se por agentes e fluxos e cresce até um dano em todo o sistema.</p></li>
+<li><span class="threats__tag" title="Misinformation">OWASP LLM09:2025</span><span class="threats__tag" title="Human-Agent Trust Exploitation">OWASP ASI09</span><strong lang="en">Exploited trust, false confidence</strong><strong lang="de">Ausgenutztes Vertrauen, falsche Gewissheit</strong><strong lang="pt">Confiança explorada, falsa certeza</strong><p lang="en">People over-rely on fluent, confident agent output and approve actions without checking, or the agent states falsehoods convincingly. The human sign-off becomes the weak point.</p><p lang="de">Menschen verlassen sich auf flüssige, selbstsichere Agentenantworten und geben Aktionen ohne Gegenprüfung frei, oder der Agent behauptet Falsches überzeugend. Die menschliche Freigabe wird zur Schwachstelle.</p><p lang="pt">As pessoas confiam em respostas fluentes e seguras do agente e aprovam ações sem verificar, ou o agente afirma falsidades de forma convincente. A aprovação humana torna-se o ponto fraco.</p></li>
+<li><span class="threats__tag" title="Rogue Agents">OWASP ASI10</span><strong lang="en">Rogue agents</strong><strong lang="de">Abtrünnige Agenten</strong><strong lang="pt">Agentes desviantes</strong><p lang="en">A compromised or drifting agent leaves its intended scope while single actions still look legitimate, and rule-based controls do not catch it.</p><p lang="de">Ein kompromittierter oder abdriftender Agent verlässt seinen vorgesehenen Rahmen, obwohl einzelne Aktionen legitim aussehen, und regelbasierte Kontrollen greifen nicht.</p><p lang="pt">Um agente comprometido ou à deriva sai do seu âmbito previsto, embora cada ação pareça legítima, e os controlos baseados em regras não o apanham.</p></li>
+<li><span class="threats__tag" title="System Prompt Leakage">OWASP LLM07:2025</span><strong lang="en">System prompt leakage</strong><strong lang="de">Offenlegung des System-Prompts</strong><strong lang="pt">Fuga do prompt de sistema</strong><p lang="en">The agent reveals its own instructions, and with them any keys, internal rules or system details that were placed there.</p><p lang="de">Der Agent gibt seine eigenen Anweisungen preis und damit Schlüssel, interne Regeln oder Systemdetails, die dort hinterlegt wurden.</p><p lang="pt">O agente revela as suas próprias instruções e, com elas, chaves, regras internas ou detalhes do sistema que lá foram colocados.</p></li>
+<li><span class="threats__tag" title="Unbounded Consumption">OWASP LLM10:2025</span><strong lang="en">Unbounded consumption</strong><strong lang="de">Unbegrenzter Verbrauch</strong><strong lang="pt">Consumo ilimitado</strong><p lang="en">Loops, over-long chains or too many tool calls drive up compute and API costs or exhaust quotas, with no limit that stops the agent.</p><p lang="de">Schleifen, zu lange Ketten oder zu viele Tool-Aufrufe treiben Rechen- und API-Kosten in die Höhe oder erschöpfen Kontingente, ohne dass ein Limit den Agenten stoppt.</p><p lang="pt">Ciclos, cadeias demasiado longas ou demasiadas chamadas a ferramentas fazem subir custos de computação e de API ou esgotam quotas, sem um limite que pare o agente.</p></li>
+        </ul>
+        <p class="sos__note" lang="en">The labels map each risk to the <a href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 for LLM Applications 2025</a> (LLM) and the <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">OWASP Top 10 for Agentic Applications 2026</a> (ASI). This is for orientation and says nothing about conformity.</p><p class="sos__note" lang="de">Die Etiketten ordnen jedes Risiko den <a href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 für LLM-Anwendungen 2025</a> (LLM) und den <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">OWASP Top 10 for Agentic Applications 2026</a> (ASI) zu. Das dient der Orientierung und sagt nichts über Konformität aus.</p><p class="sos__note" lang="pt">As etiquetas associam cada risco ao <a href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 para aplicações LLM 2025</a> (LLM) e ao <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">OWASP Top 10 for Agentic Applications 2026</a> (ASI). Serve de orientação e não diz nada sobre conformidade.</p>
+        <p class="sos__intro" lang="en">Classic operating system and endpoint tools watch the kernel and the file system. They lack the context to judge whether an action belongs to the agent’s task. So AI stays either too risky or too restricted to be useful.</p><p class="sos__intro" lang="de">Klassische Betriebssystem- und Endpoint-Werkzeuge überwachen Kernel und Dateisystem. Ihnen fehlt der Kontext, um zu beurteilen, ob eine Aktion zur Aufgabe des Agenten gehört. Dadurch bleibt KI entweder zu riskant oder zu eingeschränkt, um nützlich zu sein.</p><p class="sos__intro" lang="pt">As ferramentas clássicas de sistema operativo e de endpoint vigiam o kernel e o sistema de ficheiros. Falta-lhes o contexto para avaliar se uma ação pertence à tarefa do agente. Assim, a IA fica ou demasiado arriscada ou demasiado limitada para ser útil.</p>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <h2><span lang="en">Place the emergency call</span><span lang="de">Notruf absetzen</span><span lang="pt">Fazer a chamada de emergência</span></h2>
+        <p class="contact__mail">
+          <a class="js-mail" href="#contact" data-user="post" data-host="m-ko.de">post [at] <span class="nowrap">m-ko.de</span></a>
+        </p>
+        <p class="contact__request"><a class="btn" href="../request/?service=other"><span lang="en">Prepare a request</span><span lang="de">Anfrage vorbereiten</span><span lang="pt">Preparar um pedido</span></a></p>
+      </div>
+    </section>
+    </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p class="site-footer__brand"><img class="footer__logo" src="../brand/logo-light.svg" width="220" height="40" alt="m-ko"><span>© Markus Kosmal</span></p>
+      <ul>
+        <li><a href="https://human-reviewed.com/">human-reviewed.com</a></li>
+        <li><a href="../sustainability/"><span lang="en">Sustainable AI</span><span lang="de">Nachhaltige KI</span><span lang="pt">IA sustentável</span></a></li>
+        <li><a href="../emergency/"><span lang="en">Emergency 101</span><span lang="de">Notruf 101</span><span lang="pt">Emergência 101</span></a></li>
+        <li><a href="../privacy/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span><span lang="pt">Privacidade</span></a></li>
+        <li><a href="../imprint/"><span lang="en">Imprint</span><span lang="de">Impressum</span><span lang="pt">Aviso legal</span></a></li>
+        <li><a href="https://github.com/mko-x">GitHub mko-x</a></li>
+        <li><a href="https://github.com/muka-dev">GitHub muka-dev</a></li>
+        <li><a href="https://profiles.wordpress.org/mkox/">WordPress</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
