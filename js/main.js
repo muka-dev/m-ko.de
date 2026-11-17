@@ -7,14 +7,14 @@
 
   var supported = ['de', 'en', 'pt'];
   var titles = {
-    en: 'm-ko | AI consulting and delivery in Nuremberg | Markus Kosmal',
-    de: 'm-ko | KI-Beratung und Umsetzung in Nürnberg | Markus Kosmal',
-    pt: 'm-ko | IA que chega à equipa | Markus Kosmal'
+    en: 'm-ko | Agentic AI manager and interim IT lead | Markus Kosmal',
+    de: 'm-ko | Agentic AI Manager und IT-Leitung auf Zeit | Markus Kosmal',
+    pt: 'm-ko | Agentic AI Manager e direção de TI interina | Markus Kosmal'
   };
   var descriptions = {
-    en: 'Markus Kosmal helps small and medium-sized businesses bring in AI so that it makes everyday work easier: listening first, building the solution, and staying until the team likes using it.',
-    de: 'Markus Kosmal, IT- und KI-Berater in Nürnberg, hilft kleinen und mittleren Unternehmen, KI so einzuführen, dass sie den Alltag leichter macht: erst zuhören, dann die Lösung bauen und dabeibleiben, bis das Team sie gern nutzt.',
-    pt: 'Markus Kosmal ajuda pequenas e médias empresas a introduzir a IA de forma a facilitar o dia a dia: primeiro ouvir, depois construir a solução e ficar até a equipa gostar de a usar.'
+    en: 'Markus Kosmal builds teams of people and AI agents and works as an interim IT lead, or both together. Based in Nuremberg and Portugal, on site and remote.',
+    de: 'Markus Kosmal baut Teams aus Menschen und KI-Agenten auf und übernimmt IT-Leitung auf Zeit, auch beides zusammen. Aus Nürnberg und Portugal, vor Ort und remote.',
+    pt: 'Markus Kosmal constrói equipas de pessoas e agentes de IA e assume a direção de TI interina, ou as duas coisas. A partir de Nuremberga e de Portugal, no local e remoto.'
   };
   var langButtons = document.querySelectorAll('[data-set-lang]');
 
