@@ -1345,3 +1345,16 @@ html:not(.js) .stop__dot { left: 50%; }
 .legal__wrap > * { max-width: 46rem; }
 .legal__wrap > h2:first-child { margin-top: 0; }
 .value .steps { margin-top: clamp(2.5rem, 6vw, 4rem); }
+
+/* Services v2 */
+.proof { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem; margin: 1.25rem 0 0; padding: 0; }
+.proof li { padding: 0.2rem 0.7rem; border-radius: 99px; border: 1.5px solid var(--ink); font-size: 0.88rem; font-weight: 600; }
+.offers__side { display: grid; gap: 1.5rem; }
+.offer--lead { border-top: 0; padding: 1.5rem; border-radius: 22px; background: var(--ink); color: var(--paper); }
+.offer--lead .offer__list li::before { background: var(--leaf-bright); }
+.offer--check { border-top: 0; padding: 1.5rem; border-radius: 22px; background: var(--paper-deep); }
+.offer--lead h3, .offer--check h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); }
+.offers__more { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2.5rem; }
+.offers__more .offers__note { margin: 0; }
+.stair__note { margin: 0.5rem 0 0; font-size: 0.92rem; font-style: italic; max-width: none; }
+.offers__layout--single { grid-template-columns: minmax(0, 46rem); }

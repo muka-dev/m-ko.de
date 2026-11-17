@@ -47,9 +47,10 @@ test('line breaks cannot be smuggled into one-line fields', () => {
   assert.ok(!/\nBcc/.test(r.text.split('\n').slice(0, 4).join('\n')));
 });
 
-test('consulting is a service of its own', () => {
-  assert.equal(build({ ...ok, service: 'consulting' }).valid, true);
-  assert.match(build({ ...ok, service: 'consulting' }).subject, /KI-Projekt oder Beratung/);
+test('older service names are mapped to the current ones', () => {
+  assert.equal(build({ ...ok, service: 'consulting' }).json.service, 'ai-adoption');
+  assert.equal(build({ ...ok, service: 'ai-pentest' }).json.service, 'security-review');
+  assert.match(build({ ...ok, service: 'interim' }).subject, /IT-Leitung auf Zeit/);
 });
 
 test('all services and languages produce a subject', () => {

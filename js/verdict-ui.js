@@ -9,9 +9,9 @@
   var last = '';
 
   var TXT = {
-    en: { alone: 'May do it alone.', approval: 'Only with the OK of a human.', never: 'Stays off limits.', ref: 'File number', hint: 'Just for fun, the detection works with keywords. For real cases: the', link: 'AI check', empty: 'Type a task first.' },
-    de: { alone: 'Darf sie allein.', approval: 'Nur mit dem OK eines Menschen.', never: 'Bleibt tabu.', ref: 'Aktenzeichen', hint: 'Nur zum Spaß, die Erkennung arbeitet mit Stichworten. Für echte Fälle: der', link: 'KI-Check', empty: 'Bitte zuerst eine Aufgabe eintippen.' },
-    pt: { alone: 'Pode fazer sozinha.', approval: 'Só com o OK de um humano.', never: 'Fica fora de questão.', ref: 'Processo n.º', hint: 'Só por diversão, a deteção usa palavras-chave. Para casos reais: a', link: 'verificação de IA', empty: 'Escreva primeiro uma tarefa.' }
+    en: { alone: 'May do it alone.', approval: 'Only with the OK of a human.', never: 'Stays off limits.', ref: 'File number', hint: 'Just for fun, the detection works with keywords. For real cases: the', link: 'AI ready', empty: 'Type a task first.' },
+    de: { alone: 'Darf sie allein.', approval: 'Nur mit dem OK eines Menschen.', never: 'Bleibt tabu.', ref: 'Aktenzeichen', hint: 'Nur zum Spaß, die Erkennung arbeitet mit Stichworten. Für echte Fälle: der', link: 'KI-Startklar', empty: 'Bitte zuerst eine Aufgabe eintippen.' },
+    pt: { alone: 'Pode fazer sozinha.', approval: 'Só com o OK de um humano.', never: 'Fica fora de questão.', ref: 'Processo n.º', hint: 'Só por diversão, a deteção usa palavras-chave. Para casos reais: a', link: 'IA pronta', empty: 'Escreva primeiro uma tarefa.' }
   };
   var ICON = { alone: '✓', approval: '✋', never: '⛔' };
   function lang() { var l = document.documentElement.getAttribute('lang'); return l === 'de' || l === 'pt' ? l : 'en'; }
@@ -26,7 +26,7 @@
       '<p class="verdict__ref">' + t.ref + ' ' + r.ref + '</p>' +
       '<p class="verdict__title"><span aria-hidden="true">' + ICON[r.level] + '</span> ' + t[r.level] + '</p>' +
       '<p class="verdict__quip">' + esc(r.quip) + '</p>' +
-      '<p class="verdict__hint">' + t.hint + ' <a href="../security/">' + t.link + '</a>.</p></div>';
+      '<p class="verdict__hint">' + t.hint + ' <a href="../adoption/">' + t.link + '</a>.</p></div>';
   }
 
   function placeholder() { input.placeholder = input.getAttribute('data-ph-' + lang()) || input.placeholder; }
