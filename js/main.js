@@ -22,10 +22,15 @@
     root.setAttribute('data-lang', lang);
     root.setAttribute('lang', lang);
     // Subpages carry their own title and description on <html>.
-    document.title = root.getAttribute('data-title-' + lang) || titles[lang];
-    var meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content', root.getAttribute('data-desc-' + lang) || descriptions[lang]);
+    // Built pages (one address per language) carry a fixed title already.
+    var fixed = root.hasAttribute('data-fixed-lang');
+    if (!fixed) {
+      document.title = root.getAttribute('data-title-' + lang) || titles[lang];
+      var meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.setAttribute('content', root.getAttribute('data-desc-' + lang) || descriptions[lang]);
+    }
     langButtons.forEach(function (b) {
+      if (b.tagName === 'A') return;
       b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
     });
     if (save) {
@@ -40,6 +45,11 @@
 
   langButtons.forEach(function (b) {
     b.addEventListener('click', function () {
+      // On built pages the switch is a link: remember the choice, then follow it.
+      if (b.tagName === 'A') {
+        try { localStorage.setItem('lang', b.getAttribute('data-set-lang')); } catch (e) {}
+        return;
+      }
       applyLang(b.getAttribute('data-set-lang'), true);
     });
   });

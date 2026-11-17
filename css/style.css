@@ -135,7 +135,11 @@ a:hover { text-decoration-color: var(--sun); }
   border-radius: 999px;
   padding: 2px;
 }
-.lang button {
+.lang button,
+.lang a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
   font: inherit;
   font-size: 0.85rem;
   font-weight: 700;
@@ -148,7 +152,8 @@ a:hover { text-decoration-color: var(--sun); }
   min-height: 2rem;
   cursor: pointer;
 }
-.lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.lang button[aria-pressed="true"],
+.lang a[aria-current="true"] { background: var(--ink); color: var(--paper); }
 
 .visually-hidden {
   position: absolute !important;
@@ -1168,7 +1173,7 @@ html:not(.js) .stop__dot { left: 50%; }
 
   /* Header parts keep their size when the system text size grows. */
   .brand__logo { height: 26px; }
-  .lang button { height: 36px; padding: 0 10px; font-size: 13px; }
+  .lang button, .lang a { height: 36px; padding: 0 10px; font-size: 13px; }
 
   .bp-swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
   .bp-swatch__chip { height: 3.5rem; }
@@ -1185,7 +1190,7 @@ html:not(.js) .stop__dot { left: 50%; }
 @media (max-width: 380px) {
   .site-header__inner { gap: 0.4rem; }
   .brand__logo { height: 22px; }
-  .lang button { padding: 0 8px; }
+  .lang button, .lang a { padding: 0 8px; }
 }
 
 /* Fingers: bigger targets where the main input is touch. */

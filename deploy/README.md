@@ -79,3 +79,7 @@ und ihn in konsoleH entfernen, wenn er nicht mehr gebraucht wird.
 Actions → Deploy → Run workflow, auf `main`. Der letzte Schritt ruft die
 Startseite, das CSS, das JS und das Foto live ab. Schlägt eines davon fehl,
 wird der Lauf rot.
+
+## One address per language
+
+The pages in the repository are trilingual. `python3 deploy/build_site.py site` writes the folder for the server: German at `/`, English at `/en/`, Portuguese at `/pt/`, each page with only its own language, hreflang links and a sitemap with all three. CI runs it before every upload. To preview locally: build, then `python3 -m http.server -d site`.
