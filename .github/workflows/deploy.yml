@@ -24,6 +24,7 @@ jobs:
             for ref in $(grep -oE '(src|href)="[^"#]+"' "$page" \
                 | sed -E 's/^(src|href)="//; s/"$//' \
                 | grep -vE '^(https?:|mailto:|data:)'); do
+              ref="${ref%%\?*}"
               case "$ref" in
                 /*) target="${ref#/}" ;;
                 *)  target="$dir/$ref" ;;
@@ -75,7 +76,7 @@ jobs:
       - name: Assemble site folder
         run: |
           mkdir site
-          cp -r index.html favicon.svg llms.txt css js fonts img get check assistant security agents brand about tools request privacy imprint sustainability site/
+          cp -r index.html favicon.svg llms.txt robots.txt sitemap.xml css js fonts img get check assistant security agents brand about tools request privacy imprint sustainability site/
           chmod -R u=rwX,go=rX site
 
       - name: Deploy over SFTP

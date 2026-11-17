@@ -148,7 +148,7 @@
     "content_type": "application/json",
     "status_check": "GET https://m-ko.de/agents/request.php?status returns {\"enabled\": true|false}",
     "fields": {
-      "service": "ai-check | production-check | ai-pentest | agent-review | other",
+      "service": "consulting | ai-check | production-check | ai-pentest | agent-review | other",
       "subject": "string, 200 characters at most",
       "message": "string, 1500 characters at most (optional)",
       "contact": {

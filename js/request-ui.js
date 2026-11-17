@@ -8,38 +8,38 @@
   var T = {
     en: {
       service: 'Service', who: 'Who is asking?', human: 'A person or company', agent: 'An AI agent on behalf of a responsible person',
-      behalf: 'Person or company the agent acts for', subject: 'What should be reviewed? (name, URL or repository)', message: 'Anything I should know? (short)',
+      behalf: 'Person or company the agent acts for', subject: 'What is it about? (topic, app, component or repository)', message: 'Anything I should know? (short)',
       name: 'Your name (optional)', email: 'Email address for the reply', attach: 'Attach the size estimate and scan result from this browser',
       preview: 'Your request', open: 'Open in mail program', copy: 'Copy text', json: 'Download as JSON', send: 'Send directly', copied: 'Copied.',
       sent: 'Received. Reference:', sentNote: 'A responsible person confirms by email before anything is commissioned.', failed: 'Sending failed:', fix: 'Please check:',
-      errors: { service: 'service', subject: 'what should be reviewed', email: 'a valid email address', behalf: 'who the agent acts for' },
+      errors: { service: 'service', subject: 'what it is about', email: 'a valid email address', behalf: 'who the agent acts for' },
       cut: 'The mail link was shortened because mail programs limit its length. Please use "Copy text" for the full request.',
       noSecrets: 'Please do not send keys, passwords or credentials, only descriptions.'
     },
     de: {
       service: 'Leistung', who: 'Wer fragt an?', human: 'Ein Mensch oder Unternehmen', agent: 'Ein KI-Agent im Auftrag einer verantwortlichen Person',
-      behalf: 'Person oder Unternehmen, für die der Agent handelt', subject: 'Was soll geprüft werden? (Name, URL oder Repository)', message: 'Was sollte ich wissen? (kurz)',
+      behalf: 'Person oder Unternehmen, für die der Agent handelt', subject: 'Worum geht es? (Thema, App, Komponente oder Repository)', message: 'Was sollte ich wissen? (kurz)',
       name: 'Name (optional)', email: 'E-Mail-Adresse für die Antwort', attach: 'Größenabschätzung und Scan-Ergebnis aus diesem Browser anhängen',
       preview: 'Die Anfrage', open: 'Im Mailprogramm öffnen', copy: 'Text kopieren', json: 'Als JSON herunterladen', send: 'Direkt senden', copied: 'Kopiert.',
       sent: 'Eingegangen. Referenz:', sentNote: 'Ein Verantwortlicher bestätigt per E-Mail, bevor etwas beauftragt wird.', failed: 'Senden fehlgeschlagen:', fix: 'Bitte prüfen:',
-      errors: { service: 'Leistung', subject: 'was geprüft werden soll', email: 'eine gültige E-Mail-Adresse', behalf: 'für wen der Agent handelt' },
+      errors: { service: 'Leistung', subject: 'worum es geht', email: 'eine gültige E-Mail-Adresse', behalf: 'für wen der Agent handelt' },
       cut: 'Der Mail-Link wurde gekürzt, weil Mailprogramme seine Länge begrenzen. Für die vollständige Anfrage bitte „Text kopieren“ nutzen.',
       noSecrets: 'Bitte keine Schlüssel, Passwörter oder Zugangsdaten senden, nur Beschreibungen.'
     },
     pt: {
       service: 'Serviço', who: 'Quem faz o pedido?', human: 'Uma pessoa ou empresa', agent: 'Um agente de IA em nome de uma pessoa responsável',
-      behalf: 'Pessoa ou empresa em nome da qual o agente atua', subject: 'O que deve ser revisto? (nome, URL ou repositório)', message: 'Algo que eu deva saber? (curto)',
+      behalf: 'Pessoa ou empresa em nome da qual o agente atua', subject: 'De que se trata? (tema, app, componente ou repositório)', message: 'Algo que eu deva saber? (curto)',
       name: 'Nome (opcional)', email: 'Endereço de email para a resposta', attach: 'Anexar a estimativa de tamanho e o resultado da análise deste browser',
       preview: 'O pedido', open: 'Abrir no programa de email', copy: 'Copiar texto', json: 'Descarregar como JSON', send: 'Enviar diretamente', copied: 'Copiado.',
       sent: 'Recebido. Referência:', sentNote: 'Um responsável confirma por email antes de qualquer encomenda.', failed: 'O envio falhou:', fix: 'Por favor verifique:',
-      errors: { service: 'o serviço', subject: 'o que deve ser revisto', email: 'um email válido', behalf: 'em nome de quem o agente atua' },
+      errors: { service: 'o serviço', subject: 'de que se trata', email: 'um email válido', behalf: 'em nome de quem o agente atua' },
       cut: 'A ligação de email foi encurtada porque os programas de email limitam o seu comprimento. Use «Copiar texto» para o pedido completo.',
       noSecrets: 'Por favor, não enviem chaves, palavras-passe nem credenciais, apenas descrições.'
     }
   };
-  var SERVICES = { en: { 'ai-check': 'AI check', 'production-check': 'Production check', 'ai-pentest': 'AI pentest', 'agent-review': 'Review for AI agents', other: 'Other' },
-    de: { 'ai-check': 'KI-Check', 'production-check': 'Produktionscheck', 'ai-pentest': 'AI-Pentest', 'agent-review': 'Prüfung für KI-Agenten', other: 'Sonstiges' },
-    pt: { 'ai-check': 'Verificação de IA', 'production-check': 'Verificação de produção', 'ai-pentest': 'Pentest de IA', 'agent-review': 'Revisão para agentes de IA', other: 'Outro' } };
+  var SERVICES = { en: { consulting: 'AI project or consulting', 'ai-check': 'AI check', 'production-check': 'Production check', 'ai-pentest': 'AI pentest', 'agent-review': 'Review for AI agents', other: 'Other' },
+    de: { consulting: 'KI-Projekt oder Beratung', 'ai-check': 'KI-Check', 'production-check': 'Produktionscheck', 'ai-pentest': 'AI-Pentest', 'agent-review': 'Prüfung für KI-Agenten', other: 'Sonstiges' },
+    pt: { consulting: 'Projeto de IA ou consultoria', 'ai-check': 'Verificação de IA', 'production-check': 'Verificação de produção', 'ai-pentest': 'Pentest de IA', 'agent-review': 'Revisão para agentes de IA', other: 'Outro' } };
 
   var state = { service: '', agent: false, behalf: '', subject: '', message: '', name: '', email: '', attach: true, website: '' };
   var endpoint = false;
