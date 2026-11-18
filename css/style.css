@@ -1599,3 +1599,10 @@ a.emp:hover { background: var(--emp, var(--ink)); color: var(--paper); }
   .projects__art { width: 5rem; }
   .norms { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ---------- Prologue comic (about) ---------- */
+
+.prologue { background: var(--paper); }
+.prologue__head { margin-bottom: clamp(2rem, 5vw, 3rem); }
+.prologue__comic { margin: 0 auto; max-width: 56rem; }
+.prologue__comic .comic { display: block; width: 100%; height: auto; }
