@@ -15,6 +15,7 @@ hreflang. Links to other pages stay inside the language, links to files
 
 Usage: python3 deploy/build_site.py [output folder, default: site]
 """
+import hashlib
 import html
 import os
 import posixpath
@@ -82,6 +83,21 @@ def strip_languages(src, lang):
     return ''.join(out)
 
 
+_versions = {}
+
+
+def file_version(path):
+    """Short content hash of a root file, or '' if it does not exist."""
+    if path not in _versions:
+        f = os.path.join(ROOT, path)
+        if os.path.isfile(f):
+            with open(f, 'rb') as fh:
+                _versions[path] = hashlib.sha256(fh.read()).hexdigest()[:10]
+        else:
+            _versions[path] = ''
+    return _versions[path]
+
+
 def rewrite_refs(doc, page, lang, page_set):
     """Make relative links absolute: pages inside the language, files at the root."""
     base = '/' + page
@@ -103,6 +119,11 @@ def rewrite_refs(doc, page, lang, page_set):
             new = url_for(key, lang if page_set[key] else DEFAULT)
         else:
             new = '/' + key
+            if not sep and key.endswith(('.css', '.js')):
+                # Version stamp from the content: browsers fetch a changed file at once.
+                v = file_version(key)
+                if v:
+                    new, sep, rest = new, '?', 'v=' + v
         return '%s="%s%s%s"' % (attr, new, sep, rest)
 
     return re.sub(r'\b(href|src|action)="([^"]*)"', fix, doc)
