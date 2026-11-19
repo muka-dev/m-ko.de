@@ -1466,6 +1466,14 @@ a.red-alert:hover .red-alert__light, a.red-alert:focus-visible .red-alert__light
 }
 .hero--sos .hero__action { justify-content: center; margin-top: 1.75rem; }
 .hero--sos .hero__link, .hero--sos .status { color: #fff; }
+.hero--sos .hero__buttons { flex-wrap: nowrap; justify-content: center; gap: 0.6rem 0.9rem; }
+.hero--sos .hero__buttons .btn { white-space: nowrap; }
+.hero__or { color: rgba(255, 255, 255, 0.75); font-size: 0.95rem; }
+.btn--outline { background: transparent; color: #fff; border: 2px solid rgba(255, 255, 255, 0.7); }
+.btn--outline:hover { background: #fff; color: var(--ink); }
+@media (max-width: 480px) {
+  .hero--sos .hero__buttons .btn { font-size: 0.95rem; padding: 0.75rem 1rem; }
+}
 .hero--sos .proof { justify-content: center; }
 .hero--sos .proof li { border-color: rgba(255, 255, 255, 0.45); }
 .hero--sos .trust { border-top-color: rgba(255, 255, 255, 0.2); }
