@@ -51,6 +51,7 @@ test('older service names are mapped to the current ones', () => {
   assert.equal(build({ ...ok, service: 'consulting' }).json.service, 'ai-adoption');
   assert.equal(build({ ...ok, service: 'ai-pentest' }).json.service, 'security-review');
   assert.match(build({ ...ok, service: 'interim' }).subject, /IT-Leitung auf Zeit/);
+  assert.match(build({ ...ok, service: 'red-alert' }).subject, /Alarmstufe Rot/);
 });
 
 test('all services and languages produce a subject', () => {

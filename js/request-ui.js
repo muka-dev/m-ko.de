@@ -37,9 +37,9 @@
       noSecrets: 'Por favor, não enviem chaves, palavras-passe nem credenciais, apenas descrições.'
     }
   };
-  var SERVICES = { en: { 'ai-adoption': 'AI adoption', 'interim': 'Interim IT lead', 'production-check': 'Production check', 'security-review': 'AI security review', 'agent-review': 'Review for AI agents', 'other': 'Other' },
-    de: { 'ai-adoption': 'KI-Einführung', 'interim': 'IT-Leitung auf Zeit', 'production-check': 'Produktionscheck', 'security-review': 'KI-Sicherheitsreview', 'agent-review': 'Prüfung für KI-Agenten', 'other': 'Sonstiges' },
-    pt: { 'ai-adoption': 'Adoção de IA', 'interim': 'Direção de TI interina', 'production-check': 'Verificação de produção', 'security-review': 'Revisão de segurança de IA', 'agent-review': 'Revisão para agentes de IA', 'other': 'Outro' } };
+  var SERVICES = { en: { 'ai-adoption': 'AI adoption', 'interim': 'Interim IT lead', 'production-check': 'Production check', 'security-review': 'AI security review', 'agent-review': 'Review for AI agents', 'red-alert': 'Red alert', 'other': 'Other' },
+    de: { 'ai-adoption': 'KI-Einführung', 'interim': 'IT-Leitung auf Zeit', 'production-check': 'Produktionscheck', 'security-review': 'KI-Sicherheitsreview', 'agent-review': 'Prüfung für KI-Agenten', 'red-alert': 'Alarmstufe Rot', 'other': 'Sonstiges' },
+    pt: { 'ai-adoption': 'Adoção de IA', 'interim': 'Direção de TI interina', 'production-check': 'Verificação de produção', 'security-review': 'Revisão de segurança de IA', 'agent-review': 'Revisão para agentes de IA', 'red-alert': 'Alerta vermelho', 'other': 'Outro' } };
 
   var state = { service: '', agent: false, behalf: '', subject: '', message: '', name: '', email: '', attach: true, website: '' };
   var endpoint = false;

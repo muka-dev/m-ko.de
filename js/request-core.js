@@ -6,7 +6,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
   'use strict';
 
-  var SERVICES = ['ai-adoption',  'interim',  'production-check',  'security-review',  'agent-review',  'other'];
+  var SERVICES = ['ai-adoption',  'interim',  'production-check',  'security-review',  'agent-review',  'red-alert',  'other'];
   // Older values still arrive from saved links and agents; map them to the current ones.
   var LEGACY = { consulting: 'ai-adoption', 'ai-check': 'security-review', 'ai-pentest': 'security-review' };
   var LIMITS = { subject: 200, message: 1500, name: 100, email: 200, behalf: 200 };
@@ -20,9 +20,9 @@
     pt: { subject: 'Pedido', service: 'Serviço', about: 'Assunto', message: 'Mensagem', contact: 'Contacto', requester: 'Enviado por', agent: 'Agente de IA em nome de', human: 'pessoa ou empresa', size: 'Estimativa de tamanho', scan: 'Digest da análise', note: 'Preparado com o assistente de pedidos em m-ko.de. Um responsável confirma antes de qualquer encomenda.', cut: '[encurtado, use «Copiar texto»]' }
   };
   var SERVICE_NAMES = {
-    en: { 'ai-adoption': 'AI adoption', 'interim': 'Interim IT lead', 'production-check': 'Production check', 'security-review': 'AI security review', 'agent-review': 'Review for AI agents', 'other': 'Other' },
-    de: { 'ai-adoption': 'KI-Einführung', 'interim': 'IT-Leitung auf Zeit', 'production-check': 'Produktionscheck', 'security-review': 'KI-Sicherheitsreview', 'agent-review': 'Prüfung für KI-Agenten', 'other': 'Sonstiges' },
-    pt: { 'ai-adoption': 'Adoção de IA', 'interim': 'Direção de TI interina', 'production-check': 'Verificação de produção', 'security-review': 'Revisão de segurança de IA', 'agent-review': 'Revisão para agentes de IA', 'other': 'Outro' }
+    en: { 'ai-adoption': 'AI adoption', 'interim': 'Interim IT lead', 'production-check': 'Production check', 'security-review': 'AI security review', 'agent-review': 'Review for AI agents', 'red-alert': 'Red alert', 'other': 'Other' },
+    de: { 'ai-adoption': 'KI-Einführung', 'interim': 'IT-Leitung auf Zeit', 'production-check': 'Produktionscheck', 'security-review': 'KI-Sicherheitsreview', 'agent-review': 'Prüfung für KI-Agenten', 'red-alert': 'Alarmstufe Rot', 'other': 'Sonstiges' },
+    pt: { 'ai-adoption': 'Adoção de IA', 'interim': 'Direção de TI interina', 'production-check': 'Verificação de produção', 'security-review': 'Revisão de segurança de IA', 'agent-review': 'Revisão para agentes de IA', 'red-alert': 'Alerta vermelho', 'other': 'Outro' }
   };
 
   function clean(s, max) { return String(s == null ? '' : s).replace(/\r/g, '').trim().slice(0, max); }
