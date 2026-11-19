@@ -148,7 +148,7 @@
     "content_type": "application/json",
     "status_check": "GET https://m-ko.de/agents/request.php?status returns {\"enabled\": true|false}",
     "fields": {
-      "service": "ai-adoption | interim | production-check | security-review | agent-review | other",
+      "service": "ai-adoption | interim | production-check | security-review | agent-review | red-alert | other",
       "subject": "string, 200 characters at most",
       "message": "string, 1500 characters at most (optional)",
       "contact": {
