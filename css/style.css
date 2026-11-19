@@ -1653,6 +1653,7 @@ a.emp:hover { background: var(--emp, var(--ink)); color: var(--paper); }
 @media (max-width: 760px) {
   .book-hero__grid, .book-buy__grid, .book-plan__grid, .book-toc__cols { grid-template-columns: minmax(0, 1fr); }
   .book-hero__cover { max-width: 14rem; }
+}
 
 /* ---------- AI adoption: 90 days, book, traffic light, quick check ---------- */
 
