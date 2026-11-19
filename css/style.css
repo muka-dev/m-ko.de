@@ -1611,3 +1611,41 @@ a.emp:hover { background: var(--emp, var(--ink)); color: var(--paper); }
 .prologue__head { margin-bottom: clamp(2rem, 5vw, 3rem); }
 .prologue__comic { margin: 0 auto; max-width: 56rem; }
 .prologue__comic .comic { display: block; width: 100%; height: auto; }
+
+/* ---------- AI adoption: 90 days, book, traffic light, quick check ---------- */
+
+.adopt-hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 0; max-width: none; }
+.adopt-example { background: var(--paper); }
+.steps--four { margin-bottom: 0; }
+.steps--four > h2 { margin-bottom: 0.75rem; }
+.steps--four > .section__lede { margin-bottom: 2rem; }
+.steps--four ol { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 1.5rem; }
+.steps--four h3 { font-family: var(--display); font-weight: 600; font-size: 1.35rem; letter-spacing: -0.01em; margin: 0 0 0.4rem; }
+.sizes--two { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: clamp(3rem, 7vw, 5rem); }
+.adopt-book { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+.adopt-book__cover { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 6px 18px color-mix(in srgb, var(--ink) 22%, transparent); }
+.adopt-stair__head { margin-bottom: 1rem; }
+.adopt-result { margin: 0.9rem 0 0.4rem; font-weight: 700; max-width: none; }
+.stair__step--3 .adopt-result { color: var(--leaf-bright); }
+.offers .offer__note { margin-top: 1.25rem; }
+.adopt-rules .section__lede { margin-bottom: 0.5rem; }
+.adopt-check { background: var(--paper-deep); }
+.adopt-check__form { margin: 1.5rem 0; max-width: 46rem; }
+.adopt-check__form .chips label > span { display: block; text-align: left; }
+.adopt-check__result { border: 2px solid var(--ink); border-radius: 20px; padding: 1.1rem 1.25rem; max-width: 46rem; background: var(--paper); margin-bottom: 1rem; }
+.adopt-check__result [data-result][hidden] { display: none; }
+.adopt-check__title { font-family: var(--display); font-weight: 600; font-size: 1.25rem; margin: 0 0 0.4rem; }
+.adopt-fold { border-top: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+.adopt-fold:last-of-type { border-bottom: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+.adopt-fold > summary { cursor: pointer; padding: 0.8rem 0; font-weight: 600; }
+.adopt-fold > p { margin: 0 0 1rem; }
+
+@media (max-width: 940px) {
+  .steps--four ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps--four li:nth-child(2)::after { display: none; }
+}
+@media (max-width: 760px) {
+  .steps--four ol,
+  .sizes--two { grid-template-columns: minmax(0, 1fr); }
+  .adopt-book { grid-template-columns: 6.5rem minmax(0, 1fr); }
+}
