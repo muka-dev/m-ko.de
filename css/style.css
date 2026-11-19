@@ -1432,9 +1432,10 @@ html:not(.js) .stop__dot { left: 50%; }
   .sos-says { height: 3.7rem; }
   .sos-bubble { max-width: 88%; text-align: center; font-size: 0.88rem; }
 }
-.sos-tags { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin: 1.25rem 0 0; padding: 0; }
-.sos-tags a { display: block; padding: 0.45rem 1rem; border: 1.5px solid rgba(255, 255, 255, 0.45); border-radius: 999px; color: #fff; font-weight: 700; text-decoration: none; }
-.sos-tags a:hover { background: var(--sun); border-color: var(--sun); color: var(--ink); }
+.sos-hint { display: flex; flex-direction: column; align-items: center; gap: 0.15rem; margin: 0.6rem 0 0; color: #fff; font-weight: 700; text-align: center; }
+.sos-hint__arrow { font-size: 1.6rem; line-height: 1; animation: sos-hint-nudge 1.2s ease-in-out infinite; }
+@keyframes sos-hint-nudge { 50% { transform: translateY(-0.35rem); } }
+@media (prefers-reduced-motion: reduce) { .sos-hint__arrow { animation: none; } }
 /* Only the real escalation is red, in the tone of the emergency button. #C9281C keeps white text above 4.5:1. */
 /* Red alert: calm breathing edge at rest, KITT scanner + flicker + glitch on hover/focus */
 a.red-alert { --alarm: #E5372A; --alarm-d: #8E1A12; border: 1.5px solid var(--alarm); color: #fff; position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; gap: 0.5rem;
