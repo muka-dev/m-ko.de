@@ -1406,6 +1406,7 @@ html:not(.js) .stop__dot { left: 50%; }
 .sos-bubble:nth-child(2) { animation-delay: 3s; }
 .sos-bubble:nth-child(3) { animation-delay: 6s; }
 @keyframes sos-pop { 0% { opacity: 0; transform: translate(-50%, 0.4rem); } 4%, 29% { opacity: 1; transform: translate(-50%, 0); } 33%, 100% { opacity: 0; transform: translate(-50%, -0.3rem); } }
+@keyframes sos-fade { 0%, 100% { opacity: 0; } 5%, 30% { opacity: 1; } 35% { opacity: 0; } }
 .sos-dial { position: relative; display: grid; place-items: center; padding-bottom: 0.9rem; }
 .sos-phone { position: relative; z-index: 2; display: block; border-radius: 50%; -webkit-tap-highlight-color: transparent; text-decoration: none; }
 .sos-phone:focus-visible { outline: 4px solid var(--sun); outline-offset: 8px; }
@@ -1443,9 +1444,13 @@ html:not(.js) .stop__dot { left: 50%; }
 @keyframes sos-out { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
 .sos__call { margin: 1.25rem 0 0; }
 @media (prefers-reduced-motion: reduce) {
-  .sos-phone__cap, .sos-wave, .sos-bubble { animation: none; }
-  .sos-wave, .sos-bubble + .sos-bubble { display: none; }
-  .sos-bubble:first-child { opacity: 1; transform: translateX(-50%); }
+  .sos-phone__cap, .sos-wave { animation: none; }
+  .sos-wave { display: none; }
+  /* No movement, the bubbles only fade into each other. */
+  /* !important beats the global "animation: none !important" for reduced motion. */
+  .sos-says .sos-bubble { transform: translateX(-50%); animation: sos-fade 9s infinite !important; }
+  .sos-says .sos-bubble:nth-child(2) { animation-delay: 3s !important; }
+  .sos-says .sos-bubble:nth-child(3) { animation-delay: 6s !important; }
 }
 
 /* ---------- Standards (about) ---------- */
