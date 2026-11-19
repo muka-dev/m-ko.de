@@ -1399,29 +1399,32 @@ html:not(.js) .stop__dot { left: 50%; }
 .hero--sos h1 { color: #fff; max-width: 14em; margin: 0 auto 1rem; font-size: clamp(2.2rem, 5.6vw, 4rem); }
 .hero--sos h1 em { font-style: normal; color: var(--sun); }
 .sos-hero__lede { max-width: 36rem; margin: 0 auto; font-size: clamp(1.1rem, 1.7vw, 1.3rem); color: #CFE0DA; }
-.sos-stage { position: relative; width: min(34rem, 100%); min-height: 15.5rem; margin: 1rem auto 0; display: grid; place-items: center; }
+.sos-stage { width: min(30rem, 100%); margin: 1.75rem auto 0; display: grid; justify-items: center; gap: 1.1rem; }
+.sos-says { position: relative; width: 100%; height: 2.6rem; }
+.sos-bubble { position: absolute; left: 50%; bottom: 0.45rem; max-width: 100%; width: max-content; padding: 0.4rem 0.95rem; border-radius: 0.9rem; background: #fff; color: var(--ink); font-weight: 700; font-size: 0.9rem; line-height: 1.3; opacity: 0; transform: translate(-50%, 0.4rem); animation: sos-pop 9s infinite; }
+.sos-bubble::after { content: ""; position: absolute; left: 50%; bottom: -0.4rem; width: 0.8rem; height: 0.8rem; background: #fff; transform: translateX(-50%) rotate(45deg); border-radius: 0 0 0.15rem 0; }
+.sos-bubble:nth-child(2) { animation-delay: 3s; }
+.sos-bubble:nth-child(3) { animation-delay: 6s; }
+@keyframes sos-pop { 0% { opacity: 0; transform: translate(-50%, 0.4rem); } 4%, 29% { opacity: 1; transform: translate(-50%, 0); } 33%, 100% { opacity: 0; transform: translate(-50%, -0.3rem); } }
+@keyframes sos-fade { 0%, 100% { opacity: 0; } 5%, 30% { opacity: 1; } 35% { opacity: 0; } }
+.sos-dial { position: relative; display: grid; place-items: center; padding-bottom: 0.9rem; }
 .sos-phone { position: relative; z-index: 2; display: block; border-radius: 50%; -webkit-tap-highlight-color: transparent; text-decoration: none; }
 .sos-phone:focus-visible { outline: 4px solid var(--sun); outline-offset: 8px; }
-.sos-phone__cap { display: grid; place-items: center; width: clamp(9rem, 28vw, 11.5rem); aspect-ratio: 1; border-radius: 50%;
+.sos-phone__cap { display: grid; place-items: center; width: clamp(7.5rem, 22vw, 9.5rem); aspect-ratio: 1; border-radius: 50%;
   background: radial-gradient(circle at 35% 28%, #FF7A6B 0, var(--alarm) 45%, var(--alarm-d) 100%);
-  box-shadow: 0 0.9rem 0 #6F120C, 0 1.8rem 2rem rgba(0, 0, 0, 0.45);
-  transform-origin: 50% 60%; animation: sos-ring 1.6s infinite; transition: filter 0.15s; }
+  box-shadow: 0 0.6rem 0 #6F120C, 0 1.2rem 1.6rem rgba(0, 0, 0, 0.4);
+  transform-origin: 50% 60%; animation: sos-ring 3s infinite; transition: filter 0.15s; }
 .sos-phone:hover .sos-phone__cap { filter: brightness(1.1); }
-.sos-phone__cap svg { width: 55%; height: 55%; fill: #fff; }
-.sos-phone:active .sos-phone__cap, .sos-phone.is-pressed .sos-phone__cap { animation: none; transform: translateY(0.7rem); box-shadow: 0 0.1rem 0 #6F120C, 0 0.5rem 1rem rgba(0, 0, 0, 0.4); }
-@keyframes sos-ring { 0%, 40%, 100% { transform: rotate(0); } 5% { transform: rotate(-14deg); } 10% { transform: rotate(14deg); } 15% { transform: rotate(-12deg); } 20% { transform: rotate(12deg); } 25% { transform: rotate(-8deg); } 30% { transform: rotate(8deg); } 35% { transform: rotate(0); } }
-.sos-wave { position: absolute; left: 50%; top: 50%; width: clamp(9rem, 28vw, 11.5rem); aspect-ratio: 1; border-radius: 50%; border: 5px solid var(--alarm); opacity: 0; animation: sos-wave 1.6s ease-out infinite; }
-.sos-wave + .sos-wave { animation-delay: 0.5s; }
-@keyframes sos-wave { 0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.7; } 100% { transform: translate(-50%, -50%) scale(1.9); opacity: 0; } }
-.sos-lamp { position: absolute; top: 0.8rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--alarm); box-shadow: 0 0 1.5rem 0.5rem var(--alarm); animation: sos-blink 1s steps(2) infinite; }
-.sos-lamp--l { left: 8%; } .sos-lamp--r { right: 8%; animation-delay: 0.5s; }
-@keyframes sos-blink { 50% { opacity: 0.15; box-shadow: none; } }
-.sos-bubble { position: absolute; z-index: 3; max-width: 58%; padding: 0.35rem 0.85rem; border: 2px solid #fff; border-radius: 1rem; background: var(--ink); color: #fff; font-weight: 700; font-size: 0.88rem; line-height: 1.3; opacity: 0; animation: sos-pop 9s infinite; }
-.sos-bubble:nth-of-type(1) { top: 0.5rem; left: 0; }
-.sos-bubble:nth-of-type(2) { top: 5rem; right: 0; animation-delay: 3s; }
-.sos-bubble:nth-of-type(3) { bottom: 0.5rem; left: 2%; animation-delay: 6s; }
-@keyframes sos-pop { 0%, 3% { opacity: 0; transform: scale(0.6); } 6%, 28% { opacity: 1; transform: scale(1); } 33%, 100% { opacity: 0; } }
-.sos-hint { margin: 0.9rem 0 0; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: var(--sun); }
+.sos-phone__cap svg { width: 50%; height: 50%; fill: #fff; }
+.sos-phone:active .sos-phone__cap, .sos-phone.is-pressed .sos-phone__cap { animation: none; transform: translateY(0.5rem); box-shadow: 0 0.1rem 0 #6F120C, 0 0.4rem 0.8rem rgba(0, 0, 0, 0.4); }
+@keyframes sos-ring { 0%, 22%, 100% { transform: rotate(0); } 3% { transform: rotate(-10deg); } 6% { transform: rotate(10deg); } 9% { transform: rotate(-8deg); } 12% { transform: rotate(8deg); } 15% { transform: rotate(-4deg); } 18% { transform: rotate(4deg); } }
+.sos-wave { position: absolute; left: 50%; top: calc(50% - 0.45rem); width: clamp(7.5rem, 22vw, 9.5rem); aspect-ratio: 1; border-radius: 50%; border: 3px solid var(--alarm); opacity: 0; animation: sos-wave 3s ease-out infinite; }
+@keyframes sos-wave { 0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; } 45%, 100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; } }
+@media (max-width: 30rem) {
+  .sos-stage { margin-top: 1.5rem; gap: 0.9rem; }
+  .sos-says { height: 3.7rem; }
+  .sos-bubble { max-width: 88%; text-align: center; font-size: 0.88rem; }
+}
 .sos-tags { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin: 1.25rem 0 0; padding: 0; }
 .sos-tags a { display: block; padding: 0.45rem 1rem; border: 1.5px solid rgba(255, 255, 255, 0.45); border-radius: 999px; color: #fff; font-weight: 700; text-decoration: none; }
 .sos-tags a:hover { background: var(--sun); border-color: var(--sun); color: var(--ink); }
@@ -1441,11 +1444,13 @@ html:not(.js) .stop__dot { left: 50%; }
 @keyframes sos-out { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
 .sos__call { margin: 1.25rem 0 0; }
 @media (prefers-reduced-motion: reduce) {
-  .sos-phone__cap, .sos-wave, .sos-lamp, .sos-bubble { animation: none; }
-  .sos-bubble { opacity: 1; position: static; display: inline-block; margin: 0.3rem; }
-  .sos-stage { display: block; min-height: 0; text-align: center; }
+  .sos-phone__cap, .sos-wave { animation: none; }
   .sos-wave { display: none; }
-  .sos-phone { display: inline-block; margin: 1rem 0; }
+  /* No movement, the bubbles only fade into each other. */
+  /* !important beats the global "animation: none !important" for reduced motion. */
+  .sos-says .sos-bubble { transform: translateX(-50%); animation: sos-fade 9s infinite !important; }
+  .sos-says .sos-bubble:nth-child(2) { animation-delay: 3s !important; }
+  .sos-says .sos-bubble:nth-child(3) { animation-delay: 6s !important; }
 }
 
 /* ---------- Standards (about) ---------- */
@@ -1648,4 +1653,41 @@ a.emp:hover { background: var(--emp, var(--ink)); color: var(--paper); }
 @media (max-width: 760px) {
   .book-hero__grid, .book-buy__grid, .book-plan__grid, .book-toc__cols { grid-template-columns: minmax(0, 1fr); }
   .book-hero__cover { max-width: 14rem; }
+
+/* ---------- AI adoption: 90 days, book, traffic light, quick check ---------- */
+
+.adopt-hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 0; max-width: none; }
+.adopt-example { background: var(--paper); }
+.steps--four { margin-bottom: 0; }
+.steps--four > h2 { margin-bottom: 0.75rem; }
+.steps--four > .section__lede { margin-bottom: 2rem; }
+.steps--four ol { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 1.5rem; }
+.steps--four h3 { font-family: var(--display); font-weight: 600; font-size: 1.35rem; letter-spacing: -0.01em; margin: 0 0 0.4rem; }
+.sizes--two { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: clamp(3rem, 7vw, 5rem); }
+.adopt-book { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+.adopt-book__cover { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 6px 18px color-mix(in srgb, var(--ink) 22%, transparent); }
+.adopt-stair__head { margin-bottom: 1rem; }
+.adopt-result { margin: 0.9rem 0 0.4rem; font-weight: 700; max-width: none; }
+.stair__step--3 .adopt-result { color: var(--leaf-bright); }
+.offers .offer__note { margin-top: 1.25rem; }
+.adopt-rules .section__lede { margin-bottom: 0.5rem; }
+.adopt-check { background: var(--paper-deep); }
+.adopt-check__form { margin: 1.5rem 0; max-width: 46rem; }
+.adopt-check__form .chips label > span { display: block; text-align: left; }
+.adopt-check__result { border: 2px solid var(--ink); border-radius: 20px; padding: 1.1rem 1.25rem; max-width: 46rem; background: var(--paper); margin-bottom: 1rem; }
+.adopt-check__result [data-result][hidden] { display: none; }
+.adopt-check__title { font-family: var(--display); font-weight: 600; font-size: 1.25rem; margin: 0 0 0.4rem; }
+.adopt-fold { border-top: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+.adopt-fold:last-of-type { border-bottom: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+.adopt-fold > summary { cursor: pointer; padding: 0.8rem 0; font-weight: 600; }
+.adopt-fold > p { margin: 0 0 1rem; }
+
+@media (max-width: 940px) {
+  .steps--four ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps--four li:nth-child(2)::after { display: none; }
+}
+@media (max-width: 760px) {
+  .steps--four ol,
+  .sizes--two { grid-template-columns: minmax(0, 1fr); }
+  .adopt-book { grid-template-columns: 6.5rem minmax(0, 1fr); }
 }
