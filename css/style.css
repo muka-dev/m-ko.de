@@ -1436,10 +1436,33 @@ html:not(.js) .stop__dot { left: 50%; }
 .sos-tags a { display: block; padding: 0.45rem 1rem; border: 1.5px solid rgba(255, 255, 255, 0.45); border-radius: 999px; color: #fff; font-weight: 700; text-decoration: none; }
 .sos-tags a:hover { background: var(--sun); border-color: var(--sun); color: var(--ink); }
 /* Only the real escalation is red, in the tone of the emergency button. #C9281C keeps white text above 4.5:1. */
-.sos-tags a.sos-tags__red { display: inline-flex; align-items: center; gap: 0.5rem; background: #C9281C; border-color: var(--alarm); }
-.sos-tags a.sos-tags__red:hover { background: var(--alarm-d); border-color: var(--alarm); color: #fff; }
-.sos-tags__light { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: #fff; animation: sos-blink 1.4s ease-out infinite; --alarm: #fff; }
-@media (prefers-reduced-motion: reduce) { .sos-tags__light { animation: none; } }
+/* Red alert: calm breathing edge at rest, KITT scanner + flicker + glitch on hover/focus */
+.sos-tags a.sos-tags__red { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; gap: 0.5rem;
+  background: color-mix(in srgb, var(--alarm) 14%, #120403); border-color: var(--alarm); animation: sos-breathe 2.8s ease-in-out infinite; }
+.sos-tags a.sos-tags__red::before { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: 0; width: 38%; opacity: 0;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--alarm) 70%, transparent) 35%, #FF8A7A 50%, color-mix(in srgb, var(--alarm) 70%, transparent) 65%, transparent);
+  filter: blur(2px); transform: translateX(-100%); }
+.sos-tags a.sos-tags__red:hover, .sos-tags a.sos-tags__red:focus-visible { background: #160504; border-color: var(--alarm); color: #fff;
+  animation: sos-flicker 0.45s steps(1, end) 1, sos-hot 0.9s 0.45s ease-in-out infinite alternate; }
+.sos-tags a.sos-tags__red:hover::before, .sos-tags a.sos-tags__red:focus-visible::before { opacity: 1; animation: sos-scan 0.85s ease-in-out infinite alternate; }
+.sos-tags a.sos-tags__red:hover > span, .sos-tags a.sos-tags__red:focus-visible > span { animation: sos-glitch 2.4s steps(1, end) infinite; }
+.sos-tags a.sos-tags__red > span { display: inline-block; }
+.sos-tags__light { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--alarm); animation: sos-blink 1.4s ease-out infinite; }
+.sos-tags a.sos-tags__red:hover .sos-tags__light, .sos-tags a.sos-tags__red:focus-visible .sos-tags__light { background: #fff; animation-duration: 0.45s; --alarm: #fff; }
+@keyframes sos-breathe { 0%, 100% { box-shadow: 0 0 0.25rem color-mix(in srgb, var(--alarm) 25%, transparent); } 50% { box-shadow: 0 0 1.1rem color-mix(in srgb, var(--alarm) 60%, transparent); } }
+@keyframes sos-scan { from { transform: translateX(-100%); } to { transform: translateX(263%); } }
+@keyframes sos-flicker { 0%, 30%, 60% { border-color: #fff; box-shadow: 0 0 1.4rem var(--alarm); } 15%, 45%, 80% { border-color: transparent; box-shadow: none; } }
+@keyframes sos-hot { from { box-shadow: 0 0 0.6rem color-mix(in srgb, var(--alarm) 55%, transparent); } to { box-shadow: 0 0 1.6rem var(--alarm), 0 0 0.3rem #fff inset; } }
+@keyframes sos-glitch { 0%, 8%, 100% { text-shadow: none; transform: none; }
+  2% { text-shadow: -2px 0 #FF3B2F, 2px 0 #5FF; transform: translateX(1px); }
+  4% { text-shadow: 2px 0 #FF3B2F, -2px 0 #5FF; transform: translateX(-1px) skewX(-6deg); }
+  6% { text-shadow: -1px 0 #FF3B2F, 1px 0 #5FF; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .sos-tags a.sos-tags__red, .sos-tags a.sos-tags__red:hover, .sos-tags a.sos-tags__red:focus-visible, .sos-tags a.sos-tags__red > span, .sos-tags__light { animation: none !important; }
+  .sos-tags a.sos-tags__red { box-shadow: 0 0 0.8rem color-mix(in srgb, var(--alarm) 50%, transparent); }
+  .sos-tags a.sos-tags__red:hover, .sos-tags a.sos-tags__red:focus-visible { background: var(--alarm-d); box-shadow: 0 0 1.2rem var(--alarm); }
+  .sos-tags a.sos-tags__red::before { display: none; }
+}
 .hero--sos .hero__action { justify-content: center; margin-top: 1.75rem; }
 .hero--sos .hero__link, .hero--sos .status { color: #fff; }
 .hero--sos .proof { justify-content: center; }
