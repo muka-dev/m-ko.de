@@ -1736,3 +1736,33 @@ a.emp:hover { background: var(--emp, var(--ink)); color: var(--paper); }
   .sizes--two { grid-template-columns: minmax(0, 1fr); }
   .adopt-book { grid-template-columns: 6.5rem minmax(0, 1fr); }
 }
+
+/* ---------- Privacy overview (cards, icons, "at a glance" table) ---------- */
+.privacy-overview { background: var(--paper-deep); padding-block: clamp(2rem, 5vw, 3.5rem); }
+.privacy-overview h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 1.5rem; }
+.privacy-cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+.privacy-card { background: var(--paper); border: 2px solid var(--ink); border-radius: 16px; padding: 1.1rem 1.25rem 1.25rem; min-width: 0; overflow-wrap: anywhere; }
+.privacy-card__icon { display: block; width: 2rem; height: 2rem; color: var(--lagoon); margin-bottom: 0.6rem; }
+.privacy-card__title { font-size: 1.15rem; line-height: 1.2; margin: 0 0 0.4rem; }
+.privacy-card p { font-size: 1rem; line-height: 1.5; color: var(--ink); margin: 0; }
+.privacy-overview__sub { font-size: clamp(1.15rem, 2.2vw, 1.4rem); margin: 2.25rem 0 0.75rem; }
+.privacy-overview__note { margin: 1rem 0 0; font-size: 0.95rem; color: var(--ink-soft); }
+.glance { overflow-x: auto; max-width: none; }
+.glance__table { border-collapse: collapse; width: 100%; background: var(--paper); font-size: 1rem; line-height: 1.45; }
+.glance__table th, .glance__table td { text-align: left; vertical-align: top; padding: 0.75rem 0.9rem; border: 1.5px solid var(--ink); overflow-wrap: anywhere; }
+.glance__table thead th { background: var(--ink); color: var(--paper); font-family: var(--display); font-weight: 600; }
+.glance__table tbody th { font-weight: 600; width: 38%; }
+@media (max-width: 40rem) {
+  .glance__table, .glance__table tbody, .glance__table tr, .glance__table th, .glance__table td { display: block; width: auto; }
+  .glance__table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .glance__table tr { border: 2px solid var(--ink); border-radius: 12px; margin-bottom: 0.9rem; overflow: hidden; }
+  .glance__table th, .glance__table td { border: 0; border-top: 1.5px solid var(--paper-deep); padding: 0.6rem 0.9rem; }
+  .glance__table tbody th { width: auto; background: var(--paper-deep); border-top: 0; }
+  .glance__table td::before { content: attr(data-col); display: block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+  .glance__table td[data-col="p"]::before { content: "Zweck"; }
+  .glance__table td[data-col="s"]::before { content: "Speicherdauer"; }
+  html[data-lang="en"] .glance__table td[data-col="p"]::before { content: "Purpose"; }
+  html[data-lang="en"] .glance__table td[data-col="s"]::before { content: "Storage period"; }
+  html[data-lang="pt"] .glance__table td[data-col="p"]::before { content: "Finalidade"; }
+  html[data-lang="pt"] .glance__table td[data-col="s"]::before { content: "Prazo de conservação"; }
+}
