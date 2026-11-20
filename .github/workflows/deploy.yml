@@ -47,8 +47,10 @@ jobs:
       - name: Scripts parse
         run: for f in js/*.js; do node --check "$f"; done
       - name: PHP syntax
-        run: php -l agents/request.php
-      - name: Tests (scanner, verdict, request builder, endpoint)
+        run: |
+          php -l agents/request.php
+          php -l stats/collect.php
+      - name: Tests (scanner, verdict, request builder, endpoints, stats)
         run: node --test tests/*.test.js
 
   deploy:
@@ -75,7 +77,7 @@ jobs:
       - name: Assemble site folder
         run: |
           mkdir site
-          cp -r index.html favicon.svg llms.txt css js fonts img get check assistant security agents brand about tools request privacy imprint sustainability site/
+          cp -r index.html favicon.svg llms.txt css js fonts img get check assistant security agents brand about tools request privacy imprint sustainability stats site/
           chmod -R u=rwX,go=rX site
 
       - name: Deploy over SFTP

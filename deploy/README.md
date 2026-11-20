@@ -13,7 +13,7 @@ Solange das Secret `DEPLOY_HOST` fehlt, wird nichts hochgeladen. Der Job
 meldet dann "Deploy skipped". Man kann den Workflow also gefahrlos mergen
 und die Zugangsdaten danach einrichten.
 
-Was auf den Server geht: `index.html`, `favicon.svg`, `css/`, `js/`,
+Was auf den Server geht: `index.html`, `favicon.svg`, `css/`, `js/`, `stats/`,
 `fonts/`, `img/`, `get/`. Dateien, die nur auf dem Server liegen, bleiben
 unberührt (kein Löschen). Dateien bekommen die Rechte 644 und Ordner 755,
 damit der Webserver sie ausliefern darf.
